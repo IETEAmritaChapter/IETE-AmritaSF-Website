@@ -91,7 +91,7 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser to view the
 
 ## Commit Guidelines
 
-### Frontend Team Note
+### Web Dev Team Note
 
 - This project uses **Commitlint** to enforce proper commit message standards.
 
