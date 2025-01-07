@@ -145,8 +145,8 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser to view the
    ```plaintext
    src/
      └── fonts/
-         ├── custom-font.woff
-         └── another-font.woff
+         ├── Montserrat-Regular.woff
+         └── MontserratAlternates-Regular.woff
    ```
 
 2. **Import Fonts Using `next/font/local`:**
@@ -157,7 +157,8 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser to view the
    import localFont from 'next/font/local';
 
    const customFont = localFont({
-     src: './fonts/custom-font.woff',
+     src: './fonts/Montserrat-Regular.woff',
+     src: './fonts/MontserratAlternates-Regular.woff',
    });
    ```
 
