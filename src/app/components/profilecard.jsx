@@ -14,7 +14,6 @@ const ProfileCard = () => {
         const socials = socialsRef.current;
 
         gsap.set(socials, { y: "-100%", opacity: 0 });
-        // gsap.set(text, { y: "0%" });
 
         card.addEventListener("mouseenter", () => {
             gsap.to(text, { y: "200%", duration: 0.5, ease: "power2.inOut" });
@@ -22,7 +21,6 @@ const ProfileCard = () => {
         });
 
         card.addEventListener("mouseleave", () => {
-            // Text returns to center, socials move up
             gsap.to(text, { y: "0%", duration: 0.5, ease: "power2.inOut" });
             gsap.to(socials, { y: "-100%", opacity: 0, duration: 0.5, ease: "power2.inOut" });
         });
@@ -31,23 +29,23 @@ const ProfileCard = () => {
     return (
         <div
             ref={cardRef}
-            className="rounded-2xl bg-black w-[450px] flex flex-row items-center p-4 relative overflow-hidden"
+            className="rounded-2xl bg-black w-[300px] flex flex-col items-center p-6 relative overflow-hidden"
         >
             {/* Image Container */}
-            <div className="w-[40%] flex justify-center items-center">
+            <div className="w-[50%] flex justify-center items-center">
                 <img
                     src="/Images/team/Saran.png"
                     alt="Profile Picture"
-                    className="w-[75%] h-auto object-cover"
+                    className="w-full h-auto object-cover"
                 />
             </div>
 
             {/* Content Container */}
-            <div className="w-[60%] relative">
+            <div className="w-[100%] relative flex flex-col justify-center items-center mt-4">
                 {/* Text Container */}
                 <div
                     ref={textRef}
-                    className="pl-4 space-y-1"
+                    className="text-center space-y-2"
                 >
                     <h1 className="text-white text-2xl font-bold">PRESIDENT</h1>
                     <h2 className="text-white text-2xl">Saran Dharshan</h2>
