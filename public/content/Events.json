@@ -1,0 +1,56 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "Completed":"Past Event",
+            "title": "Club Induction",
+            "Year": "2023",
+            "Month": "03",
+            "Date": "01",
+            "time": "10:00 AM",
+            "location": "Sandeepmani Hall, 2nd floor",
+            "description": "At IETE, our focus is on advancing the fields of electronics, telecommunications, and software development. We provide opportunities for learning, sharing, and growing your knowledge and expertise in these ",
+            "image": "/Images/events/induction.png",
+            "registration":"https://google.com"
+        },
+        {
+            "id": 2,
+            "Completed":"Upcoming Event",
+            "title": "Event 2",
+            "Year": "2023",
+            "Month": "03",
+            "Date": "02",
+            "time": "11:00 AM",
+            "location": "Location 2",
+            "description": "At IETE, our focus is on advancing the fields of electronics, telecommunications, and software development. ",
+            "image": "/Images/events/induction.png",
+            "registration":"https://google.com"
+        },
+        {
+            "id": 3,
+            "Completed":"Upcoming Event",
+            "title": "Event 3",
+            "Year": "2023",
+            "Month": "03",
+            "Date": "03",
+            "time": "12:00 PM",
+            "location": "Location 3",
+            "description": "At IETE, our focus is on advancing the fields of electronics, telecommunications, and software development. We provide opportunities for learning, sharing, and growing your knowledge and expertise in these",
+            "image": "/Images/events/induction.png",
+            "registration":"https://google.com"
+        },
+        {
+            "id": 4,
+            "Completed":"Upcoming Event",
+            "title": "Event 4",
+            "Year": "2023",
+            "Month": "03",
+            "Date": "05",
+            "time": "01:00 PM",
+            "location": "Location 4",
+            "description": "At IETE, our focus is on advancing the fields of electronics, telecommunications, and software development. We provide opportunities for learning, sharing, and growing your knowledge and expertise in these",
+            "image": "/Images/events/induction.png",
+            "registration":"https://google.com"
+        }
+    ]
+}
