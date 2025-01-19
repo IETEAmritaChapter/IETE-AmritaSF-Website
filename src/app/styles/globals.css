@@ -18,11 +18,11 @@
   --size-button-arrow: 1em;
   --size-button-arrow-small: 0.75em;
   --size-overlay-width: 37.5em;
-  --size-overlay-height: 28.125em;
+  --size-overlay-height: 39em;
   --size-slider-width: 42.5em;
   --size-slider-height: 28em;
   --size-padding: 1.25em;
-  --size-padding-large: 2em;
+  --size-padding-large: 5em;
   --size-padding-small: 0.4em;
   --size-padding-medium: 0.75em;
   --size-border-radius: 0.4em;
@@ -72,7 +72,7 @@ body {
 
 .overlay-inner {
   flex-flow: column;
-  justify-content: space-between;
+  gap:10px;
   align-items: flex-start;
   height: var(--size-overlay-height);
   display: flex;
@@ -236,7 +236,7 @@ body {
 }
 
 b {
-  font-size: 8rem;
+  font-size: 4em;
 }
 
 img {
@@ -248,7 +248,7 @@ img {
 [data-slider="slide"] img {
   object-fit: cover;
   align-items: center;
-  translate: 200px;
+  translate: 20%;
 
 }
 
@@ -326,13 +326,9 @@ html:not(.wf-design-mode) [data-slider="slide"].active .slide-caption {
   font-display: swap;
 }
 
-.animate-text {
-  transform: translateY(0);
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-  overflow: hidden;
+.register-button{
+  color: #007bff;
 }
-
 .event-details {
   overflow: hidden;
   position: relative;
@@ -343,6 +339,7 @@ html:not(.wf-design-mode) [data-slider="slide"].active .slide-caption {
   transition: opacity 0.4s ease;
   height: 200px;
   width: 700px;
+  overflow: hidden;
 }
 
 /* Optional: Add fade-in animation for new content */
@@ -366,7 +363,7 @@ html:not(.wf-design-mode) [data-slider="slide"].active .slide-caption {
 }
 
 .description-content {
-  max-height: 200px;
+  max-height: 220px;
   row-gap: 200px;
   overflow: hidden;
   transition: max-height 0.6s ease-in-out;

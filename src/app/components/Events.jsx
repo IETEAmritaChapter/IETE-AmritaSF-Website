@@ -99,7 +99,7 @@ export default function Events() {
 
         const registrationClone = stepElementRegistration.cloneNode(true);
         registrationClone.href = events[index].registration;
-        registrationClone.textContent = "Click here to register";
+        registrationClone.textContent = events[index].Completed !== "Past Event" ? "Click here to register" : "";
         stepsParentRegistration.appendChild(registrationClone);
 
         // Insert data
@@ -194,15 +194,15 @@ export default function Events() {
               y: `${-100 * index}%`,
               ease: "power3.inOut",
               duration: 0.6,
-              delay: 0.1,
+              delay: 0.4,
             });
           }
           if (allStepsDescription) {
             gsap.to(allStepsDescription, {
               y: `${-100 * index}%`,
-              ease: "power3.inOut",
+              ease: "power3",
               duration: 0.6,
-              delay: 0.2,
+              delay: 0.5,
             });
           }
 
@@ -211,7 +211,7 @@ export default function Events() {
               y: `${-100 * index}%`,
               ease: "power3.inOut",
               duration: 0.6,
-              delay: 0.3,
+              delay: 0.6,
             });
           }
           if (allStepsTime) {
@@ -219,7 +219,7 @@ export default function Events() {
               y: `${-100 * index}%`,
               ease: "power3.inOut",
               duration: 0.6,
-              delay: 0.4,
+              delay: 0.7,
             });
           }
           if (allStepsRegistration) {
@@ -227,7 +227,7 @@ export default function Events() {
               y: `${-100 * index}%`,
               ease: "power3.inOut",
               duration: 0.6,
-              delay: 0.5,
+              delay: 0.8,
             });
           }
 
@@ -540,7 +540,7 @@ export default function Events() {
           <div className="overlay-inner">
             <div className="overlay-count-row">
               <div className="count-column">
-                <h2 data-slide-count="step" className="count-heading"></h2>
+                <h2 data-slide-count="step-date" className="count-heading"></h2>
               </div>
               <div className="count-row-divider"></div>
               <div className="count-column">
@@ -548,7 +548,7 @@ export default function Events() {
               </div>
               <div className="count-row-divider"></div>
               <div className="count-column">
-                <h2 data-slide-count="step-date" className="count-heading"></h2>
+                <h2 data-slide-count="step" className="count-heading"></h2>
               </div>
             </div>
             <b>
@@ -559,9 +559,8 @@ export default function Events() {
             <div 
               className="count-column description-container"
               style={{
-                height: "200px",
+                height: "110px",
                 position: "relative",
-                marginBottom: "20px",
                 overflow: "hidden",
                 width: "100%"
               }}
@@ -570,8 +569,8 @@ export default function Events() {
                 <div
                   key={event.id}
                   style={{
-                    transition: "opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
-                    height: "150px",
+                    transition: "opacity 0.9s ease-in-out, transform 0.9s ease-in-out",
+                    height: "170px",
                     width: "100%",
                     opacity: activeEventIndex === index ? 1 : 0,
                     visibility: activeEventIndex === index ? "visible" : "hidden",
@@ -584,10 +583,9 @@ export default function Events() {
                     paddingBottom: "30px"
                   }}
                 >
-                  {console.log(activeEventIndex, index)}
                   <div
                     style={{
-                      height: "100%",
+                      height: "50%",
                       overflowY: "hidden",
                       paddingRight: "10px"
                     }}
@@ -598,7 +596,7 @@ export default function Events() {
                       style={{
                         margin: 0,
                         lineHeight: "1.5",
-                        maxHeight: readMore && activeEventIndex === index ? "100px" : "120px",
+                        maxHeight: readMore && activeEventIndex === index ? "100px" : "150px",
                         overflow: "hidden"
                       }}
                     >
@@ -627,17 +625,15 @@ export default function Events() {
                 </div>
               ))}
             </div>
-            <div className="count-column">
-              <div className="count-heading">
-                <h3 data-slide-count="step-location" className="animate-text"></h3>
-              </div>
+            <div className="count-column" style={{ height: "2vh" }}>
+                <h2 data-slide-count="step-location" className="count-heading"></h2>
             </div>
-            <div className="count-column">
-              <h3 data-slide-count="step-time" className="count-heading animate-text"></h3>
+            <div className="count-column" style={{ height: "2vh" }}>
+              <h3 data-slide-count="step-time" className="count-heading "></h3>
             </div>
-            <div className="count-column">
-              <a className="register-button" href="#!" target="_blank" rel="noopener noreferrer">
-                <h3 className="count-heading animate-text" data-slide-count="step-registration"></h3>
+            <div className="count-column" style={{ height: "2vh" }}>
+              <a  href="#!" target="_blank" rel="noopener noreferrer">
+                <h3 className="count-heading register-button" data-slide-count="step-registration"></h3>
               </a>
             </div>
             <div className="overlay-nav-row">
