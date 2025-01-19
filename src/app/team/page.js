@@ -4,42 +4,213 @@ import { useEffect, useRef, useState } from "react";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 import ProfileCard from "../components/profilecard";
 import gsap from "gsap";
+import { useSwipeable } from "react-swipeable";
 
 export default function Home() {
   const navRef = useRef(null);
   const buttonsRef = useRef([]);
+  const underlineRefs = useRef([]);
+  const headingRef = useRef(null);  
+  const cardsContainerRef = useRef(null);
   const [activeButton, setActiveButton] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [jsonData, setJsonData] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 20);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+  const animateCardsOut = () => {
+    return gsap.to(".profile-card", {
+      opacity: 0,
+      y: 50,
+      stagger: {
+        amount: 0.3,
+        from: "random"
+      },
+      duration: 0.4,
+      ease: "power2.out"
+    });
+  };
 
-  useEffect(() => {
+  const animateHeadingOut = () => {
+    return gsap.to(headingRef.current, {
+      opacity: 0,
+      y: -20,
+      duration: 0.3,
+      ease: "power2.out"
+    });
+  };
+
+  const animateHeadingIn = () => {
+    return gsap.fromTo(headingRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+    );
+  };
+
+
+  const animateCardsIn = () => {
+    const cards = document.querySelectorAll('.profile-card');
+    const tl = gsap.timeline();
+    
+    // Set initial state
+    gsap.set(cards, {
+      opacity: 0,
+      y: 50
+    });
+
+    // Simple sequential animation
+    tl.to(cards, {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: "power2.out"
+    });
+
+    return tl;
+};const handleVerticalChange = async (newIndex) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
+    // Animate current cards out
+    animateHeadingOut();
+    await animateCardsOut();
+    
+    
+    setActiveButton(newIndex);
+  
+    await new Promise(resolve => setTimeout(resolve, 50));
+    
+    // Animate new cards in
+    animateCardsIn();
+    await animateHeadingIn();
+    
+    
+    setIsAnimating(false);
+  };
+
+
+
+  
+
+  const handleNext = () => {
+    if (activeButton < Object.keys(jsonData).length - 1) {
+      handleVerticalChange(activeButton + 1);
+      
+      gsap.to(buttonsRef.current[activeButton + 1], {
+        backgroundColor: "#f97316",
+        color: "#fff",
+        scale: 1.1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+
+      buttonsRef.current.forEach((button, idx) => {
+        if (idx !== activeButton + 1) {
+          gsap.to(button, {
+            backgroundColor: "transparent",
+            color: "#fff",
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        }
+      });
+    }
+  };
+
+  const handlePrev = () => {
+    if (activeButton > 0) {
+      handleVerticalChange(activeButton - 1);
+      
+      gsap.to(buttonsRef.current[activeButton - 1], {
+        backgroundColor: "#f97316",
+        color: "#fff",
+        scale: 1.1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+
+      buttonsRef.current.forEach((button, idx) => {
+        if (idx !== activeButton - 1) {
+          gsap.to(button, {
+            backgroundColor: "transparent",
+            color: "#fff",
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        }
+      });
+    }
+  };
+
+  const handleButtonClick = (index) => {
+    if (index !== activeButton) {
+      handleVerticalChange(index);
+
+      gsap.to(buttonsRef.current[index], {
+        backgroundColor: "#f97316",
+        color: "#fff",
+        scale: 1.1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+
+      buttonsRef.current.forEach((button, idx) => {
+        if (idx !== index) {
+          gsap.to(button, {
+            backgroundColor: "transparent",
+            color: "#fff",
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        }
+      });
+
+      gsap.to(underlineRefs.current[index], {
+        scaleX: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    }
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: handleNext,
+    onSwipedRight: handlePrev,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true, // Optional: allows swipe gestures with a mouse
+  });
+
+  useEffect(() =>  {
+    
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/Assets/members.json"); // Relative URL to public folder
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setJsonData(data);
+
+        animateCardsIn();
+        animateHeadingIn();
+      } catch (error) {
+        console.error("Error fetching the JSON data:", error);
+      }
+    };
+    
+    fetchData();
+
     gsap.fromTo(
       navRef.current,
-      { 
-        y: -100, 
-        opacity: 0 
-      },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.8, 
-        ease: "power3.out" 
-      }
+      { y: -100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
     );
 
     gsap.fromTo(
       buttonsRef.current,
-      { 
-        y: -20, 
-        opacity: 0 
-      },
+      { y: -100, opacity: 0 },
       {
         y: 0,
         opacity: 1,
@@ -48,31 +219,16 @@ export default function Home() {
         ease: "back.out(1.2)"
       }
     );
+
+    
   }, []);
 
-  const handleButtonClick = (index) => {
-    setActiveButton(index);
+  if (!jsonData) {
+    return <div>Loading...</div>; 
+  }
+  
+  const verticals = Object.keys(jsonData);
 
-    gsap.to(buttonsRef.current[index], {
-      backgroundColor: "#f97316",
-      color: "#fff",
-      scale: 1.1,
-      duration: 0.3,
-      ease: "power2.out",
-    });
-
-    buttonsRef.current.forEach((button, idx) => {
-      if (idx !== index) {
-        gsap.to(button, {
-          backgroundColor: "transparent",
-          color: "#fff",
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      }
-    });
-  };
 
   const handleButtonHover = (index) => {
     if (index !== activeButton) {
@@ -80,6 +236,12 @@ export default function Home() {
         scale: 1.05,
         duration: 0.2,
         ease: "power2.out",
+      });
+
+      gsap.to(underlineRefs.current[index], {
+        scaleX: 1,
+        duration: 0.3,
+        ease: "power3.out",
       });
     }
   };
@@ -91,60 +253,91 @@ export default function Home() {
         duration: 0.2,
         ease: "power2.out",
       });
+
+      gsap.to(underlineRefs.current[index], {
+        scaleX: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      });
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" {...swipeHandlers}>
       <nav
         ref={navRef}
-        className={`w-full text-white transition-all duration-300 z-50 `}
+        className="w-full text-white transition-all duration-300 z-50 h-auto"
       >
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between gap-4">
+        <div className="h-full max-w-6xl mx-auto px-4 sm:px-6">
+          {/* Mobile Navigation */}
+          <div className="lg:hidden h-full flex items-center justify-between gap-2">
             <button
-              className="p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 transform hover:scale-110 min-w-[40px]"
+              onClick={handlePrev}
+              disabled={activeButton === 0}
+              className="p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Previous"
             >
               <IoArrowBack size={20} />
             </button>
 
-            <div className="flex items-center justify-center flex-grow gap-4">
-              {Array.from({ length: 8 }).map((_, index) => (
-                <div key={index} className="relative group">
+            <div className="flex-1 text-center">
+              <h2 className="text-lg font-medium">{verticals[activeButton]}</h2>
+            </div>
+
+            <button
+              onClick={handleNext}
+              disabled={activeButton === verticals.length - 1}
+              className="p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Next"
+            >
+              <IoArrowForward size={20} />
+            </button>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex h-full items-center justify-between">
+            <button
+              onClick={handlePrev}
+              disabled={activeButton === 0}
+              className="p-2 rounded-full  transition-all duration-300 transform hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Previous"
+            >
+              <IoArrowBack size={20} />
+            </button>
+
+            <div className="flex-1 flex items-center justify-center h-full">
+              {verticals.map((name, index) => (
+                <div key={index} className="relative h-full flex items-center px-2 group">
                   <button
                     ref={(el) => (buttonsRef.current[index] = el)}
                     onClick={() => handleButtonClick(index)}
                     onMouseEnter={() => handleButtonHover(index)}
                     onMouseLeave={() => handleButtonLeave(index)}
-                    className={`
+                    className={` 
                       px-6 py-2 rounded-md text-sm font-medium
                       transition-all duration-300 ease-out
-                      hover:bg-orange-500/20 min-w-[100px]
                       focus:outline-none focus:ring-2 focus:ring-orange-500/50
                       ${
                         activeButton === index
-                          ? "bg-orange-500 text-white shadow-lg"
+                          ? "bg-orange-500 text-white"
                           : "text-gray-200 hover:text-white"
                       }
                     `}
                   >
-                    Button {index + 1}
+                    {name}
                   </button>
-                  {/* Animated underline */}
-                  <div className={`
-                    absolute bottom-0 left-0 w-full h-0.5
-                    transform origin-left scale-x-0 
-                    transition-transform duration-300 ease-out
-                    bg-orange-500
-                    ${activeButton === index ? 'scale-x-100' : 'group-hover:scale-x-100'}
-                  `}></div>
+                  <div
+                    ref={(el) => (underlineRefs.current[index] = el)}
+                    className={`absolute bottom-0 left-0 w-full h-0.5 transform origin-left scale-x-0 bg-orange-500`}
+                  ></div>
                 </div>
               ))}
             </div>
 
             <button
-              className="p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 transform hover:scale-110 min-w-[40px]"
+              onClick={handleNext}
+              disabled={activeButton === 7}
+              className="p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 transform hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Next"
             >
               <IoArrowForward size={20} />
@@ -154,22 +347,32 @@ export default function Home() {
       </nav>
 
       {/* Content Sections */}
-      <div className="pt-24">
-        {[...Array(8)].map((_, sectionIndex) => (
-          <div
-            key={sectionIndex}
-            className="flex-1 overflow-y-auto p-8"
-          >
-            <div className="flex flex-wrap justify-between gap-4 mb-8">
-              <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
-              <ProfileCard />
+      <div className="w-full py-4 flex flex-col items-center">
+      <h1 
+      ref={headingRef}
+      className="text-3xl font-bold font-[var(--font-montserrat)] text-white mb-8">
+          {verticals[activeButton]}
+        </h1>
+        <div 
+          ref={cardsContainerRef}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl px-4"
+        >
+          {jsonData[verticals[activeButton]].map((member, index) => (
+            <div key={index} className="flex items-center justify-center profile-card">
+              <ProfileCard
+                className="opacity-[0]"
+                name={member.Name}
+                dept={member.Dept}
+                year={member.Year}
+                contactEmail={member.ContactEmail}
+                instagram={member.Instagram}
+                linkedin={member.Linkedin}
+                github={member.Github}
+              />
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        </div>
       </div>
-    </div>
   );
 }
