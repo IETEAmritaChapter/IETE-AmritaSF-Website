@@ -351,13 +351,13 @@ export default function Home() {
       <h1 
       ref={headingRef}
       className="text-3xl font-bold font-[var(--font-montserrat)] text-white mb-8">
-          {verticals[activeButton]}
+          {jsonData[verticals[activeButton]]["name"]}
         </h1>
         <div 
           ref={cardsContainerRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl px-4"
         >
-          {jsonData[verticals[activeButton]].map((member, index) => (
+          {jsonData[verticals[activeButton]]["data"].map((member, index) => (
             <div key={index} className="flex items-center justify-center profile-card">
               <ProfileCard
                 className="opacity-[0]"
