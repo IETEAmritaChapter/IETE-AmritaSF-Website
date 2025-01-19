@@ -80,8 +80,8 @@ const ProfileCard = ({
                     ref={textRef}
                     className="text-center space-y-2 w-full px-2 md:transform"
                 >
-                    <h2 className="text-white text-lg font-[var(--font-montserrat)]">{name}</h2>
-                    <p className="text-gray-300 text-md font-[var(--font-montserrat)]">{details}</p>
+                    <h2 className="text-white text-xl [font-family:var(--font-montserratb)]">{name}</h2>
+                    <p className="text-gray-300 text-lg [font-family:var(--font-montserrat)]">{details}</p>
                 </div>
 
                 <div

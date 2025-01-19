@@ -10,7 +10,7 @@ export default function Home() {
   const navRef = useRef(null);
   const buttonsRef = useRef([]);
   const underlineRefs = useRef([]);
-  const headingRef = useRef(null);  
+  const headingRef = useRef(null);
   const cardsContainerRef = useRef(null);
   const [activeButton, setActiveButton] = useState(0);
   const [jsonData, setJsonData] = useState(null);
@@ -22,10 +22,10 @@ export default function Home() {
       y: 50,
       stagger: {
         amount: 0.3,
-        from: "random"
+        from: "random",
       },
       duration: 0.4,
-      ease: "power2.out"
+      ease: "power2.out",
     });
   };
 
@@ -34,26 +34,26 @@ export default function Home() {
       opacity: 0,
       y: -20,
       duration: 0.3,
-      ease: "power2.out"
+      ease: "power2.out",
     });
   };
 
   const animateHeadingIn = () => {
-    return gsap.fromTo(headingRef.current,
+    return gsap.fromTo(
+      headingRef.current,
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
     );
   };
 
-
   const animateCardsIn = () => {
-    const cards = document.querySelectorAll('.profile-card');
+    const cards = document.querySelectorAll(".profile-card");
     const tl = gsap.timeline();
-    
+
     // Set initial state
     gsap.set(cards, {
       opacity: 0,
-      y: 50
+      y: 50,
     });
 
     // Simple sequential animation
@@ -62,41 +62,36 @@ export default function Home() {
       y: 0,
       duration: 0.5,
       stagger: 0.1,
-      ease: "power2.out"
+      ease: "power2.out",
     });
 
     return tl;
-};const handleVerticalChange = async (newIndex) => {
+  };
+  const handleVerticalChange = async (newIndex) => {
     if (isAnimating) return;
     setIsAnimating(true);
 
     // Animate current cards out
     animateHeadingOut();
     await animateCardsOut();
-    
-    
+
     setActiveButton(newIndex);
-  
-    await new Promise(resolve => setTimeout(resolve, 50));
-    
+
+    await new Promise((resolve) => setTimeout(resolve, 50));
+
     // Animate new cards in
     animateCardsIn();
     await animateHeadingIn();
-    
-    
+
     setIsAnimating(false);
   };
-
-
-
-  
 
   const handleNext = () => {
     if (activeButton < Object.keys(jsonData).length - 1) {
       handleVerticalChange(activeButton + 1);
-      
+
       gsap.to(buttonsRef.current[activeButton + 1], {
-        backgroundColor: "#f97316",
+        backgroundImage: "linear-gradient(to right, #f97316, #ea580c)",
         color: "#fff",
         scale: 1.1,
         duration: 0.3,
@@ -106,7 +101,7 @@ export default function Home() {
       buttonsRef.current.forEach((button, idx) => {
         if (idx !== activeButton + 1) {
           gsap.to(button, {
-            backgroundColor: "transparent",
+            backgroundImage: "none",
             color: "#fff",
             scale: 1,
             duration: 0.3,
@@ -120,9 +115,9 @@ export default function Home() {
   const handlePrev = () => {
     if (activeButton > 0) {
       handleVerticalChange(activeButton - 1);
-      
+
       gsap.to(buttonsRef.current[activeButton - 1], {
-        backgroundColor: "#f97316",
+        backgroundImage: "linear-gradient(to right, #f97316, #ea580c)",
         color: "#fff",
         scale: 1.1,
         duration: 0.3,
@@ -132,7 +127,7 @@ export default function Home() {
       buttonsRef.current.forEach((button, idx) => {
         if (idx !== activeButton - 1) {
           gsap.to(button, {
-            backgroundColor: "transparent",
+            backgroundImage: "none",
             color: "#fff",
             scale: 1,
             duration: 0.3,
@@ -148,9 +143,9 @@ export default function Home() {
       handleVerticalChange(index);
 
       gsap.to(buttonsRef.current[index], {
-        backgroundColor: "#f97316",
+        backgroundImage: "linear-gradient(to right, #f97316, #ea580c)",
         color: "#fff",
-        scale: 1.1,
+        scale: 1,
         duration: 0.3,
         ease: "power2.out",
       });
@@ -158,6 +153,7 @@ export default function Home() {
       buttonsRef.current.forEach((button, idx) => {
         if (idx !== index) {
           gsap.to(button, {
+            backgroundImage: "none",
             backgroundColor: "transparent",
             color: "#fff",
             scale: 1,
@@ -182,8 +178,7 @@ export default function Home() {
     trackMouse: true, // Optional: allows swipe gestures with a mouse
   });
 
-  useEffect(() =>  {
-    
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("/Assets/members.json"); // Relative URL to public folder
@@ -199,7 +194,7 @@ export default function Home() {
         console.error("Error fetching the JSON data:", error);
       }
     };
-    
+
     fetchData();
 
     gsap.fromTo(
@@ -216,24 +211,21 @@ export default function Home() {
         opacity: 1,
         duration: 0.5,
         stagger: 0.1,
-        ease: "back.out(1.2)"
+        ease: "back.out(1.2)",
       }
     );
-
-    
   }, []);
 
   if (!jsonData) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
-  
-  const verticals = Object.keys(jsonData);
 
+  const verticals = Object.keys(jsonData);
 
   const handleButtonHover = (index) => {
     if (index !== activeButton) {
       gsap.to(buttonsRef.current[index], {
-        scale: 1.05,
+        scale: 1.2,
         duration: 0.2,
         ease: "power2.out",
       });
@@ -264,9 +256,16 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col" {...swipeHandlers}>
+      {/* Heading Section */}
+      <div className="w-full text-white text-center">
+        <h1 className="text-5xl font-bold [font-family:var(--font-montserratb)]">
+          MEET OUR TEAM<span className="text-orange-700">.</span>
+        </h1>
+      </div>
+
       <nav
         ref={navRef}
-        className="w-full text-white transition-all duration-300 z-50 h-auto"
+        className="w-full text-white transition-all duration-300 z-50 my-5 h-auto"
       >
         <div className="h-full max-w-6xl mx-auto px-4 sm:px-6">
           {/* Mobile Navigation */}
@@ -274,20 +273,22 @@ export default function Home() {
             <button
               onClick={handlePrev}
               disabled={activeButton === 0}
-              className="p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-3xl"
               aria-label="Previous"
             >
               <IoArrowBack size={20} />
             </button>
 
             <div className="flex-1 text-center">
-              <h2 className="text-lg font-medium">{verticals[activeButton]}</h2>
+              <h2 className="text-2xl [font-family:var(--font-montserratb)] font-medium">
+                {`${jsonData[verticals[activeButton]]["name"]} Team`}
+              </h2>
             </div>
 
             <button
               onClick={handleNext}
               disabled={activeButton === verticals.length - 1}
-              className="p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="text-3xl p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Next"
             >
               <IoArrowForward size={20} />
@@ -307,19 +308,23 @@ export default function Home() {
 
             <div className="flex-1 flex items-center justify-center h-full">
               {verticals.map((name, index) => (
-                <div key={index} className="relative h-full flex items-center px-2 group">
+                <div
+                  key={index}
+                  className="relative h-full flex items-center px-2 group"
+                >
                   <button
                     ref={(el) => (buttonsRef.current[index] = el)}
                     onClick={() => handleButtonClick(index)}
                     onMouseEnter={() => handleButtonHover(index)}
                     onMouseLeave={() => handleButtonLeave(index)}
                     className={` 
-                      px-6 py-2 rounded-md text-sm font-medium
+                      px-6 py-2 rounded-md text-md
                       transition-all duration-300 ease-out
+                      [font-family:var(--font-montserrat)]
                       focus:outline-none focus:ring-2 focus:ring-orange-500/50
                       ${
                         activeButton === index
-                          ? "bg-orange-500 text-white"
+                          ? "bg-gradient-to-r from-orange-400 to-orange-600"
                           : "text-gray-200 hover:text-white"
                       }
                     `}
@@ -348,17 +353,21 @@ export default function Home() {
 
       {/* Content Sections */}
       <div className="w-full py-4 flex flex-col items-center">
-      <h1 
-      ref={headingRef}
-      className="text-3xl font-bold font-[var(--font-montserrat)] text-white mb-8">
-          {jsonData[verticals[activeButton]]["name"]}
+        <h1
+          ref={headingRef}
+          className="hidden lg:block text-4xl [font-family:var(--font-montserratb)] text-white mb-8"
+        >
+          {`${jsonData[verticals[activeButton]]["name"]} Team`}
         </h1>
-        <div 
+        <div
           ref={cardsContainerRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl px-4"
         >
           {jsonData[verticals[activeButton]]["data"].map((member, index) => (
-            <div key={index} className="flex items-center justify-center profile-card">
+            <div
+              key={index}
+              className="flex items-center justify-center profile-card"
+            >
               <ProfileCard
                 className="opacity-[0]"
                 name={member.Name}
@@ -372,7 +381,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        </div>
       </div>
+    </div>
   );
 }
