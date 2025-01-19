@@ -1,95 +1,18 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation"; // Import of useRouter
 import gsap from "gsap";
 
 export default function MainContent() {
   const imageRef = useRef(null);
-  const textRefs = useRef([]);
-  const isDefaultPage = useRef(true);
-
-  const handleImageClick = () => {
-    const timeline = gsap.timeline();
-    if (isDefaultPage.current) {
-      timeline
-        .to(".main-content", { opacity: 0, duration: 0.5, ease: "power1.out" })
-        .call(() => {
-          document.querySelector(".main-content").innerHTML = `
-            <div class="self-center mt-32 text-7xl font-extrabold leading-none text-center max-md:mt-10 max-md:max-w-full max-md:text-3xl [font-family:var(--font-montserratb)]">
-  <button class="about-button bg-clip-text text-white cursor-pointer">
-    ABOUT US<span class="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span>
-  </button>
-</div>
-            <div class="self-center mt-4 text-3xl leading-10 text-center max-md:max-w-full [font-family:var(--font-montserrat)]">
-              Our mission is to empower the next generation of innovators through hands-on learning, interdisciplinary projects, and practical exposure to emerging technologies.
-            </div>
-            <img
-              src="/Images/hero/hero-image.webp"
-              alt="IETE Student Forum team collaboration"
-              class="object-contain self-end mt-16 mb-0 w-full rounded-3xl aspect-[4.5] max-md:mt-10 max-md:mb-2.5 max-md:max-w-full rounded-2xl cursor-pointer"
-            />
-          `;
-          isDefaultPage.current = false;
-
-          // Add event listener for button click
-          document.querySelector(".about-button").addEventListener("click", () => {
-            window.location.href = "/about-us"; // Redirect to About Us page
-          });
-
-          // Apply animations to the new content
-          const aboutTextRefs = document.querySelectorAll(".self-center");
-          gsap.fromTo(
-            aboutTextRefs,
-            { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 1.5, ease: "power2.out", stagger: 0.2 }
-          );
-        })
-        .fromTo(".main-content", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.in" });
-    } else {
-      timeline
-        .to(".main-content", { opacity: 0, duration: 0.5, ease: "power1.out" })
-        .call(() => {
-          document.querySelector(".main-content").innerHTML = `
-            <div
-              class="self-center mt-32 text-7xl font-extrabold leading-none text-center max-md:mt-10 max-md:max-w-full max-md:text-3xl [font-family:var(--font-montserratb)]"
-            >
-              DREAM<span class="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span> DESIGN
-              <span class="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span> DEVELOP
-              <span class="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span>
-            </div>
-            <div
-              class="self-center mt-4 text-3xl leading-10 text-center max-md:max-w-full [font-family:var(--font-montserrat)]"
-            >
-              We are a vibrant, student-run club at{" "}
-              <span class="font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent [font-family:var(--font-montserratb)]">
-                Amrita Vishwa Vidyapeetham, Coimbatore
-              </span>
-              , bringing together tech enthusiasts to spark creativity and collaboration.
-            </div>
-            <img
-              src="/Images/hero/hero-image-bw.webp"
-              alt="IETE Student Forum team collaboration"
-              class="object-contain self-end mt-16 mb-0 w-full rounded-3xl aspect-[4.5] max-md:mt-10 max-md:mb-2.5 max-md:max-w-full rounded-2xl cursor-pointer"
-              style="filter: grayscale(100%);"
-            />
-          `;
-          isDefaultPage.current = true;
-
-          // Apply animations to the new content
-          const defaultTextRefs = document.querySelectorAll(".self-center");
-          gsap.fromTo(
-            defaultTextRefs,
-            { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 1.5, ease: "power2.out", stagger: 0.2 }
-          );
-        })
-        .fromTo(".main-content", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.in" });
-    }
-  };
+  const dreamSectionRef = useRef(null);
+  const aboutSectionRef = useRef(null);
+  const router = useRouter(); // Initialization of the router
 
   useEffect(() => {
+    // Hover animation for the image
     const imageElement = imageRef.current;
-
     const hoverAnimation = gsap.to(imageElement, {
       scale: 1.1,
       filter: "grayscale(0%)",
@@ -104,10 +27,28 @@ export default function MainContent() {
     imageElement.addEventListener("mouseenter", handleMouseEnter);
     imageElement.addEventListener("mouseleave", handleMouseLeave);
 
-    gsap.fromTo(
-      textRefs.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1.5, ease: "power2.out", stagger: 0.2 }
+    // Scroll-triggered animation
+    const scrollAnimation = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".main-content",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+
+    // Fade-out "DREAM DESIGN DEVELOP" section
+    scrollAnimation.to(dreamSectionRef.current, {
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+
+    // Fade-in "ABOUT US" section
+    scrollAnimation.to(
+      aboutSectionRef.current,
+      { opacity: 1, duration: 1, ease: "power2.out" },
+      "<"
     );
 
     return () => {
@@ -116,38 +57,66 @@ export default function MainContent() {
     };
   }, []);
 
+  // Function to handle navigation to About Us page
+  const navigateToAboutUs = () => {
+    router.push("/components/about"); // Navigate to about.jsx
+  };
+
   return (
-    <div className="main-content" style={{ transform: "scale(0.97)", transformOrigin: "center center" }}>
+    <div className="main-content relative">
+      {/* DREAM DESIGN DEVELOP Section */}
       <div
-        className="self-center mt-32 text-7xl font-extrabold leading-none text-center max-md:mt-10 max-md:max-w-full max-md:text-3xl [font-family:var(--font-montserratb)]"
-        ref={(el) => (textRefs.current[0] = el)}
+        className="flex flex-col items-center justify-center text-center mt-3 max-md:mt-2 px-4"
+        ref={dreamSectionRef}
       >
-        DREAM<span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span> DESIGN
-        <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span> DEVELOP
-        <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span>
-      </div>
-      <div
-        className="self-center mt-4 text-3xl leading-10 text-center max-md:max-w-full [font-family:var(--font-montserrat)]"
-        ref={(el) => (textRefs.current[1] = el)}
-      >
-        We are a vibrant, student-run club at{" "}
-        <span className="font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent [font-family:var(--font-montserratb)]">
-          Amrita Vishwa Vidyapeetham, Coimbatore
-        </span>
-        , bringing together tech enthusiasts to spark creativity and collaboration.
+        <div className="text-9xl font-extrabold leading-none max-md:text-5xl [font-family:var(--font-montserratb)]">
+          DREAM
+          <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span> DESIGN
+          <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span> DEVELOP
+          <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span>
+        </div>
+        <div className="mt-2 text-4xl leading-10 max-md:text-xl [font-family:var(--font-montserrat)]">
+          We are a vibrant, student-run club at{" "}
+          <span className="font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent [font-family:var(--font-montserratb)]">
+            Amrita Vishwa Vidyapeetham, Coimbatore
+          </span>
+          , bringing together tech enthusiasts to spark creativity and
+          collaboration.
+        </div>
       </div>
 
-      <Image
-        loading="lazy"
-        src="/Images/hero/hero-image-bw.webp"
-        alt="IETE Student Forum team collaboration"
-        width={1286}
-        height={286}
-        ref={imageRef}
-        onClick={handleImageClick}
-        className="object-contain self-end mt-16 mb-0 w-full rounded-3xl aspect-[4.5] max-md:mt-10 max-md:mb-2.5 max-md:max-w-full rounded-2xl cursor-pointer"
-        style={{ filter: "grayscale(100%)" }}
-      />
+      {/* Image Section */}
+      <div className="self-center mt-4 overflow-hidden rounded-3xl max-md:mt-2">
+        <Image
+          loading="lazy"
+          src="/Images/hero/hero-image.webp"
+          alt="IETE Student Forum team collaboration"
+          width={1286}
+          height={286}
+          ref={imageRef}
+          className="object-contain w-full cursor-pointer"
+          style={{
+            filter: "grayscale(1)",
+            transition: "all 0.8s ease-in-out",
+          }}
+        />
+      </div>
+
+      {/* ABOUT US Section */}
+      <div
+        className="flex flex-col items-center justify-center text-center mt-4 max-md:mt-2"
+        ref={aboutSectionRef}
+      >
+        <button
+          onClick={navigateToAboutUs} // Call navigate function on click
+          className="text-7xl font-extrabold leading-none max-md:text-3xl [font-family:var(--font-montserratb)] bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent cursor-pointer"
+        >
+          ABOUT US
+        </button>
+        <div className="mt-2 text-3xl leading-10 max-md:text-xl [font-family:var(--font-montserrat)]">
+          Our mission is to empower the next generation of innovators through hands-on learning, interdisciplinary projects, and practical exposure to emerging technologies.
+        </div>
+      </div>
     </div>
   );
 }
