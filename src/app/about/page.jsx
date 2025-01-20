@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
 
         {/* About Section */}
         <section className="about flex flex-col gap-4 items-center">
-          <h2 className="text-[38px] sm:text-[40px] font-[montserratb]">
+          <h2 className="text-[38px] sm:text-[42px] text-center font-[montserratb] leading-10">
             ABOUT <span className="gradient-text">IETE AMRITA</span>
           </h2>
 
@@ -31,10 +32,12 @@ export default function Home() {
           <div className="box-wrapper flex flex-wrap md:flex-row justify-center items-stretch gap-4 w-full mt-4">
             {/* Mission Box */}
             <div className="box-container bg-white p-4 border rounded-[8px] shadow text-black flex-1 min-h-[150px] relative">
-              <img
+              <Image
                 src="/images/mission-vision/mission.png"
                 alt="Mission Icon"
-                className="w-11 h-11 absolute top-4 right-12"
+                width={44}
+                height={44}
+                className="absolute top-4 right-12"
               />
               <div className="text-start">
                 <h2 className="text-[26px] sm:text-[28px] text-orange-600 font-[montserratb]">
@@ -48,10 +51,12 @@ export default function Home() {
 
             {/* Vision Box */}
             <div className="box-container bg-white p-4 border rounded-[8px] shadow text-black flex-1 min-h-[150px] relative">
-              <img
+              <Image
                 src="/images/mission-vision/vision.png"
                 alt="Vision Icon"
-                className="w-14 h-10 absolute top-4 right-12"
+                width={56}
+                height={40}
+                className="absolute top-4 right-12"
               />
               <div className="text-start">
                 <h2 className="text-[26px] sm:text-[28px] text-orange-600 font-[montserratb]">
@@ -66,62 +71,42 @@ export default function Home() {
         </section>
 
         {/* Verticals Section */}
-        <section className="verticals w-full flex flex-col gap-4 items-center text-center mt-10">
+        <section className="verticals w-full flex flex-col gap-4 justify-center items-center text-center mt-10">
           <h2 className="text-[28px] sm:text-[32px] font-[montserratb]">
             VARIOUS <span className="text-orange-600">VERTICALS</span> & <span className="text-orange-600">DOMAINS</span> WE EXPLORE
           </h2>
           <p className="text-base sm:text-lg lg:text-xl xl:text-[1.3rem] text-gray-400 text-center font-[montserrat]">
-            Whether it&apos;s mastering Competitive Programming, pioneering the future with IoT, crafting dynamic Web Development, or unlocking the potential of AI/ML, each vertical is designed to spark passion, refine skills, and push boundaries.
+            Whether it’s mastering Competitive Programming, pioneering the future with IoT, crafting dynamic Web Development, unlocking the potential of AI/ML, fostering connections through Public Relations, orchestrating events with Event Management, or bringing creative visions to life with Design & Media, each vertical and team contributes to a balanced ecosystem that sparks passion, refines skills, and celebrates innovation and collaboration.
           </p>
-          <div className="icons-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 w-full gap-6 justify-items-center items-center mt-4 font-[montserrat]">
-            {/* Web Development */}
-            <div className="text-center">
-              <img src="/images/verticals/webdev.png" alt="Web Development" className="w-16 h-16 sm:w-20 sm:h-20" />
-              <p className="text-sm sm:text-base md:text-[1.1rem] mt-2">Web<br />Development</p>
-            </div>
+          <div className="icons-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-8 w-full gap-8 justify-items-center justify-center items-center mt-4 font-[montserrat]">
+  {[
+    { src: "/images/verticals/webdev.png", label: "Web Development", translate: true },
+    { src: "/images/verticals/embedded.png", label: "Embedded Systems", translate: true },
+    { src: "/images/verticals/cp.png", label: "Competitive Programming", translate: true },
+    { src: "/images/verticals/appdev.png", label: "App Development", translate: true },
+    { src: "/images/verticals/ai.png", label: "AI/ML", translate: false },
+    { src: "/images/verticals/pr.png", label: "Public Relations", translate: true },
+    { src: "/images/verticals/eventmang.png", label: "Event Management", translate: true },
+    { src: "/images/verticals/design.png", label: "Design", translate: false },
+  ].map(({ src, label, translate }, index) => (
+    <div
+      className={`text-center flex flex-col items-center gap-4 ${
+        translate ? "transform translate-x-2" : ""
+      }`}
+      key={label}
+    >
+      <Image
+        src={src}
+        alt={label}
+        width={80}
+        height={80}
+        className="block"
+      />
+      <p className="text-sm sm:text-base md:text-[1.1rem]">{label}</p>
+    </div>
+  ))}
+</div>
 
-            {/* Embedded Systems */}
-            <div className="text-center">
-              <img src="/images/verticals/embedded.png" alt="Embedded Systems" className="w-16 h-16 sm:w-20 sm:h-20" />
-              <p className="text-sm sm:text-base md:text-[1.1rem] mt-2">Embedded <br />Systems</p>
-            </div>
-
-            {/* Competitive Programming */}
-            <div className="text-center">
-              <img src="/images/verticals/cp.png" alt="Competitive Programming" className="w-16 h-16 sm:w-20 sm:h-20" />
-              <p className="text-sm sm:text-base md:text-[1.1rem] mt-2">Competitive <br />Programming</p>
-            </div>
-
-            {/* App Development */}
-            <div className="text-center">
-              <img src="/images/verticals/appdev.png" alt="App Development" className="w-16 h-16 sm:w-20 sm:h-20" />
-              <p className="text-sm sm:text-base md:text-[1.1rem] mt-2">App <br />Development</p>
-            </div>
-
-            {/* AI/ML */}
-            <div className="text-center">
-              <img src="/images/verticals/ai.png" alt="AI & ML" className="w-16 h-16 sm:w-20 sm:h-20" />
-              <p className="text-sm sm:text-base md:text-[1.1rem] mt-2">AI/ML</p>
-            </div>
-
-            {/* Public Relations */}
-            <div className="text-center">
-              <img src="/images/verticals/pr.png" alt="Public Relations" className="w-16 h-16 sm:w-20 sm:h-20" />
-              <p className="text-sm sm:text-base md:text-[1.1rem] mt-2">Public Relations</p>
-            </div>
-
-            {/* Event Management */}
-            <div className="text-center">
-              <img src="/images/verticals/eventmang.png" alt="Event Management" className="w-16 h-16 sm:w-20 sm:h-20" />
-              <p className="text-sm sm:text-base md:text-[1.1rem] mt-2">Event <br />Management</p>
-            </div>
-
-            {/* Design */}
-            <div className="text-center">
-              <img src="/images/verticals/design.png" alt="Design" className="w-16 h-16 sm:w-20 sm:h-20" />
-              <p className="text-sm sm:text-base md:text-[1.1rem] mt-2">Design</p>
-            </div>
-          </div>
         </section>
 
         {/* Join Section */}
@@ -133,25 +118,25 @@ export default function Home() {
             <p className="text-base sm:text-lg lg:text-xl xl:text-[1.3rem] text-start font-[montserrat]">
               As we continue to innovate and create, we invite you to be a part of this exciting journey. IETE Amrita is more than just a club; it&apos;s a community of passionate individuals shaping the future of technology. Don&apos;t miss out on the opportunity to collaborate, grow, and lead in the tech world.
               <br />
-              <Link href="/team" passHref>Learn More
-                <span className="text-orange-600 font-[montserratb] btn-primary"> About Our Team</span></Link>
+              <Link href="/team" passHref>
+                Learn More
+                <span className="text-orange-600 font-[montserratb] btn-primary"> About Our Team</span>
+              </Link>
             </p>
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex justify-center items-center space-x-8 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] mt-6">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src="/images/footer/instagram.png" alt="Instagram" className="w-12 h-12 sm:w-13 sm:h-13" />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <img src="/images/footer/github.png" alt="Github" className="w-14 h-14 sm:w-13 sm:h-13" />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <img src="/images/footer/linkedin.png" alt="LinkedIn" className="w-10 h-10 sm:w-13 sm:h-13" />
-            </a>
-            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">
-              <img src="/images/footer/whatsapp.png" alt="Whatsapp" className="w-12 h-12 sm:w-13 sm:h-13" />
-            </a>
+          <div className="flex justify-start items-center space-x-4 sm:space-x-6 mt-4 sm:mt-6 max-md:justify-center mt-6">
+            {[
+              { src: "/images/footer/instagram.png", alt: "Instagram", link: "https://www.instagram.com/iete_amrita/" },
+              { src: "/images/footer/github.png", alt: "Github", link: "https://github.com/IETEAmritaChapter " },
+              { src: "/images/footer/linkedin.png", alt: "LinkedIn", link: "https://www.linkedin.com/in/iete-amrita-sf/" },
+              { src: "/images/footer/whatsapp.png", alt: "WhatsApp", link: "https://chat.whatsapp.com/EaQtTt7U4ClKEz26g9ddii" },
+            ].map(({ src, alt, link }) => (
+              <a href={link} target="_blank" rel="noopener noreferrer" key={alt}>
+                <Image src={src} alt={alt} width={52} height={52} />
+              </a>
+            ))}
           </div>
         </section>
       </div>
