@@ -14,6 +14,7 @@ export default function Home() {
   const cardsContainerRef = useRef(null);
   const [activeButton, setActiveButton] = useState(0);
   const [jsonData, setJsonData] = useState(null);
+  const [allMembers, setAllMembers] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const animateCardsOut = () => {
@@ -50,13 +51,11 @@ export default function Home() {
     const cards = document.querySelectorAll(".profile-card");
     const tl = gsap.timeline();
 
-    // Set initial state
     gsap.set(cards, {
       opacity: 0,
       y: 50,
     });
 
-    // Simple sequential animation
     tl.to(cards, {
       opacity: 1,
       y: 0,
@@ -67,11 +66,11 @@ export default function Home() {
 
     return tl;
   };
+
   const handleVerticalChange = async (newIndex) => {
     if (isAnimating) return;
     setIsAnimating(true);
 
-    // Animate current cards out
     animateHeadingOut();
     await animateCardsOut();
 
@@ -79,7 +78,6 @@ export default function Home() {
 
     await new Promise((resolve) => setTimeout(resolve, 50));
 
-    // Animate new cards in
     animateCardsIn();
     await animateHeadingIn();
 
@@ -87,7 +85,8 @@ export default function Home() {
   };
 
   const handleNext = () => {
-    if (activeButton < Object.keys(jsonData).length - 1) {
+    const totalButtons = Object.keys(jsonData).length;
+    if (activeButton < totalButtons) {
       handleVerticalChange(activeButton + 1);
 
       gsap.to(buttonsRef.current[activeButton + 1], {
@@ -175,18 +174,33 @@ export default function Home() {
     onSwipedLeft: handleNext,
     onSwipedRight: handlePrev,
     preventDefaultTouchmoveEvent: true,
-    trackMouse: true, // Optional: allows swipe gestures with a mouse
+    trackMouse: true,
   });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/Assets/members.json"); // Relative URL to public folder
+        const response = await fetch("/Assets/members.json");
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        setJsonData(data);
+        
+        // Create the "All" section by combining all members
+        const allMembersList = Object.values(data).reduce((acc, team) => {
+          return acc.concat(team.data);
+        }, []);
+
+        const dataWithAll = {
+          ALL: {
+            name: "Our",
+            data: allMembersList
+          },
+          ...data
+        };
+
+        setJsonData(dataWithAll);
+        setAllMembers(allMembersList);
 
         animateCardsIn();
         animateHeadingIn();
@@ -256,10 +270,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col" {...swipeHandlers}>
-      {/* Heading Section */}
       <div className="w-full text-white text-center">
         <h1 className="text-5xl font-bold [font-family:var(--font-montserratb)]">
-          MEET OUR TEAM<span className="text-orange-700">.</span>
+        MEET OUR TEAM<span className="text-[#FF5252]">.</span>
         </h1>
       </div>
 
@@ -268,7 +281,6 @@ export default function Home() {
         className="w-full text-white transition-all duration-300 z-50 my-5 h-auto"
       >
         <div className="h-full max-w-6xl mx-auto px-4 sm:px-6">
-          {/* Mobile Navigation */}
           <div className="lg:hidden h-full flex items-center justify-between gap-2">
             <button
               onClick={handlePrev}
@@ -295,12 +307,11 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex h-full items-center justify-between">
             <button
               onClick={handlePrev}
               disabled={activeButton === 0}
-              className="p-2 rounded-full  transition-all duration-300 transform hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="p-2 rounded-full transition-all duration-300 transform hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Previous"
             >
               <IoArrowBack size={20} />
@@ -341,7 +352,7 @@ export default function Home() {
 
             <button
               onClick={handleNext}
-              disabled={activeButton === 7}
+              disabled={activeButton === verticals.length - 1}
               className="p-2 rounded-full hover:bg-orange-500/20 transition-all duration-300 transform hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Next"
             >
@@ -351,7 +362,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Content Sections */}
       <div className="w-full py-4 flex flex-col items-center">
         <h1
           ref={headingRef}
@@ -377,6 +387,11 @@ export default function Home() {
                 instagram={member.Instagram}
                 linkedin={member.Linkedin}
                 github={member.Github}
+                image={
+                  member.Image
+                    ? `${member.Image}`
+                    : "https://drive.google.com/thumbnail?id=1GlyRemCDgVnDtukcxVO8FpZmsDi0SbUM"
+                }
               />
             </div>
           ))}

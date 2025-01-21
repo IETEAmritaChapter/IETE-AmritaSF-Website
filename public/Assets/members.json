@@ -1,59 +1,65 @@
 {
-  "Core": {
+  "CORE": {
     "data": [
       {
         "Name": "Saran Dharshan",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "sarandharshanpushparaj@gmail.com",
+        "ContactEmail": "sarandharshanpushparaj@gmail.com",
         "Instagram": "bettercallsaran",
         "Linkedin": "https://www.linkedin.com/in/sarandharshan/",
-        "Github": "https://github.com/SaranDharshanSP"
+        "Github": "https://github.com/SaranDharshanSP",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclVfls9eZRZ8awAHGu37xo2YmNysPlgd9TSjFK"
       },
       {
         "Name": "Aadithyaa E",
         "Dept": "CSE",
         "Year": 3,
-        "Contact Email": "eaadithyaa@gmail.com",
+        "ContactEmail": "eaadithyaa@gmail.com",
         "Instagram": "-",
         "Linkedin": "https://www.linkedin.com/in/aadithyaa-eeswaran/",
-        "Github": "https://github.com/aadit-n3rdy"
+        "Github": "https://github.com/aadit-n3rdy",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclHZ9RnVsWAilc1QYr687UzGsbIJnV4Nyo3XZS"
       },
       {
         "Name": "Amritha Nandini",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "amrithanandini2003@gmail.com",
+        "ContactEmail": "amrithanandini2003@gmail.com",
         "Instagram": "amrututu",
         "Linkedin": "https://www.linkedin.com/in/amrithanandini/",
-        "Github": "https://github.com/amri-tah"
+        "Github": "https://github.com/amri-tah",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclJb9UhVtzcIODnXHMGsSEqyvTC1PeNjK6r5m7"
       },
       {
         "Name": "Pavithraa S",
         "Dept": "CSE",
         "Year": 3,
-        "Contact Email": "pavithraasasee@gmail.com",
+        "ContactEmail": "pavithraasasee@gmail.com",
         "Instagram": "pavithraa.7",
         "Linkedin": "www.linkedin.com/in/pavithraasasseendran",
-        "Github": "https://github.com/Pavithraa77"
+        "Github": "https://github.com/Pavithraa77",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclpPfSlBmasc1zWN3TJRL5Sd8wkDmECqHlI6Pi"
       },
       {
         "Name": "Sanjay Kumar",
         "Dept": "ARE",
         "Year": 3,
-        "Contact Email": "ksanjay19874@gmail.com",
+        "ContactEmail": "ksanjay19874@gmail.com",
         "Instagram": "_",
         "Linkedin": "https://www.linkedin.com/in/sanjay-kumar-kj/",
-        "Github": "https://github.com/Sanjay-saturn"
+        "Github": "https://github.com/Sanjay-saturn",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclqzN5hjiuoOgkedH6KmnZPVcaFNiSDlI9Ur3R"
       },
       {
         "Name": "Mithill Prabhu",
         "Dept": "ARE",
         "Year": 2,
-        "Contact Email": "psmithill27@gmail.com",
+        "ContactEmail": "psmithill27@gmail.com",
         "Instagram": "miithill",
         "Linkedin": "https://www.linkedin.com/in/mithill-prabhu/",
-        "Github": "https://github.com/MithillPrabhu"
+        "Github": "https://github.com/MithillPrabhu",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclOslNrtpeuGDK0VCl7fbFsQzr1oxH8TjJmRLO"
       }
     ],
     "name": "Core"
@@ -64,46 +70,51 @@
         "Name": "Vishal S",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "vishalatmadurai@gmail.com",
+        "ContactEmail": "vishalatmadurai@gmail.com",
         "Instagram": "-",
         "Linkedin": "https://www.linkedin.com/in/vishalthehuman/",
-        "Github": "https://github.com/VishalTheHuman"
+        "Github": "https://github.com/VishalTheHuman",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclapfMIm5hmTcl3ve4dpCZPuJLoYjUENfk7G8V"
       },
       {
         "Name": "Jayadev D",
         "Dept": "CSE",
         "Year": 2,
-        "Contact Email": "jayaveeran2005@gmail.com",
+        "ContactEmail": "jayaveeran2005@gmail.com",
         "Instagram": "_",
         "Linkedin": "https://www.linkedin.com/in/jayadev-d-4127392a0/",
-        "Github": "https://github.com/FLASH2332"
+        "Github": "https://github.com/FLASH2332",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclhJndvJOaMWpmE6Gkil7gowy3AIex4dSRLqPt"
       },
       {
         "Name": "Nilavarasan",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "01nilavarasan@gmail.com",
+        "ContactEmail": "01nilavarasan@gmail.com",
         "Instagram": "",
         "Linkedin": "https://www.linkedin.com/in/nilavarsan-manimaran/",
-        "Github": "https://github.com/NILAVARASAN-M"
+        "Github": "https://github.com/NILAVARASAN-M",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclew2lBcbHGwFxp205KjEA6NYUMkSB1PoufvbZ"
       },
       {
         "Name": "L S Thoshi Babu",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "thoshibabuls@gmail.com",
+        "ContactEmail": "thoshibabuls@gmail.com",
         "Instagram": "",
         "Linkedin": "https://www.linkedin.com/in/thoshi-babu-b6aa99251/",
-        "Github": "https://github.com/ThoshiBabu"
+        "Github": "https://github.com/ThoshiBabu",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclqLVgqliuoOgkedH6KmnZPVcaFNiSDlI9Ur3R"
       },
       {
         "Name": "Ashwin V A",
         "Dept": "CSE",
         "Year": 2,
-        "Contact Email": "ashwinvaws@gmail.com",
+        "ContactEmail": "ashwinvaws@gmail.com",
         "Instagram": "",
         "Linkedin": "https://www.linkedin.com/in/ashwin-va-179687296/",
-        "Github": "https://github.com/WinterSun23"
+        "Github": "https://github.com/WinterSun23",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclvMbaFR1cXqWkhKUwi0p45Q3AdaP6FHogyNJr"
       }
     ],
     "name": "Competitive Programming"
@@ -114,46 +125,71 @@
         "Name": "Keerthivasan S V",
         "Dept": "AIE",
         "Year": 2,
-        "Contact Email": "keerthivasansv2006@outlook.com",
+        "ContactEmail": "keerthivasansv2006@outlook.com",
         "Instagram": "keerrrthiv",
         "Linkedin": "https://www.linkedin.com/in/keerthivasansv",
-        "Github": "https://github.com/Keerthivasan-Venkitajalam"
+        "Github": "https://github.com/Keerthivasan-Venkitajalam",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclfmooeVhV0D259JLyxKrh31bkaiWQXqs8IeEA"
       },
       {
         "Name": "Saran Hiruthik M",
         "Dept": "CSE",
         "Year": 2,
-        "Contact Email": "saran.hiruthik83@gmail.com",
+        "ContactEmail": "saran.hiruthik83@gmail.com",
         "Instagram": "sarxn_._",
         "Linkedin": "https://www.linkedin.com/in/saran-hiruthik-m/",
-        "Github": "https://github.com/hirux06"
+        "Github": "https://github.com/hirux06",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclInW06ijvGca3KqQexMhpLbB5t24yrm6PgFdC"
       },
       {
-        "Name": "Eshwanth Karti T R",
+        "Name": "Eshwanth Karti",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "eshwanthkartitr@gmail.com",
+        "ContactEmail": "eshwanthkartitr@gmail.com",
         "Instagram": "-",
         "Linkedin": "https://www.linkedin.com/in/eshwanth-karti-tr/",
-        "Github": "https://github.com/eshwanthkartitr"
+        "Github": "https://github.com/eshwanthkartitr",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclbDhmfZVDzkhSH1xwR4CaqcejI8yVZ6TKfQE3"
       },
       {
         "Name": "Tharunkumar S",
         "Dept": "AIE",
         "Year": 2,
-        "Contact Email": "senthietk@gmail.com",
+        "ContactEmail": "senthietk@gmail.com",
         "Instagram": "_.thxrunz",
         "Linkedin": "https://www.linkedin.com/in/tharunkumar-s-42a126284/",
-        "Github": "https://github.com/TharunCodes07"
+        "Github": "https://github.com/TharunCodes07",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclnePEPIfhTFD3dGPQJ0qjZkKmACutzWslEVoR"
       },
       {
-        "Name": "Nithish Ariyha K",
+        "Name": "Nithish Ariyha",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "nithishariyha02467@gmail.com",
+        "ContactEmail": "nithishariyha02467@gmail.com",
         "Instagram": "always_ariyha",
         "Linkedin": "https://www.linkedin.com/in/nithishariyha/",
-        "Github": "https://github.com/ariyha"
+        "Github": "https://github.com/ariyha",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclsdTiZSw84Sxq0WCHyJmMr7cz5Ask3p6fF9Yd"
+      },
+      {
+        "Name": "Tharun Kumarr A",
+        "Dept": "CSE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4cse22253@cb.students.amrita.edu",
+        "Instagram": "-",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTcle2fLgEHGwFxp205KjEA6NYUMkSB1PoufvbZm"
+      },
+      {
+        "Name": "Thanus Kumaar A",
+        "Dept": "CSE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4cse22447@cb.students.amrita.edu",
+        "Instagram": "-",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclA96HuoKFdQAZnz16xWLSloI5aRckvfmYuV2s"
       }
     ],
     "name": "Web and Mobile Dev"
@@ -164,37 +200,51 @@
         "Name": "Suriya K P",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "pamous24@gmail.com",
+        "ContactEmail": "pamous24@gmail.com",
         "Instagram": "_",
         "Linkedin": "https://www.linkedin.com/in/suriya-kp/",
-        "Github": "https://github.com/SURIYA-KP"
+        "Github": "https://github.com/SURIYA-KP",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclews4ncpHGwFxp205KjEA6NYUMkSB1PoufvbZ"
       },
       {
         "Name": "Dharsini Sri",
         "Dept": "AIE",
         "Year": 2,
-        "Contact Email": "purpleunalome@gmail.com",
+        "ContactEmail": "purpleunalome@gmail.com",
         "Instagram": "dhars1n1",
         "Linkedin": "https://www.linkedin.com/in/dharsinisri/",
-        "Github": "https://github.com/dhars1n1"
+        "Github": "https://github.com/dhars1n1",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclvLTxcW1cXqWkhKUwi0p45Q3AdaP6FHogyNJr"
       },
       {
         "Name": "Akhilesh Mohanasundaram",
         "Dept": "AIE",
         "Year": 2,
-        "Contact Email": "akhileshmohan2005@gmail.com",
+        "ContactEmail": "akhileshmohan2005@gmail.com",
         "Instagram": "_.akhilesh_mohan._",
         "Linkedin": "https://www.linkedin.com/in/akhilesh-mohan-8134a2311/",
-        "Github": "https://github.com/Akhilesh-Mohanasundaram"
+        "Github": "https://github.com/Akhilesh-Mohanasundaram",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclxoHAekEcn4wRS2dvKHX95YuGFbrQLONBZ3yW"
       },
       {
-        "Name": "SAI NIVEDH V",
+        "Name": "Sai Nivedh V",
         "Dept": "AIE",
         "Year": 2,
-        "Contact Email": "sainivedh26@gmail.com",
+        "ContactEmail": "sainivedh26@gmail.com",
         "Instagram": "sai_nivedh_26",
         "Linkedin": "https://linkedin.com/in/sainivedhai/",
-        "Github": "https://github.com/SaiNivedh26"
+        "Github": "https://github.com/SaiNivedh26",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclqUZt0EuiuoOgkedH6KmnZPVcaFNiSDlI9Ur3"
+      },
+      {
+        "Name": "Baranidharan Selvaraj",
+        "Dept": "AIE",
+        "Year": 2,
+        "ContactEmail": "cb.sc.u4aie23015@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclqs83L1iuoOgkedH6KmnZPVcaFNiSDlI9Ur3R"
       }
     ],
     "name": "Artificial Intelligence"
@@ -205,10 +255,31 @@
         "Name": "SIDHARTH RAJ KR",
         "Dept": "ARE",
         "Year": 3,
-        "Contact Email": "sidharthraj31032004@gmail.com",
+        "ContactEmail": "sidharthraj31032004@gmail.com",
         "Instagram": "_.sidh31._",
         "Linkedin": "https://www.linkedin.com/in/sidharth-raj-kr/",
-        "Github": "https://github.com/SiDhU31"
+        "Github": "https://github.com/SiDhU31",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclIxIr7AjvGca3KqQexMhpLbB5t24yrm6PgFdC"
+      },
+      {
+        "Name": "Kaavyaa Aravind",
+        "Dept": "CCE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4cce22028@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTcl0I199K6H6QVxsPfaCd21wpODGZuRj9hUylJW"
+      },
+      {
+        "Name": " Sai Mahesh",
+        "Dept": "ECE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4ece22229@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclu5Q2nMoM1rOC8EtkPWLUYHJ7I3gRwcnZlvsj"
       }
     ],
     "name": "Embedded and Robotics"
@@ -219,28 +290,61 @@
         "Name": "Korukonda L K M Prem Chand",
         "Dept": "ELC",
         "Year": 2,
-        "Contact Email": "korukonda.lkmpremchand@gmail.com",
+        "ContactEmail": "korukonda.lkmpremchand@gmail.com",
         "Instagram": "urstruly_prem1508",
         "Linkedin": "https://www.linkedin.com/in/l-k-m-prem-chand-korukonda-4a449a29a/",
-        "Github": "https://github.com/Premchand006"
+        "Github": "https://github.com/Premchand006",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclzEtLGjUSmglMhQkt0iRFc4zYnBfx9KN5esr2"
       },
       {
         "Name": "Ved",
         "Dept": "AIE",
         "Year": 2,
-        "Contact Email": "saivedgrt@gmail.com",
+        "ContactEmail": "saivedgrt@gmail.com",
         "Instagram": "ved_0802",
         "Linkedin": "www.linkedin.com/in/sai-ved-713176315",
-        "Github": ""
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclqUCHLhCiuoOgkedH6KmnZPVcaFNiSDlI9Ur3"
       },
       {
         "Name": "Naga Sriyasantoshi Puranam",
         "Dept": "ELC",
         "Year": 2,
-        "Contact Email": "sriyasantoshi005@gmail.com",
+        "ContactEmail": "sriyasantoshi005@gmail.com",
         "Instagram": "_.sriyaaaaaa._._",
         "Linkedin": "https://www.linkedin.com/in/sriya-santoshi-puranam-3a20412aa/",
-        "Github": "https://github.com/sriyasantoshi"
+        "Github": "https://github.com/sriyasantoshi",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclCnRVUbY8SXnGdMsgyWjtHNUiV9moB2T7O0Ke"
+      },
+      {
+        "Name": "Arivananthan M",
+        "Dept": "AIE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4aie22007@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclfS4ZB4hV0D259JLyxKrh31bkaiWQXqs8IeEA"
+      },
+      {
+        "Name": "Gopika Madambath",
+        "Dept": "ARE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4are22015@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTcl1lLhobuTJ2uElSsdigZyPvBG6rK5V4AHfn1w"
+      },
+      {
+        "Name": "Roshni Nadella",
+        "Dept": "AIE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4aie22026@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTcl3SuxCpqR4Oe8HPgrlbCchDUVpdisoYwa7Ify"
       }
     ],
     "name": "Public Relations"
@@ -251,55 +355,71 @@
         "Name": "Gali Yamini Sinha",
         "Dept": "CSE",
         "Year": 3,
-        "Contact Email": "yaminisinha76@gmail.com",
+        "ContactEmail": "yaminisinha76@gmail.com",
         "Instagram": "_yaminisinhaaaa_",
         "Linkedin": "https://www.linkedin.com/in/gali-yamini-sinha-14096628b",
-        "Github": "https://github.com/YaminiSinha05"
+        "Github": "https://github.com/YaminiSinha05",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTcljBE5Nr7X2TiC4g8G7vw3yDZhlJUmP01xLeYa"
       },
       {
         "Name": "Samhitha S",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "samhithas04@gmail.com",
+        "ContactEmail": "samhithas04@gmail.com",
         "Instagram": "samhitha_07",
         "Linkedin": "https://www.linkedin.com/in/samhitha-s07/",
-        "Github": "https://github.com/Samhitha-07"
+        "Github": "https://github.com/Samhitha-07",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclL7AvhL4dB9MVxgr0GF6AHJquWa2S7ljU5zLR"
       },
       {
         "Name": "Lalitha Saranya Pathi",
         "Dept": "ELC",
         "Year": 2,
-        "Contact Email": "lalithasaranya1@gmail.com",
+        "ContactEmail": "lalithasaranya1@gmail.com",
         "Instagram": "saranyeah_p",
         "Linkedin": "https://www.linkedin.com/in/lalitha-saranya-pathi-0565b2281/",
-        "Github": "https://github.com/Lalitha-Saranya"
+        "Github": "https://github.com/Lalitha-Saranya",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclOv4dRNeuGDK0VCl7fbFsQzr1oxH8TjJmRLOp"
       },
       {
         "Name": "S Sajeev",
         "Dept": "AIE",
         "Year": 2,
-        "Contact Email": "sajeevs0706@gmail.com",
+        "ContactEmail": "sajeevs0706@gmail.com",
         "Instagram": "_sajeev_01",
         "Linkedin": "https://www.linkedin.com/in/sajeev-senthil-35814a2b8/",
-        "Github": "SajeevSenthil (S Sajeev)"
+        "Github": "SajeevSenthil (S Sajeev)",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclnCAjv5fhTFD3dGPQJ0qjZkKmACutzWslEVoR"
       },
       {
         "Name": "Srishti Prasanna",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "srishti.prasanna369@gmail.com",
+        "ContactEmail": "srishti.prasanna369@gmail.com",
         "Instagram": "_srishti.prasanna_",
         "Linkedin": "www.linkedin.com/in/srishti-prasanna-726005287",
-        "Github": "https://github.com/srishtiprasanna"
+        "Github": "https://github.com/srishtiprasanna",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclm8lkgQbnBYR0SjNCI32vLulthKOFUiWTVx6Z"
       },
       {
         "Name": "Deo Vaibhav",
         "Dept": "EEE",
         "Year": 2,
-        "Contact Email": "vaibhavraut.india@gmail.com",
+        "ContactEmail": "vaibhavraut.india@gmail.com",
         "Instagram": "shriman_1110",
         "Linkedin": "https://www.linkedin.com/in/deo-vaibhav-90a912283/",
-        "Github": ""
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclDy5i5ozAC9PH4zSQl68TVoOKjxEba1Yshfwt"
+      },
+      {
+        "Name": " Balaji Arunachalam",
+        "Dept": "CSE",
+        "Year": 2,
+        "ContactEmail": "cb.sc.u4cse23759@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclfS4ZB4hV0D259JLyxKrh31bkaiWQXqs8IeEA"
       }
     ],
     "name": "Event Management"
@@ -310,19 +430,71 @@
         "Name": "Arunoday A K",
         "Dept": "AIE",
         "Year": 2,
-        "Contact Email": "akarunoday2005@gmail.com",
+        "ContactEmail": "akarunoday2005@gmail.com",
         "Instagram": "arooon__n",
         "Linkedin": "www.linkedin.com/in/arunoday-a-k",
-        "Github": "https://github.com/arooon-n"
+        "Github": "https://github.com/arooon-n",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclYSiVbsgUuRtCElcmVHP738OTpBrhgMDikL2n"
       },
       {
         "Name": "Guna Vardhan Pulagam",
         "Dept": "AIE",
         "Year": 3,
-        "Contact Email": "pulagamguna4142@gmail.com",
+        "ContactEmail": "pulagamguna4142@gmail.com",
         "Instagram": "hardly.ithhadi",
         "Linkedin": "https://www.linkedin.com/in/guna-vardhan-pulagam/",
-        "Github": "https://github.com/PGunaVardhan"
+        "Github": "https://github.com/PGunaVardhan",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclCUhWiPY8SXnGdMsgyWjtHNUiV9moB2T7O0Ke"
+      },
+      {
+        "Name": " Sravya Duvvuri",
+        "Dept": "CSE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4cse22353@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclAcIzhVKFdQAZnz16xWLSloI5aRckvfmYuV2s"
+      },
+      {
+        "Name": " Mahisri Nagireddy",
+        "Dept": "CSE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4cse22338@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclqehbj8iuoOgkedH6KmnZPVcaFNiSDlI9Ur3R"
+      },
+      {
+        "Name": "  Deepan S",
+        "Dept": "AIE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4aie22117@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclCq3OXOY8SXnGdMsgyWjtHNUiV9moB2T7O0Ke"
+      },
+      {
+        "Name": "Dharanitharan RS",
+        "Dept": "ECE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4ece22215@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclvo83e261cXqWkhKUwi0p45Q3AdaP6FHogyNJ"
+      },
+      {
+        "Name": "Sathwik Reddy",
+        "Dept": "ARE",
+        "Year": 3,
+        "ContactEmail": "cb.en.u4are22016@cb.students.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "",
+        "Github": "",
+        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclrxpEWyCnOEvFUftgYRBok2zTV6SJx5hWeljm"
       }
     ],
     "name": "Design and Media"
