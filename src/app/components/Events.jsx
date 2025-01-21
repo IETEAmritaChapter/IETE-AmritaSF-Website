@@ -625,13 +625,13 @@ export default function Events() {
                 </div>
               ))}
             </div>
-            <div className="count-column" style={{ height: "2vh" }}>
+            <div className="count-column">
                 <h2 data-slide-count="step-location" className="count-heading"></h2>
             </div>
-            <div className="count-column" style={{ height: "2vh" }}>
+            <div className="count-column" style={{ fontSize: "1.1em" }}>
               <h3 data-slide-count="step-time" className="count-heading "></h3>
             </div>
-            <div className="count-column" style={{ height: "2vh" }}>
+            <div className="count-column" style={{ fontSize: "1.1em" }}>
               <a  href="#!" target="_blank" rel="noopener noreferrer">
                 <h3 className="count-heading register-button" data-slide-count="step-registration"></h3>
               </a>

@@ -18,7 +18,7 @@
   --size-button-arrow: 1em;
   --size-button-arrow-small: 0.75em;
   --size-overlay-width: 37.5em;
-  --size-overlay-height: 39em;
+  --size-overlay-height: 50rem;
   --size-slider-width: 42.5em;
   --size-slider-height: 28em;
   --size-padding: 1.25em;
@@ -72,7 +72,6 @@ body {
 
 .overlay-inner {
   flex-flow: column;
-  gap:10px;
   align-items: flex-start;
   height: var(--size-overlay-height);
   display: flex;
@@ -265,7 +264,8 @@ img {
 .slide-inner {
   border-radius: var(--size-border-radius-large);
   width: 100%;
-  height: 100%;
+  height: 36em;
+  transform: translatey(-40px);
   position: relative;
   overflow: hidden;
 }
@@ -399,6 +399,7 @@ html:not(.wf-design-mode) [data-slider="slide"].active .slide-caption {
 .count-column {
   margin-bottom: 20px;
   overflow: hidden;
+  font-size: 1em;
 }
 
 .count-heading {
