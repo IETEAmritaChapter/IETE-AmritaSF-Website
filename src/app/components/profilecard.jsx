@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 
 const ProfileCard = ({
     name,
+    role="President", // Added role prop
     dept,
     year,
     contactEmail,
@@ -106,7 +107,7 @@ const ProfileCard = ({
     return (
         <div
             ref={cardRef}
-            className="rounded-2xl bg-black aspect-[1/1.25] w-full max-w-xs flex flex-col justify-center items-center p-6 relative overflow-hidden"
+            className="rounded-2xl bg-black aspect-[1/1.3] w-full max-w-xs flex flex-col justify-center items-center p-6 relative overflow-hidden"
         >
             <div className="w-4/5 aspect-square flex justify-center items-center relative">
                 {!imageLoaded && (
@@ -135,7 +136,10 @@ const ProfileCard = ({
                     className="text-center space-y-2 w-full px-2 md:transform"
                 >
                     <h2 className="text-white text-xl [font-family:var(--font-montserratb)]">{name}</h2>
-                    <p className="text-gray-300 text-lg [font-family:var(--font-montserrat)]">{details}</p>
+                    {role && (
+                        <p className="text-orange-400 text-base [font-family:var(--font-montserrat)] font-bold">{role}</p>
+                    )}
+                    <p className="text-gray-300 text-sm [font-family:var(--font-montserrat)]">{details}</p>
                 </div>
 
                 <div
