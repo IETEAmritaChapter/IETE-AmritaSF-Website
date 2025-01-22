@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="flex justify-start items-center space-x-4 sm:space-x-6 mt-4 sm:mt-6 max-md:justify-center">
             <Link href="https://www.instagram.com/iete_amrita/" target="_blank" rel="noopener noreferrer">
               <Image
-                src="/images/socials/instagram.png"
+                src="/Images/socials/instagram.png"
                 alt="Instagram"
                 width={40}
                 height={40}
@@ -23,7 +23,7 @@ const Footer = () => {
             </Link>
             <Link href="https://github.com/IETEAmritaChapter" target="_blank" rel="noopener noreferrer">
               <Image
-                src="/images/socials/github.png"
+                src="/Images/socials/github.png"
                 alt="Github"
                 width={40}
                 height={40}
@@ -32,7 +32,7 @@ const Footer = () => {
             </Link>
             <Link href="https://www.linkedin.com/in/iete-amrita-sf/" target="_blank" rel="noopener noreferrer">
               <Image
-                src="/images/socials/linkedin.png"
+                src="/Images/socials/linkedin.png"
                 alt="LinkedIn"
                 width={36}
                 height={36}
@@ -41,7 +41,7 @@ const Footer = () => {
             </Link>
             <Link href="https://chat.whatsapp.com/EaQtTt7U4ClKEz26g9ddii" target="_blank" rel="noopener noreferrer">
               <Image
-                src="/images/socials/whatsapp.png"
+                src="/Images/socials/whatsapp.png"
                 alt="Whatsapp"
                 width={40}
                 height={40}
