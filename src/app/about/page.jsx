@@ -128,10 +128,10 @@ export default function Home() {
           {/* Social Media Icons */}
           <div className="flex justify-start items-center space-x-4 sm:space-x-6 mt-4 sm:mt-6 max-md:justify-center mt-6">
             {[
-              { src: "/Images/socials/instagram.png", alt: "Instagram", link: "https://www.instagram.com/iete_amrita/" },
-              { src: "/Images/socials/github.png", alt: "Github", link: "https://github.com/IETEAmritaChapter " },
-              { src: "/Images/socials/linkedin.png", alt: "LinkedIn", link: "https://www.linkedin.com/in/iete-amrita-sf/" },
-              { src: "/Images/socials/whatsapp.png", alt: "WhatsApp", link: "https://chat.whatsapp.com/EaQtTt7U4ClKEz26g9ddii" },
+              { src: "/Images/socials/Instagram.png", alt: "Instagram", link: "https://www.instagram.com/iete_amrita/" },
+              { src: "/Images/socials/GitHub.png", alt: "Github", link: "https://github.com/IETEAmritaChapter " },
+              { src: "/Images/socials/LinkedIn.png", alt: "LinkedIn", link: "https://www.linkedin.com/in/iete-amrita-sf/" },
+              { src: "/Images/socials/Whatsapp.png", alt: "WhatsApp", link: "https://chat.whatsapp.com/EaQtTt7U4ClKEz26g9ddii" },
             ].map(({ src, alt, link }) => (
               <a href={link} target="_blank" rel="noopener noreferrer" key={alt}>
                 <Image src={src} alt={alt} width={52} height={52} />
