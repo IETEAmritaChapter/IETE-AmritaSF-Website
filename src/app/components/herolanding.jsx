@@ -1,20 +1,23 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { useRouter } from "next/navigation"; // Import of useRouter
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Link from "next/link";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function MainContent() {
   const imageRef = useRef(null);
-  const dreamSectionRef = useRef(null);
+  const textRefs = useRef([]);
   const aboutSectionRef = useRef(null);
-  const router = useRouter(); // Initialization of the router
 
   useEffect(() => {
-    // Hover animation for the image
     const imageElement = imageRef.current;
+
+    // Hover animation for the image
     const hoverAnimation = gsap.to(imageElement, {
-      scale: 1.1,
+      scale: 1.01,
       filter: "grayscale(0%)",
       duration: 0.5,
       ease: "power1.out",
@@ -27,28 +30,32 @@ export default function MainContent() {
     imageElement.addEventListener("mouseenter", handleMouseEnter);
     imageElement.addEventListener("mouseleave", handleMouseLeave);
 
-    // Scroll-triggered animation
+    // Scroll-triggered animations
     const scrollAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: ".main-content",
-        start: "top center",
-        end: "bottom center",
+        start: "top top",
+        end: "bottom+=100 center",
         scrub: true,
+        pin: true,
       },
     });
 
-    // Fade-out "DREAM DESIGN DEVELOP" section
-    scrollAnimation.to(dreamSectionRef.current, {
+    // Fade-out effect for the Description Section
+    scrollAnimation.to(textRefs.current, {
       opacity: 0,
+      y: -20,
       duration: 1,
+      stagger: 0.2,
       ease: "power2.out",
     });
 
-    // Fade-in "ABOUT US" section
-    scrollAnimation.to(
+    // Fade-in effect for the About Us Section
+    scrollAnimation.fromTo(
       aboutSectionRef.current,
-      { opacity: 1, duration: 1, ease: "power2.out" },
-      "<"
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: -30, duration: 1.5, ease: "power2.out" },
+      "-=0.5"
     );
 
     return () => {
@@ -57,36 +64,67 @@ export default function MainContent() {
     };
   }, []);
 
-  // Function to handle navigation to About Us page
-  const navigateToAboutUs = () => {
-    router.push("/components/about"); // Navigate to about.jsx
-  };
-
   return (
-    <div className="main-content relative">
-      {/* DREAM DESIGN DEVELOP Section */}
+    <div className="main-content py-20 px-5 text-white rounded-lg shadow-xl">
+    {/* Description Section */}
+    <div
+      className="self-center mt-10 text-[72px] font-extrabold leading-tight text-center max-md:mt-6 max-md:max-w-full max-md:text-[36px] tracking-wide [font-family:var(--font-montserratb)]"
+      ref={(el) => (textRefs.current[0] = el)}
+    >
+      {/* For small and medium screens, stack the words vertically */}
+      <div className="max-md:block hidden">
+        <div>DREAM<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span></div>
+        <div>DESIGN<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span></div>
+        <div>DEVELOP<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span></div>
+      </div>
+      {/* For large screens, display the words in a single line */}
+      <div className="max-md:hidden">
+        DREAM<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
+        DESIGN<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
+        DEVELOP<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
+      </div>
+    </div>
       <div
-        className="flex flex-col items-center justify-center text-center mt-3 max-md:mt-2 px-4"
-        ref={dreamSectionRef}
+        className="self-center mt-4 text-[24px] leading-8 text-center max-md:max-w-full [font-family:var(--font-montserrat)]"
+        ref={(el) => (textRefs.current[1] = el)}
       >
-        <div className="text-9xl font-extrabold leading-none max-md:text-5xl [font-family:var(--font-montserratb)]">
-          DREAM
-          <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span> DESIGN
-          <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span> DEVELOP
-          <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">.</span>
-        </div>
-        <div className="mt-2 text-4xl leading-10 max-md:text-xl [font-family:var(--font-montserrat)]">
-          We are a vibrant, student-run club at{" "}
-          <span className="font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent [font-family:var(--font-montserratb)]">
-            Amrita Vishwa Vidyapeetham, Coimbatore
-          </span>
-          , bringing together tech enthusiasts to spark creativity and
-          collaboration.
+        We are a vibrant, student-run club at{" "}
+        <a
+          href="https://www.amrita.edu/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent [font-family:var(--font-montserratb)] hover:underline"
+        >
+          Amrita Vishwa Vidyapeetham, Coimbatore
+        </a>
+        , bringing together tech enthusiasts to spark creativity and collaboration.
+      </div>
+
+      {/* About Us Section */}
+      <div
+        className="self-center mt-10 text-[72px] font-extrabold leading-tight text-center max-md:mt-6 max-md:max-w-full max-md:text-[36px] tracking-wide [font-family:var(--font-montserratb)]"
+        ref={aboutSectionRef}
+      >
+        <Link href="/about">
+          <button
+            className="text-[72px] font-extrabold leading-tight text-center max-md:text-[36px] bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent [font-family:var(--font-montserratb)] hover:scale-105 transition-transform duration-300"
+          >
+            ABOUT US
+          </button>
+        </Link>
+        <div
+          className="mt-4 mb-10 text-[24px] leading-8 text-center max-md:max-w-full [font-family:var(--font-montserrat)]"
+        >
+          Our mission is to empower the next generation of innovators through
+          hands-on learning, interdisciplinary projects, and practical exposure
+          to emerging technologies.
         </div>
       </div>
 
       {/* Image Section */}
-      <div className="self-center mt-4 overflow-hidden rounded-3xl max-md:mt-2">
+      <div
+        className="self-center mt-10 overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+      >
         <Image
           loading="lazy"
           src="/Images/hero/hero-image.webp"
@@ -94,28 +132,12 @@ export default function MainContent() {
           width={1286}
           height={286}
           ref={imageRef}
-          className="object-contain w-full cursor-pointer"
+          className="object-contain w-full cursor-pointer rounded-3xl hover:scale-105 transition-transform duration-500"
           style={{
             filter: "grayscale(1)",
             transition: "all 0.8s ease-in-out",
           }}
         />
-      </div>
-
-      {/* ABOUT US Section */}
-      <div
-        className="flex flex-col items-center justify-center text-center mt-4 max-md:mt-2"
-        ref={aboutSectionRef}
-      >
-        <button
-          onClick={navigateToAboutUs} // Call navigate function on click
-          className="text-7xl font-extrabold leading-none max-md:text-3xl [font-family:var(--font-montserratb)] bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent cursor-pointer"
-        >
-          ABOUT US
-        </button>
-        <div className="mt-2 text-3xl leading-10 max-md:text-xl [font-family:var(--font-montserrat)]">
-          Our mission is to empower the next generation of innovators through hands-on learning, interdisciplinary projects, and practical exposure to emerging technologies.
-        </div>
       </div>
     </div>
   );
