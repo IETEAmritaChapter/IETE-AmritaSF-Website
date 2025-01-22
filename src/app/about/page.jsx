@@ -16,7 +16,7 @@ export default function Home() {
             ABOUT <span className="gradient-text">IETE AMRITA</span>
           </h2>
 
-          <div className="message-box text-black text-base sm:text-lg lg:text-xl xl:text-[1.3rem] p-6 bg-white rounded-[8px] text-start font-[montserrat] mt-4">
+          <div className="message-box text-black text-base sm:text-lg lg:text-xl xl:text-[1.2rem] p-6 bg-white rounded-[8px] text-justify font-[montserrat] mt-4">
             At IETE Amrita, we are more than just a club; we are a thriving ecosystem for technology enthusiasts and innovators. Rooted in a passion for electronics, communication, and programming, we aim to bridge the gap between theoretical knowledge and real-world applications. Our mission is to foster a culture of innovation, empowering students to explore emerging technologies and push the boundaries of what&apos;s possible.
           </div>
         </section>
@@ -26,7 +26,7 @@ export default function Home() {
           <h2 className="text-[28px] sm:text-[32px] font-[montserratb]">
             <span className="text-orange-600">WHY</span> WE DO <span className="text-orange-600">WHAT</span> WE DO
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl xl:text-[1.3rem] text-gray-400 text-center font-[montserrat]">
+          <p className="text-base sm:text-lg lg:text-xl xl:text-[1.3rem] text-gray-400 text-justify p-4 font-[montserrata]">
             At IETE Amrita, our purpose stems from a shared passion for technology and innovation. Every action, initiative, and event we undertake is guided by a deep commitment to empowering students and fostering a culture of technical excellence.
           </p>
           <div className="box-wrapper flex flex-wrap md:flex-row justify-center items-stretch gap-4 w-full mt-4">
@@ -43,7 +43,7 @@ export default function Home() {
                 <h2 className="text-[26px] sm:text-[28px] text-orange-600 font-[montserratb]">
                   MISSION
                 </h2>
-                <p className="text-base sm:text-lg lg:text-xl xl:text-[1.2rem] text-start font-[montserrat] mt-5">
+                <p className="text-base sm:text-lg lg:text-xl xl:text-[1.2rem] text-justify p-4 font-[montserrat] mt-3">
                   Our mission is to organize impactful events and workshops that demystify emerging technologies, inspiring students to learn and innovate, while offering hands-on project opportunities that bridge the gap between theoretical knowledge and practical application to empower them with industry-relevant skills. We aim to foster an environment that encourages continuous learning.
                 </p>
               </div>
@@ -62,7 +62,7 @@ export default function Home() {
                 <h2 className="text-[26px] sm:text-[28px] text-orange-600 font-[montserratb]">
                   VISION
                 </h2>
-                <p className="text-base sm:text-lg lg:text-xl xl:text-[1.2rem] text-start font-[montserrat] mt-5">
+                <p className="text-base sm:text-lg lg:text-xl xl:text-[1.2rem] text-justify p-4 font-[montserrat] mt-3">
                   To create a vibrant and inclusive tech community at Amrita that inspires innovation, nurtures talent, and serves as a catalyst for technical creativity and collaboration. We envision IETE as a central hub where students explore the frontiers of technology, develop groundbreaking ideas, and collectively shape the future of engineering and innovation.
                 </p>
               </div>
@@ -75,7 +75,7 @@ export default function Home() {
           <h2 className="text-[28px] sm:text-[32px] font-[montserratb]">
             VARIOUS <span className="text-orange-600">VERTICALS</span> & <span className="text-orange-600">DOMAINS</span> WE EXPLORE
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl xl:text-[1.3rem] text-gray-400 text-center font-[montserrat]">
+          <p className="text-base sm:text-lg lg:text-xl xl:text-[1.3rem] text-gray-400 text-justify font-[montserrata]">
             Whether it’s mastering Competitive Programming, pioneering the future with IoT, crafting dynamic Web Development, unlocking the potential of AI/ML, fostering connections through Public Relations, orchestrating events with Event Management, or bringing creative visions to life with Design & Media, each vertical and team contributes to a balanced ecosystem that sparks passion, refines skills, and celebrates innovation and collaboration.
           </p>
           <div className="icons-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-8 w-full gap-8 justify-items-center justify-center items-center mt-4 font-[montserrat]">
@@ -115,7 +115,7 @@ export default function Home() {
             JOIN THE <span className="text-orange-600">IETE</span> MOVEMENT!
           </h2>
           <div className="message-box text-black p-6 bg-white rounded-[8px] mt-4">
-            <p className="text-base sm:text-lg lg:text-xl xl:text-[1.3rem] text-start font-[montserrat]">
+            <p className="text-base sm:text-lg lg:text-xl xl:text-[1.2rem] text-justify p-2 font-[montserrat]">
               As we continue to innovate and create, we invite you to be a part of this exciting journey. IETE Amrita is more than just a club; it&apos;s a community of passionate individuals shaping the future of technology. Don&apos;t miss out on the opportunity to collaborate, grow, and lead in the tech world.
               <br />
               <Link href="/team" passHref>
@@ -128,10 +128,10 @@ export default function Home() {
           {/* Social Media Icons */}
           <div className="flex justify-start items-center space-x-4 sm:space-x-6 mt-4 sm:mt-6 max-md:justify-center mt-6">
             {[
-              { src: "/images/footer/instagram.png", alt: "Instagram", link: "https://www.instagram.com/iete_amrita/" },
-              { src: "/images/footer/github.png", alt: "Github", link: "https://github.com/IETEAmritaChapter " },
-              { src: "/images/footer/linkedin.png", alt: "LinkedIn", link: "https://www.linkedin.com/in/iete-amrita-sf/" },
-              { src: "/images/footer/whatsapp.png", alt: "WhatsApp", link: "https://chat.whatsapp.com/EaQtTt7U4ClKEz26g9ddii" },
+              { src: "/images/socials/instagram.png", alt: "Instagram", link: "https://www.instagram.com/iete_amrita/" },
+              { src: "/images/socials/github.png", alt: "Github", link: "https://github.com/IETEAmritaChapter " },
+              { src: "/images/socials/linkedin.png", alt: "LinkedIn", link: "https://www.linkedin.com/in/iete-amrita-sf/" },
+              { src: "/images/socials/whatsapp.png", alt: "WhatsApp", link: "https://chat.whatsapp.com/EaQtTt7U4ClKEz26g9ddii" },
             ].map(({ src, alt, link }) => (
               <a href={link} target="_blank" rel="noopener noreferrer" key={alt}>
                 <Image src={src} alt={alt} width={52} height={52} />

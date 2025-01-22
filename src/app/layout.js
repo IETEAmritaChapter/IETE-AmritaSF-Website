@@ -1,6 +1,6 @@
 import "@/app/styles/globals.css";
 import localFont from "next/font/local";
-import Footer from './footer';
+import Footer from './components/footer';
 
 // Font configurations
 const montserrata = localFont({
