@@ -33,7 +33,7 @@ export default function Home() {
             {/* Mission Box */}
             <div className="box-container bg-white p-4 border rounded-[8px] shadow text-black flex-1 min-h-[150px] relative">
               <Image
-                src="/images/mission-vision/mission.png"
+                src="/Images/mission-vision/mission.png"
                 alt="Mission Icon"
                 width={44}
                 height={44}
@@ -52,7 +52,7 @@ export default function Home() {
             {/* Vision Box */}
             <div className="box-container bg-white p-4 border rounded-[8px] shadow text-black flex-1 min-h-[150px] relative">
               <Image
-                src="/images/mission-vision/vision.png"
+                src="/Images/mission-vision/vision.png"
                 alt="Vision Icon"
                 width={56}
                 height={40}
@@ -80,14 +80,14 @@ export default function Home() {
           </p>
           <div className="icons-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-8 w-full gap-8 justify-items-center justify-center items-center mt-4 font-[montserrat]">
   {[
-    { src: "/images/verticals/webdev.png", label: "Web Development", translate: true },
-    { src: "/images/verticals/embedded.png", label: "Embedded Systems", translate: true },
-    { src: "/images/verticals/cp.png", label: "Competitive Programming", translate: true },
-    { src: "/images/verticals/appdev.png", label: "App Development", translate: true },
-    { src: "/images/verticals/ai.png", label: "AI/ML", translate: false },
-    { src: "/images/verticals/pr.png", label: "Public Relations", translate: true },
-    { src: "/images/verticals/eventmang.png", label: "Event Management", translate: true },
-    { src: "/images/verticals/design.png", label: "Design", translate: false },
+    { src: "/Images/verticals/webdev.png", label: "Web Development", translate: true },
+    { src: "/Images/verticals/embedded.png", label: "Embedded Systems", translate: true },
+    { src: "/Images/verticals/cp.png", label: "Competitive Programming", translate: true },
+    { src: "/Images/verticals/appdev.png", label: "App Development", translate: true },
+    { src: "/Images/verticals/ai.png", label: "AI/ML", translate: false },
+    { src: "/Images/verticals/pr.png", label: "Public Relations", translate: true },
+    { src: "/Images/verticals/eventmang.png", label: "Event Management", translate: true },
+    { src: "/Images/verticals/design.png", label: "Design", translate: false },
   ].map(({ src, label, translate }, index) => (
     <div
       className={`text-center flex flex-col items-center gap-4 ${
@@ -128,10 +128,10 @@ export default function Home() {
           {/* Social Media Icons */}
           <div className="flex justify-start items-center space-x-4 sm:space-x-6 mt-4 sm:mt-6 max-md:justify-center mt-6">
             {[
-              { src: "/images/socials/instagram.png", alt: "Instagram", link: "https://www.instagram.com/iete_amrita/" },
-              { src: "/images/socials/github.png", alt: "Github", link: "https://github.com/IETEAmritaChapter " },
-              { src: "/images/socials/linkedin.png", alt: "LinkedIn", link: "https://www.linkedin.com/in/iete-amrita-sf/" },
-              { src: "/images/socials/whatsapp.png", alt: "WhatsApp", link: "https://chat.whatsapp.com/EaQtTt7U4ClKEz26g9ddii" },
+              { src: "/Images/socials/instagram.png", alt: "Instagram", link: "https://www.instagram.com/iete_amrita/" },
+              { src: "/Images/socials/github.png", alt: "Github", link: "https://github.com/IETEAmritaChapter " },
+              { src: "/Images/socials/linkedin.png", alt: "LinkedIn", link: "https://www.linkedin.com/in/iete-amrita-sf/" },
+              { src: "/Images/socials/whatsapp.png", alt: "WhatsApp", link: "https://chat.whatsapp.com/EaQtTt7U4ClKEz26g9ddii" },
             ].map(({ src, alt, link }) => (
               <a href={link} target="_blank" rel="noopener noreferrer" key={alt}>
                 <Image src={src} alt={alt} width={52} height={52} />
