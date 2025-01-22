@@ -1,5 +1,6 @@
 import "@/app/styles/globals.css";
 import localFont from "next/font/local";
+import Footer from './components/footer';
 
 // Font configurations
 const montserrata = localFont({
@@ -32,12 +33,15 @@ export default function RootLayout({ children }) {
         className={`${montserrata.variable} ${montserrat.variable} ${montserratb.variable} antialiased`}
       >
         {/* Main layout container */}
-        <div className="flex flex-col items-center justify-center min-h-screen px-9 py-9 bg-white text-black max-md:px-5">
+        <div className="flex flex-col min-h-screen px-9 py-9 bg-white text-black max-md:px-5">
           {/* Content container */}
-          <div className="flex flex-col px-12 pt-10 pb-24 w-full bg-stone-900 text-white rounded-[29px] max-md:px-5 max-md:pb-16 max-md:max-w-full">
+          <div className="flex flex-col px-12 pt-10 pb-24 w-full bg-stone-900 text-white rounded-[29px] max-md:px-5 max-md:pb-16 max-md:max-w-full flex-grow">
             {children}
           </div>
         </div>
+
+        <Footer />
+
       </body>
     </html>
   );
