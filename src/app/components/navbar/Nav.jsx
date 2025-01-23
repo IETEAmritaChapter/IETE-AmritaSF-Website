@@ -31,7 +31,7 @@ function Navigation({ onClick }) {
     { text: 'ABOUT', path: '/about' },
     { text: 'TEAM', path: '/team' },
     { text: 'EVENTS & PROJECTS', path: '/' },
-    { text: 'BLOG', path: '' },
+    { text: 'BLOG', path: '/comingsoon' },
     { text: 'CP LEADERBOARD', path: '/comingsoon' },
   ];
 
