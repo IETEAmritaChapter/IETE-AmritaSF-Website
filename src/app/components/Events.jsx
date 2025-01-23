@@ -253,7 +253,7 @@ export default function Events() {
 
       slides.forEach((slide, i) =>
         slide.addEventListener("click", () =>
-          loop.toIndex(i - 1, { ease: "power3", duration: 0.725 })
+          loop.toIndex(0, { ease: "power3", duration: 0.725 })
         )
       );
 
@@ -557,12 +557,15 @@ export default function Events() {
               </div>
             </b>
             <div 
-              className="count-column description-container"
+              className="description-container"
               style={{
-                height: "110px",
+                height: "60%",
                 position: "relative",
                 overflow: "hidden",
-                width: "100%"
+                width: "60%",
+                fontSize: "15px",
+                marginBottom: "20px",
+                overflow: "hidden",
               }}
             >
               {events.map((event, index) => (
@@ -570,7 +573,7 @@ export default function Events() {
                   key={event.id}
                   style={{
                     transition: "opacity 0.9s ease-in-out, transform 0.9s ease-in-out",
-                    height: "170px",
+                    height: "700px",
                     width: "100%",
                     opacity: activeEventIndex === index ? 1 : 0,
                     visibility: activeEventIndex === index ? "visible" : "hidden",
@@ -585,7 +588,7 @@ export default function Events() {
                 >
                   <div
                     style={{
-                      height: "50%",
+                      height: "100%",
                       overflowY: "hidden",
                       paddingRight: "10px"
                     }}
@@ -596,7 +599,7 @@ export default function Events() {
                       style={{
                         margin: 0,
                         lineHeight: "1.5",
-                        maxHeight: readMore && activeEventIndex === index ? "100px" : "150px",
+                        maxHeight: readMore && activeEventIndex === index ? "100px" : "550px",
                         overflow: "hidden"
                       }}
                     >
@@ -625,14 +628,14 @@ export default function Events() {
                 </div>
               ))}
             </div>
-            <div className="count-column">
+            <div className="count-column-location"> 
                 <h2 data-slide-count="step-location" className="count-heading"></h2>
             </div>
-            <div className="count-column" style={{ fontSize: "1.1em" }}>
+            <div className="count-column-location">
               <h3 data-slide-count="step-time" className="count-heading "></h3>
             </div>
-            <div className="count-column" style={{ fontSize: "1.1em" }}>
-              <a  href="#!" target="_blank" rel="noopener noreferrer">
+            <div className="count-column-location ">
+              <a  href="#!" target="_blank" rel="noopener noreferrer" >
                 <h3 className="count-heading register-button" data-slide-count="step-registration"></h3>
               </a>
             </div>
@@ -678,7 +681,6 @@ export default function Events() {
                     <Image
                       src={event.image}
                       loading="lazy"
-                      sizes="(max-width: 479px) 100vw, 560px"
                       alt={event.title}
                       width={560}
                       height={315}
