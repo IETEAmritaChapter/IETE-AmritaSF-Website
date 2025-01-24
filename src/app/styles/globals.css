@@ -323,8 +323,8 @@ img {
 
 .slide-inner {
   border-radius: var(--size-border-radius-large);
-  width: 60%;
-  height: 100%;
+  width: 90%;
+  height: 200%;
   transform: translatey(-40px);
   position: relative;
   overflow: hidden;

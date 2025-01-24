@@ -253,7 +253,7 @@ export default function Events() {
 
       slides.forEach((slide, i) =>
         slide.addEventListener("click", () =>
-          loop.toIndex(0, { ease: "power3", duration: 0.725 })
+          loop.toIndex(i - 1, { ease: "power3", duration: 0.725 })
         )
       );
 
