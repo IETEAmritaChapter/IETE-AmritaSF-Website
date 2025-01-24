@@ -1,4 +1,4 @@
-import "@/app/styles/globals.css";
+import "./styles/globals.css";
 import localFont from "next/font/local";
 import Footer from './components/footer';
 
