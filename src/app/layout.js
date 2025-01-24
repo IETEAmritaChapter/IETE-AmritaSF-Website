@@ -21,10 +21,12 @@ const montserratb = localFont({
   weight: "700",
 });
 
-export const metadata = {
+const metadata = {
   title: "IETE SF Website",
   description: "IETE Website by Amrita Chapter",
 };
+
+export { montserrata, montserrat, montserratb };
 
 export default function RootLayout({ children }) {
   return (

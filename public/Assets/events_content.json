@@ -1,0 +1,60 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "title": "Club Induction",
+            "image": ["/Images/events/induction.png","/Images/events/induction.png","/Images/events/induction.png"],
+            "description": "The IETE Club Induction Program for the term 2024-25 on Dec 26th, 2024, brought together innovation, inspiration, and interaction. From an insightful keynote by Mr. Velmurugan E to engaging activities and team introductions, the event set the stage for a promising year ahead! 🚀 This marks the beginning of a great journey for IETE Amrita.",
+            "Status":"Past Event",
+            "Location": "Sandeepmani Hall,2nd Floor,Amrita School of Engineering,Coimbatore",
+            "Registration": "https://google.com",
+            "Year": "2024",
+            "Month": "12",
+            "Day": "26",
+            "startsAt": "10:00 AM"
+
+        },
+        {
+            "id":2,
+            "title": "Robotics Workshop",
+            "image": ["/Images/events/induction.png"],
+            "description": "We are planning for a lora workshop which would be very Interesting for students",
+            "Status":"Upcoming Event",
+            "Location": "yet to confirm",
+            "Registration": "https://google.com",
+            "Year": "yet to confirm",
+            "Month": "yet to confirm",
+            "Day": "yet to confirm",
+            "startsAt": "yet to confirm"
+
+        },
+        {
+            "id":3,
+            "title": "Dummy Event 2",
+            "image": ["/Images/events/induction.png","/Images/events/induction.png","/Images/events/induction.png"],
+            "description": "The IETE Club Induction Program for the term 2024-25 on Dec 26th, 2024, brought together innovation, inspiration, and interaction. From an insightful keynote by Mr. Velmurugan E to engaging activities and team introductions, the event set the stage for a promising year ahead! 🚀 This marks the beginning of a great journey for IETE Amrita.",
+            "Status":"Upcoming Event",
+            "Location": "yet to confirm",
+            "Registration": "Will open soon",
+            "Year": "yet to confirm",
+            "Month": "yet to confirm",
+            "Day": "yet to confirm",
+            "startsAt": "yet to confirm"
+
+        },
+        {
+            "id":4,
+            "title": "Dummy Event 3",
+            "image": ["/Images/events/induction.png","/Images/events/induction.png","/Images/events/induction.png"],
+            "description": "We are planning for a lora workshop which would be very Interesting for students",
+            "Status":"Upcoming Event",
+            "Location": "yet to confirm",
+            "Registration": "Will open soon",
+            "Year": "yet to confirm",
+            "Month": "yet to confirm",
+            "Day": "yet to confirm",
+            "startsAt": "yet to confirm"
+
+        }
+    ]
+}

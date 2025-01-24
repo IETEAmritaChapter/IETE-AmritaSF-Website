@@ -1,0 +1,38 @@
+.overlay-corner {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-top-left-radius: 6px;
+    width: 1em;
+    height: 1em;
+}
+
+.overlay-corner.top-right {
+    position: absolute;
+    inset: 0% 0% auto auto;
+    transform: rotate(90deg);
+}
+
+.overlay-corner.bottom-left {
+    position: absolute;
+    inset: auto auto 0% 0%;
+    transform: rotate(-90deg);
+}
+
+.overlay-corner.bottom-right {
+    position: absolute;
+    inset: auto 0% 0% auto;
+    transform: rotate(180deg);
+}
+
+.button-overlay {
+    z-index: 2;
+    position: absolute;
+    inset: -1px;
+    transition: transform 0.475s cubic-bezier(0.25, 0.1, 0.25, 1),
+        opacity 0.475s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.motion-button:hover {
+    transform: scale(0.85);
+    opacity: 1 !important;
+}
