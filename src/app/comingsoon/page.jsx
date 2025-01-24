@@ -12,7 +12,7 @@ export default function ComingSoon() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#1c1c1c] text-white font-montserrat">
+    <div className="min-h-[80vh] flex flex-col justify-center items-center text-white font-montserrat">
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center flex-1 text-center">
         {/* Dots Animation */}
