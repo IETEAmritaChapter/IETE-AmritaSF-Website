@@ -59,9 +59,9 @@ export default function Nav() {
   };
 
   return (
-    <div className="relative w-full bg-[#1a1a1a] [font-family:var(--font-montserrat)]">
+    <div className="relative w-full bg-[#1a1a1a] [font-family:var(--font-montserrat)] z-[100]">
       {/* Navbar */}
-      <div className="flex items-center justify-between w-full px-4 py-1 md:px-6 md:py-1">
+      <div className="flex items-center justify-between w-full px-4 pt-1 pb-0 md:px-6 md:pt-1 md:pb-0 relative z-[100]">
         <Link href="/">
           <Logo />
         </Link>
@@ -78,11 +78,11 @@ export default function Nav() {
 
       {/* Hamburger Menu */}
       <div
-        className={`absolute left-0 w-full bg-[#1a1a1a] transition-all duration-500 ease-in-out ${
-          menuOpen ? 'opacity-100 max-h-screen visible' : 'opacity-0 max-h-0 invisible'
-        } sm:block md:hidden`}
+        className={`absolute left-0 top-[60px] w-full bg-[#1a1a1a] z-[90] transition-all duration-500 ease-in-out ${
+          menuOpen ? 'opacity-100 max-h-[200px] visible' : 'opacity-0 max-h-0 invisible'
+        }`}
       >
-        <div className="flex flex-col items-center w-full py-3">
+        <div className="flex flex-col items-center w-full py-4">
           <Navigation onClick={handleCloseMenu} />
         </div>
       </div>
