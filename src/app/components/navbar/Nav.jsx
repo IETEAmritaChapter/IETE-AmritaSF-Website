@@ -61,7 +61,7 @@ export default function Nav() {
   return (
     <div className="relative w-full bg-[#1a1a1a] [font-family:var(--font-montserrat)] z-[100]">
       {/* Navbar */}
-      <div className="flex items-center justify-between w-full px-4 pt-1 pb-0 md:px-6 md:pt-1 md:pb-0 relative z-[100]">
+      <div className="flex items-center justify-between w-full px-4 pt-1 pb-10 md:px-6 md:pt-1 relative z-[100]">
         <Link href="/">
           <Logo />
         </Link>
