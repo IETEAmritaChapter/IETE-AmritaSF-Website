@@ -1,12 +1,12 @@
-import * as React from "react";
 import MainContent from "./components/herolanding.jsx";
 
-export default function HomePage() {
+export default function Page() {
   return (
     <div>
-      <div>
+      {/* Main Content */}
+      <main>
         <MainContent />
-      </div>
+      </main>
     </div>
   );
 }
