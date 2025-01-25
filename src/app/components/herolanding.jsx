@@ -66,24 +66,30 @@ export default function MainContent() {
 
   return (
     <div className="main-content py-20 px-5 text-white rounded-lg shadow-xl">
-    {/* Description Section */}
-    <div
-      className="self-center mt-10 text-[72px] font-extrabold leading-tight text-center max-md:mt-6 max-md:max-w-full max-md:text-[36px] tracking-wide [font-family:var(--font-montserratb)]"
-      ref={(el) => (textRefs.current[0] = el)}
-    >
-      {/* For small and medium screens, stack the words vertically */}
-      <div className="max-md:block hidden">
-        <div>DREAM<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span></div>
-        <div>DESIGN<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span></div>
-        <div>DEVELOP<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span></div>
+      {/* Description Section */}
+      <div
+  className="self-center mt-10 text-[48px] font-extrabold leading-tight text-center 
+             sm:text-[40px] md:text-[45px] lg:text-[50px] xl:text-[72px] 2xl:text-[72px]
+             max-md:mt-6 max-md:max-w-full max-md:text-[30px] 
+             tracking-wide [font-family:var(--font-montserratb)]"
+  ref={(el) => (textRefs.current[0] = el)}
+>
+
+        <div className="flex flex-col md:flex-row items-center justify-center text-center md:space-x-4">
+  <div className="flex flex-col md:flex-row">
+    <span className="block">
+      DREAM<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
+    </span>
+    <span className="block md:ml-4">
+      DESIGN<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
+    </span>
+    <span className="block md:ml-4">
+      DEVELOP<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
+    </span>
+  </div>
+</div>
+
       </div>
-      {/* For large screens, display the words in a single line */}
-      <div className="max-md:hidden">
-        DREAM<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
-        DESIGN<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
-        DEVELOP<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
-      </div>
-    </div>
       <div
         className="self-center mt-4 text-[24px] leading-8 text-center max-md:max-w-full [font-family:var(--font-montserrat)]"
         ref={(el) => (textRefs.current[1] = el)}
@@ -107,7 +113,8 @@ export default function MainContent() {
       >
         <Link href="/about">
           <button
-            className="text-[72px] font-extrabold leading-tight text-center max-md:text-[36px] bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent [font-family:var(--font-montserratb)] hover:scale-105 transition-transform duration-300"
+            className="text-[30px] font-extrabold leading-tight text-center sm:text-[40px] md:text-[45px] lg:text-[50px] xl:text-[72px] 2xl:text-[72px] 
+             max-md:text-[30px] bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent [font-family:var(--font-montserratb)] hover:scale-105 transition-transform duration-300"
           >
             ABOUT US
           </button>
@@ -116,7 +123,7 @@ export default function MainContent() {
           className="mt-4 mb-10 text-[24px] leading-8 text-center max-md:max-w-full [font-family:var(--font-montserrat)]"
         >
           Our mission is to empower the next generation of innovators through
-          hands-on learning, interdisciplinary projects, and practical exposure
+          hands-on learning, inter disciplinary projects, and practical exposure
           to emerging technologies.
         </div>
       </div>
@@ -125,19 +132,24 @@ export default function MainContent() {
       <div
         className="self-center mt-10 overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
       >
-        <Image
-          loading="lazy"
-          src="/Images/hero/hero-image.webp"
-          alt="IETE Student Forum team collaboration"
-          width={1286}
-          height={286}
-          ref={imageRef}
-          className="object-contain w-full cursor-pointer rounded-3xl hover:scale-105 transition-transform duration-500"
-          style={{
-            filter: "grayscale(1)",
-            transition: "all 0.8s ease-in-out",
-          }}
-        />
+        <picture>
+          {/* Small and medium screen image */}
+          <source
+            srcSet="Images/hero/hero-phone.webp"
+            media="(max-width: 1024px)"
+          />
+          {/* Large screen image */}
+          <img
+            src="/Images/hero/hero-image.webp"
+            alt="IETE Student Forum team collaboration"
+            ref={imageRef}
+            className="object-contain w-full cursor-pointer rounded-3xl hover:scale-105 transition-transform duration-500"
+            style={{
+              filter: "grayscale(1)",
+              transition: "all 0.8s ease-in-out",
+            }}
+          />
+        </picture>
       </div>
     </div>
   );
