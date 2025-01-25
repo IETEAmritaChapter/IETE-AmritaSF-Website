@@ -4,6 +4,7 @@
     border-top-left-radius: 6px;
     width: 1em;
     height: 1em;
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
 .overlay-corner.top-right {
@@ -24,15 +25,24 @@
     transform: rotate(180deg);
 }
 
+.overlay-corner.bottom-right {
+    position: absolute;
+    inset: auto 0% 0% auto;
+    transform: rotate(180deg);
+}
+
 .button-overlay {
     z-index: 2;
     position: absolute;
     inset: -1px;
-    transition: transform 0.475s cubic-bezier(0.25, 0.1, 0.25, 1),
-        opacity 0.475s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.motion-button:hover {
-    transform: scale(0.85);
-    opacity: 1 !important;
+.button-overlay:hover {
+    scale: 1.2;
+    opacity: 0.3;
+}
+
+.motion-button:hover .overlay-corner {
+    width: 2em;
+    height: 2em;
 }
