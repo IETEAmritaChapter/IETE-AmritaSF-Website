@@ -1,7 +1,6 @@
-import "./styles/globals.css";
+import "../app/styles/globals.css";
 import localFont from "next/font/local";
-import Footer from "./components/footer";
-import Nav from "./components/navbar/Nav";
+import Footer from './components/footer';
 
 // Font configurations
 const montserrata = localFont({
@@ -22,12 +21,10 @@ const montserratb = localFont({
   weight: "700",
 });
 
-const metadata = {
+export const metadata = {
   title: "IETE SF Website",
   description: "IETE Website by Amrita Chapter",
 };
-
-export { montserrata, montserrat, montserratb };
 
 export default function RootLayout({ children }) {
   return (
@@ -39,16 +36,12 @@ export default function RootLayout({ children }) {
         <div className="flex flex-col min-h-screen px-9 py-9 bg-white text-black max-md:px-5">
           {/* Content container */}
           <div className="flex flex-col px-12 pt-10 pb-24 w-full bg-stone-900 text-white rounded-[29px] max-md:px-5 max-md:pb-16 max-md:max-w-full flex-grow">
-            {/* Navbar */}
-            <Nav />
-
-            {/* Children */}
             {children}
           </div>
         </div>
 
-        {/* Footer */}
         <Footer />
+
       </body>
     </html>
   );
