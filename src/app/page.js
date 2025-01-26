@@ -15,7 +15,7 @@ export default function Home() {
           
           element.scrollIntoView({ behavior: "smooth" });
         }
-      }, 500); // Delay of 100ms
+      }, 100); // Delay of 100ms
     }
   }, []);
 

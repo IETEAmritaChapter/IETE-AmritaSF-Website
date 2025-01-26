@@ -273,7 +273,7 @@ const EventDisplay = () => {
         {/* Description */}
         <p
           ref={descriptionRef}
-          className="text-base lg:text-lg text-gray-300 mb-6 text-justify [font-family:var(--font-montserrata)]"
+          className="text-base lg:text-lg text-gray-300 mb-6 text-justify [font-family:var(--font-montserrat)]"
         >
           {isMobile && !showFullDescription
             ? `${currentEvent.description.substring(0, 100)}`
@@ -289,21 +289,23 @@ const EventDisplay = () => {
         </p>
 
         {/* Location, Time, Registration remain the same */}
-        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrata)]">
+        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrat)]">
           <span className="font-semibold text-gray-500 ">Location : </span>
           <span className="text-gray-200 ">{currentEvent.Location}</span>
         </div>
 
-        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrata)]">
+        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrat)]">
           <span className="font-semibold text-gray-500">Time : </span>
           <span className="text-gray-200">{currentEvent.startsAt}</span>
         </div>
-        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrata)]">
+        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrat)]">
           <span className="font-semibold text-gray-500">Date : </span>
-          <span className="text-gray-200">{`${currentEvent.Day}-${currentEvent.Month}-${currentEvent.Year}`}</span>
+          <span className="text-gray-200">{currentEvent.Year === "yet to confirm" 
+          ? "TBD"
+              : `${currentEvent.Day} - ${currentEvent.Month} - ${currentEvent.Year}`}</span>
         </div>
 
-        <div className="mb-6 text-base lg:text-lg [font-family:var(--font-montserrata)]">
+        <div className="mb-6 text-base lg:text-lg [font-family:var(--font-montserrat)]">
           {currentEvent.Status === "Past Event" ? (
             <motion.button
               className="bg-gray-500 text-white py-2 px-4 rounded"
@@ -314,7 +316,7 @@ const EventDisplay = () => {
             </motion.button>
           ) : currentEvent.Registration === "Will open soon" ? (
             <motion.button
-              className="bg-orange-400 text-white py-2 px-4 rounded"
+              className="bg-blue-500 text-white py-2 px-4 rounded"
               disabled
               whileHover={{ scale: 1.05 }}
             >
@@ -323,7 +325,7 @@ const EventDisplay = () => {
           ) : (
             <motion.a
               href={currentEvent.Registration}
-              className="bg-blue-500 text-white py-2 px-4 rounded"
+              className="bg-[#FB923C] text-white py-2 px-4 rounded"
               whileHover={{ scale: 1.05 }}
             >
               Click here to register
@@ -346,7 +348,7 @@ const EventDisplay = () => {
               <div className="overlay-corner bottom-left"></div>
               <div className="overlay-corner bottom-right"></div>
             </div>
-            <span className="[font-family:var(--font-montserrata)] tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
+            <span className="[font-family:var(--font-montserrat)] tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
               Prev Event
             </span>
           </motion.button>
@@ -363,7 +365,7 @@ const EventDisplay = () => {
               <div className="overlay-corner bottom-left"></div>
               <div className="overlay-corner bottom-right"></div>
             </div>
-            <span className="[font-family:var(--font-montserrata)] tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
+            <span className="[font-family:var(--font-montserrat)] tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
               Next Event
             </span>
           </motion.button>
@@ -373,7 +375,7 @@ const EventDisplay = () => {
       {/* Right Image Section - Desktop View */}
       {!isMobile && (
         <motion.div
-          className={`w-full lg:w-1/2 relative ${marginTop} holdma [font-family:var(--font-montserrata)]`}
+          className={`w-full lg:w-1/2 relative ${marginTop} holdma [font-family:var(--font-montserrat)]`}
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
