@@ -49,4 +49,8 @@
 
 .motion-button:hover .tooltip {
     opacity: 1;
-  }
+}
+
+.holdma:hover .tooltip{
+    opacity: 1;
+}

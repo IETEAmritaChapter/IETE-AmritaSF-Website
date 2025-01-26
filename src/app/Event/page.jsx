@@ -194,7 +194,7 @@ const EventDisplay = () => {
         {!isMobile && (
           <div
             ref={dateRef}
-            className="text-2xl lg:text-4xl font-bold text-white mb-4"
+            className="text-2xl lg:text-4xl font-bold text-white mb-4 [font-family:var(--font-montserratb)]"
           >
             {currentEvent.Year === "yet to confirm"
               ? "TBD"
@@ -211,17 +211,14 @@ const EventDisplay = () => {
         )}
 
         {/* Event Title */}
-        <b>
-          <h1
-            ref={titleRef}
-            className={`
-          text-4xl lg:text-6xl font-bold text-[#FF5252] mb-6 [font-family:var(--font-montserrat)]
-          ;
-        `}
-          >
-            {currentEvent.title}
-          </h1>
-        </b>
+        <h1
+          ref={titleRef}
+          className={`
+          text-4xl lg:text-6xl font-extrabold text-[#FF5252] mb-6 [font-family:var(--font-montserratb)]
+          `}
+        >
+          <b>{currentEvent.title}</b>
+        </h1>
         {/* Image for Mobile View - Inserted between title and description */}
         {isMobile && (
           <div
@@ -275,10 +272,10 @@ const EventDisplay = () => {
         {/* Description */}
         <p
           ref={descriptionRef}
-          className="text-base lg:text-lg text-gray-300 mb-6 text-justify"
+          className="text-base lg:text-lg text-gray-300 mb-6 text-justify [font-family:var(--font-montserrata)]"
         >
           {isMobile && !showFullDescription
-            ? `${currentEvent.description.substring(0, 200)}`
+            ? `${currentEvent.description.substring(0, 100)}`
             : currentEvent.description}
           {isMobile && (
             <span
@@ -291,21 +288,21 @@ const EventDisplay = () => {
         </p>
 
         {/* Location, Time, Registration remain the same */}
-        <div className="mb-4 text-base lg:text-lg">
-          <span className="font-semibold text-gray-500">Location : </span>
-          <span className="text-gray-200">{currentEvent.Location}</span>
+        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrata)]">
+          <span className="font-semibold text-gray-500 ">Location : </span>
+          <span className="text-gray-200 ">{currentEvent.Location}</span>
         </div>
 
-        <div className="mb-4 text-base lg:text-lg">
+        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrata)]">
           <span className="font-semibold text-gray-500">Time : </span>
           <span className="text-gray-200">{currentEvent.startsAt}</span>
         </div>
-        <div className="mb-4 text-base lg:text-lg">
+        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrata)]">
           <span className="font-semibold text-gray-500">Date : </span>
-          <span className="text-gray-200">{`${currentEvent.Day}.${currentEvent.Month}.${currentEvent.Year}`}</span>
+          <span className="text-gray-200">{`${currentEvent.Day}-${currentEvent.Month}-${currentEvent.Year}`}</span>
         </div>
 
-        <div className="mb-6 text-base lg:text-lg">
+        <div className="mb-6 text-base lg:text-lg [font-family:var(--font-montserrata)]">
           {currentEvent.Status === "Past Event" ? (
             <motion.button
               className="bg-gray-500 text-white py-2 px-4 rounded"
@@ -316,7 +313,7 @@ const EventDisplay = () => {
             </motion.button>
           ) : currentEvent.Registration === "Will open soon" ? (
             <motion.button
-              className="bg-yellow-500 text-white py-2 px-4 rounded"
+              className="bg-orange-400 text-white py-2 px-4 rounded"
               disabled
               whileHover={{ scale: 1.05 }}
             >
@@ -348,7 +345,7 @@ const EventDisplay = () => {
               <div className="overlay-corner bottom-left"></div>
               <div className="overlay-corner bottom-right"></div>
             </div>
-            <span className="tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
+            <span className="[font-family:var(--font-montserrata)] tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
               Prev Event
             </span>
           </motion.button>
@@ -365,7 +362,7 @@ const EventDisplay = () => {
               <div className="overlay-corner bottom-left"></div>
               <div className="overlay-corner bottom-right"></div>
             </div>
-            <span className="tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
+            <span className="[font-family:var(--font-montserrata)] tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
               Next Event
             </span>
           </motion.button>
@@ -375,14 +372,24 @@ const EventDisplay = () => {
       {/* Right Image Section - Desktop View */}
       {!isMobile && (
         <motion.div
-          className={`w-full lg:w-1/2 relative ${marginTop}`}
+          className={`w-full lg:w-1/2 relative ${marginTop} holdma [font-family:var(--font-montserrata)]`}
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          {currentEvent.image.length > 1 && (
+            <div className=" tooltip  absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <span
+                ref={highlightTextRef}
+                className=" inline-block bg-gradient-to-r text-white px-6 py-3 rounded-full shadow-lg transition-transform transform hover:scale-110 bg-transparent"
+              >
+                🎉 Click arrows to view our Highlights 🎉
+              </span>
+            </div>
+          )}
           <div
             ref={imageRef}
-            className="relative overflow-hidden rounded-xl shadow-2xl border-2 border-stone-700 mx-auto"
+            className="relative overflow-hidden rounded-xl shadow-2xl border-2  border-stone-700 mx-auto"
             style={{
               width: `${imageContainerSize.width}px`,
               height: `${imageContainerSize.height}px`,
@@ -432,7 +439,7 @@ const EventDisplay = () => {
                     <div className="overlay-corner bottom-left"></div>
                     <div className="overlay-corner bottom-right"></div>
                   </div>
-                  <span className="tooltip absolute top-full mt-2 text-xs -translate-x-8 text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
+                  <span className="tooltip absolute top-full mt-2 text-xs -translate-x-10 text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
                     Next Highlight
                   </span>
                 </motion.button>
@@ -446,17 +453,6 @@ const EventDisplay = () => {
               </div>
             )}
           </div>
-          {/* Text prompt for desktop view */}
-          {currentEvent.image.length > 1 && (
-            <div className="text-center text-gray-200 mt-4">
-              <span
-                ref={highlightTextRef}
-                className="inline-block bg-gradient-to-r text-white px-6 py-3 rounded-full shadow-lg transition-transform transform hover:scale-110 bg-transparent"
-              >
-                🎉 Click arrows to view our Highlights 🎉
-              </span>
-            </div>
-          )}
         </motion.div>
       )}
     </div>
