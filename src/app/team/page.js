@@ -393,6 +393,7 @@ export default function Home() {
                     : "https://drive.google.com/thumbnail?id=1GlyRemCDgVnDtukcxVO8FpZmsDi0SbUM"
                 }
                 role={member.Role}
+                Position={member.Position}
               />
             </div>
           ))}
