@@ -367,7 +367,7 @@ export default function Home() {
           ref={headingRef}
           className="hidden lg:block text-4xl [font-family:var(--font-montserratb)] text-white mb-8"
         >
-          {`${jsonData[verticals[activeButton]]["name"]} Team`}
+          {`${jsonData[verticals[activeButton]]["name"]} ${verticals[activeButton] == 'FACULTY'? '' : 'TEAM'} `}
         </h1>
         <div
           ref={cardsContainerRef}
