@@ -141,7 +141,7 @@ const EventDisplay = () => {
     if (aspectRatio > 0.9) {
       setMarginTop("mt-36");
     } else {
-      setMarginTop("mt-5");
+      setMarginTop("mt-8");
     }
   };
 
