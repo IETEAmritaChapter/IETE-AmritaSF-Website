@@ -26,7 +26,7 @@ const EventDisplay = () => {
   const highlightTextRef = useRef(null);
 
   useEffect(() => {
-    fetch("/assets/events_content.json")
+    fetch("/Assets/events_content.json")
       .then((response) => response.json())
       .then((data) => setEvents(data.events))
       .catch((error) => console.error("Error fetching events:", error));
