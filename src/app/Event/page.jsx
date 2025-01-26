@@ -15,11 +15,15 @@ const EventDisplay = () => {
     height: 557,
   });
   const [marginTop, setMarginTop] = useState("mt-60");
+  const [showFullDescription, setShowFullDescription] = useState(false);
 
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const imageRef = useRef(null);
   const dateRef = useRef(null);
+  const prevButtonRef = useRef(null);
+  const nextButtonRef = useRef(null);
+  const highlightTextRef = useRef(null);
 
   useEffect(() => {
     fetch("/assets/events_content.json")
@@ -51,9 +55,9 @@ const EventDisplay = () => {
           // Set margin-top based on aspect ratio
           const aspectRatio = naturalWidth / naturalHeight;
           if (aspectRatio > 0.9) {
-            setMarginTop("mt-72");
+            setMarginTop("mt-36");
           } else {
-            setMarginTop("mt-32");
+            setMarginTop("mt-5");
           }
         }
       };
@@ -65,6 +69,9 @@ const EventDisplay = () => {
           titleRef.current,
           descriptionRef.current,
           imageRef.current,
+          prevButtonRef.current,
+          nextButtonRef.current,
+          highlightTextRef.current,
         ],
         {
           opacity: 0,
@@ -132,9 +139,9 @@ const EventDisplay = () => {
     const aspectRatio = naturalWidth / naturalHeight;
     console.log(aspectRatio);
     if (aspectRatio > 0.9) {
-      setMarginTop("mt-72");
+      setMarginTop("mt-36");
     } else {
-      setMarginTop("mt-32");
+      setMarginTop("mt-5");
     }
   };
 
@@ -142,9 +149,13 @@ const EventDisplay = () => {
     e.target.src = "/Images/not_yet.png";
   };
 
+  const toggleDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
+
   if (events.length === 0) {
     return (
-      <div className="flex justify-center items-center h-screen bg-stone-900 text-gray-200 ">
+      <div className="flex justify-center items-center h-screen bg-stone-900 text-gray-200">
         Chill...
       </div>
     );
@@ -266,7 +277,17 @@ const EventDisplay = () => {
           ref={descriptionRef}
           className="text-base lg:text-lg text-gray-300 mb-6 text-justify"
         >
-          {currentEvent.description}
+          {isMobile && !showFullDescription
+            ? `${currentEvent.description.substring(0, 200)}`
+            : currentEvent.description}
+          {isMobile && (
+            <span
+              className="text-blue-500 cursor-pointer"
+              onClick={toggleDescription}
+            >
+              {showFullDescription ? " Read less" : " ..Read more"}
+            </span>
+          )}
         </p>
 
         {/* Location, Time, Registration remain the same */}
@@ -311,9 +332,10 @@ const EventDisplay = () => {
         {/* Navigation Buttons */}
         <div className="flex space-x-4">
           <motion.button
+            ref={prevButtonRef}
             onClick={handlePrev}
-            className="motion-button relative p-0 bg-transparent text-white border border-white/50 rounded-[0.4em] flex justify-center items-center w-[4em] h-[4em]"
-            whileHover={{ scale: 1.1 }}
+            className="motion-button relative p-0 bg-transparent text-white border border-white/50 rounded-[0.4em] flex justify-center items-center w-[4em] h-[4em] transition-transform transform hover:scale-110"
+            whileHover={{ scale: 1.2, rotate: -10 }}
           >
             <ChevronLeft size={24} />
             <div className="button-overlay absolute inset-[-1px]">
@@ -322,11 +344,15 @@ const EventDisplay = () => {
               <div className="overlay-corner bottom-left"></div>
               <div className="overlay-corner bottom-right"></div>
             </div>
+            <span className="tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
+              Prev Event
+            </span>
           </motion.button>
           <motion.button
+            ref={nextButtonRef}
             onClick={handleNext}
-            className="motion-button relative p-0 bg-transparent text-white border border-white/50 rounded-[0.4em] flex justify-center items-center w-[4em] h-[4em]"
-            whileHover={{ scale: 1.1 }}
+            className="motion-button relative p-0 bg-transparent text-white border border-white/50 rounded-[0.4em] flex justify-center items-center w-[4em] h-[4em] transition-transform transform hover:scale-110"
+            whileHover={{ scale: 1.2, rotate: 10 }}
           >
             <ChevronRight size={24} />
             <div className="button-overlay absolute inset-[-1px]">
@@ -335,6 +361,9 @@ const EventDisplay = () => {
               <div className="overlay-corner bottom-left"></div>
               <div className="overlay-corner bottom-right"></div>
             </div>
+            <span className="tooltip absolute top-full mt-2 text-xs text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
+              Next Event
+            </span>
           </motion.button>
         </div>
       </motion.div>
@@ -383,6 +412,9 @@ const EventDisplay = () => {
                     <div className="overlay-corner bottom-left"></div>
                     <div className="overlay-corner bottom-right"></div>
                   </div>
+                  <span className="tooltip absolute top-full mt-2 text-xs -translate-x-8 text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
+                    Prev Highlight
+                  </span>
                 </motion.button>
                 <motion.button
                   onClick={handleImageNext}
@@ -396,6 +428,9 @@ const EventDisplay = () => {
                     <div className="overlay-corner bottom-left"></div>
                     <div className="overlay-corner bottom-right"></div>
                   </div>
+                  <span className="tooltip absolute top-full mt-2 text-xs -translate-x-8 text-gray-200 bg-stone-800 px-2 py-1 rounded shadow-lg opacity-0 transition-opacity duration-300">
+                    Next Highlight
+                  </span>
                 </motion.button>
               </>
             )}
@@ -407,6 +442,17 @@ const EventDisplay = () => {
               </div>
             )}
           </div>
+          {/* Text prompt for desktop view */}
+          {currentEvent.image.length > 1 && (
+            <div className="text-center text-gray-200 mt-4">
+              <span
+                ref={highlightTextRef}
+                className="inline-block bg-gradient-to-r text-white px-6 py-3 rounded-full shadow-lg transition-transform transform hover:scale-110 bg-transparent"
+              >
+                🎉 Click arrows to view our Highlights 🎉
+              </span>
+            </div>
+          )}
         </motion.div>
       )}
     </div>
