@@ -14,6 +14,7 @@ const EventDisplay = () => {
     width: 418,
     height: 557,
   });
+  const [marginTop, setMarginTop] = useState("mt-60");
 
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
@@ -32,25 +33,29 @@ const EventDisplay = () => {
       // Responsive sizing logic
       const handleResize = () => {
         const screenWidth = window.innerWidth;
-        setIsMobile(screenWidth < 1024);
+        setIsMobile(screenWidth < 1366);
 
-        // Image container size logic
-        let newWidth, newHeight;
-        if (screenWidth < 365) {
-          newWidth = 200;
-          newHeight = 226;
-        } else if (screenWidth >= 365 && screenWidth < 430) {
-          newWidth = 250;
-          newHeight = 300;
-        } else if (screenWidth >= 430 && screenWidth < 768) {
-          newWidth = 320;
-          newHeight = 426;
-        } else {
-          newWidth = 418;
-          newHeight = 557;
+        const currentImageElement = imageRef.current.querySelector("img");
+        if (currentImageElement) {
+          const { naturalWidth, naturalHeight } = currentImageElement;
+          let newWidth = naturalWidth;
+          let newHeight = naturalHeight;
+
+          if (naturalWidth + 100 > screenWidth) {
+            newWidth = screenWidth - 100;
+            newHeight = (naturalHeight / naturalWidth) * newWidth;
+          }
+
+          setImageContainerSize({ width: newWidth, height: newHeight });
+
+          // Set margin-top based on aspect ratio
+          const aspectRatio = naturalWidth / naturalHeight;
+          if (aspectRatio > 0.9) {
+            setMarginTop("mt-72");
+          } else {
+            setMarginTop("mt-32");
+          }
         }
-
-        setImageContainerSize({ width: newWidth, height: newHeight });
       };
 
       // Animation setup
@@ -110,9 +115,36 @@ const EventDisplay = () => {
     );
   };
 
+  const handleImageLoad = (e) => {
+    const { naturalWidth, naturalHeight } = e.target;
+    const screenWidth = window.innerWidth;
+    let newWidth = naturalWidth;
+    let newHeight = naturalHeight;
+
+    if (naturalWidth + 100 > screenWidth) {
+      newWidth = screenWidth - 100;
+      newHeight = (naturalHeight / naturalWidth) * newWidth;
+    }
+
+    setImageContainerSize({ width: newWidth, height: newHeight });
+
+    // Set margin-top based on aspect ratio
+    const aspectRatio = naturalWidth / naturalHeight;
+    console.log(aspectRatio);
+    if (aspectRatio > 0.9) {
+      setMarginTop("mt-72");
+    } else {
+      setMarginTop("mt-32");
+    }
+  };
+
+  const handleImageError = (e) => {
+    e.target.src = "/Images/not_yet.png";
+  };
+
   if (events.length === 0) {
     return (
-      <div className="flex justify-center items-center h-screen bg-stone-900 text-gray-200">
+      <div className="flex justify-center items-center h-screen bg-stone-900 text-gray-200 ">
         Chill...
       </div>
     );
@@ -193,7 +225,9 @@ const EventDisplay = () => {
               key={currentImage}
               src={currentImage}
               alt={currentEvent.title}
-              className="object-cover transition-all duration-300 ease-in-out"
+              className="object-cover transition-all duration-300 ease-in-out max-w-full max-h-full"
+              onLoad={handleImageLoad}
+              onError={handleImageError}
               variants={imageVariants}
               initial="initial"
               animate="animate"
@@ -230,23 +264,23 @@ const EventDisplay = () => {
         {/* Description */}
         <p
           ref={descriptionRef}
-          className="text-base lg:text-3xl text-gray-300 mb-6 text-justify"
+          className="text-base lg:text-lg text-gray-300 mb-6 text-justify"
         >
           {currentEvent.description}
         </p>
 
         {/* Location, Time, Registration remain the same */}
-        <div className="mb-4 text-base lg:text-2xl">
+        <div className="mb-4 text-base lg:text-lg">
           <span className="font-semibold text-gray-500">Location : </span>
           <span className="text-gray-200">{currentEvent.Location}</span>
         </div>
 
-        <div className="mb-4 text-base lg:text-2xl">
+        <div className="mb-4 text-base lg:text-lg">
           <span className="font-semibold text-gray-500">Time : </span>
           <span className="text-gray-200">{currentEvent.startsAt}</span>
         </div>
 
-        <div className="mb-6 text-base lg:text-2xl">
+        <div className="mb-6 text-base lg:text-lg">
           {currentEvent.Status === "Past Event" ? (
             <motion.button
               className="bg-gray-500 text-white py-2 px-4 rounded"
@@ -308,14 +342,14 @@ const EventDisplay = () => {
       {/* Right Image Section - Desktop View */}
       {!isMobile && (
         <motion.div
-          className="w-full lg:w-1/2 mt-8 lg:mt-0 relative"
+          className={`w-full lg:w-1/2 relative ${marginTop}`}
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div
             ref={imageRef}
-            className="relative overflow-hidden rounded-xl shadow-2xl border-2 mt-52 border-stone-700 mx-auto"
+            className="relative overflow-hidden rounded-xl shadow-2xl border-2 border-stone-700 mx-auto"
             style={{
               width: `${imageContainerSize.width}px`,
               height: `${imageContainerSize.height}px`,
@@ -325,7 +359,9 @@ const EventDisplay = () => {
               key={currentImage}
               src={currentImage}
               alt={currentEvent.title}
-              className="object-cover transition-all duration-300 ease-in-out"
+              className="object-cover transition-all duration-300 ease-in-out max-w-full max-h-full"
+              onLoad={handleImageLoad}
+              onError={handleImageError}
               variants={imageVariants}
               initial="initial"
               animate="animate"
