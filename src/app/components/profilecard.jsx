@@ -12,6 +12,7 @@ const ProfileCard = ({
     linkedin,
     github,
     image,
+    Position
 }) => {
     const cardRef = useRef(null);
     const textRef = useRef(null);
@@ -29,9 +30,16 @@ const ProfileCard = ({
         };
         return romanNumerals[num] || num.toString();
     };
+    let details;
+    let isFaculty = false;
     
-    const details = `B.Tech ${dept} ${numberToRoman(year)} Year`;
-
+    if(year){
+    details = `B.Tech ${dept} ${numberToRoman(year)} Year`;
+    }
+    else{
+        isFaculty = true;
+    details = `${Position}`;
+    }
     useEffect(() => {
         // Loading animation
         if (!imageLoaded && loadingRef.current) {
@@ -107,7 +115,7 @@ const ProfileCard = ({
     return (
         <div
             ref={cardRef}
-            className="rounded-2xl bg-black aspect-[1/1.3] w-full max-w-xs flex flex-col justify-center items-center p-6 relative overflow-hidden"
+            className="rounded-2xl bg-black aspect-[1/1.5] w-full max-w-xs flex flex-col justify-center items-center p-6 relative overflow-hidden"
         >
             <div className="w-4/5 aspect-square flex justify-center items-center relative">
                 {!imageLoaded && (
@@ -139,7 +147,9 @@ const ProfileCard = ({
                     {role && (
                         <p className="text-orange-400 text-base [font-family:var(--font-montserrat)] font-bold">{role}</p>
                     )}
-                    <p className="text-gray-300 text-sm [font-family:var(--font-montserrat)]">{details}</p>
+                    <p className={`text-gray-300 ${isFaculty ? 'text-sm' : 'text-md'} [font-family:var(--font-montserrat)]`}>
+                    {details}
+                    </p>
                 </div>
 
                 <div
