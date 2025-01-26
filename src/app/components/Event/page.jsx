@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import gsap from "gsap";
-import "../styles/Event.css";
+import "../../styles/Event.css";
 
 const EventDisplay = () => {
   const [events, setEvents] = useState([]);
@@ -155,7 +155,7 @@ const EventDisplay = () => {
 
   if (events.length === 0) {
     return (
-      <div className="flex justify-center items-center h-screen bg-stone-900 text-gray-200">
+      <div id="events-section" className="flex justify-center items-center h-screen bg-stone-900 text-gray-200">
         Chill...
       </div>
     );
@@ -173,6 +173,7 @@ const EventDisplay = () => {
 
   return (
     <div
+    id="events-section"
       className={`
       min-h-screen flex 
       ${isMobile ? "flex-col" : "lg:flex-row"} 
