@@ -1,5 +1,5 @@
 {
-  "STAFF":{
+  "FACULTY":{
     "data":[
       {
         "Name": "Dr Anantha Narayanan",
@@ -21,7 +21,8 @@
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclnAOqDYfhTFD3dGPQJ0qjZkKmACutzWslEVoR",
         "Role":"Faculty Advisor "
       }
-    ]
+    ],
+    "name":"Faculty Advisors"
   },
   "CORE": {
     "data": [
