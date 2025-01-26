@@ -293,7 +293,7 @@ export default function Home() {
 
             <div className="flex-1 text-center">
               <h2 className="text-2xl [font-family:var(--font-montserratb)] font-medium">
-                {`${jsonData[verticals[activeButton]]["name"]} Team`}
+                {`${jsonData[verticals[activeButton]]["name"]} ${verticals[activeButton] == 'FACULTY'? '' : 'TEAM'}`}
               </h2>
             </div>
 
