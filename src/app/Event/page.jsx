@@ -300,6 +300,10 @@ const EventDisplay = () => {
           <span className="font-semibold text-gray-500">Time : </span>
           <span className="text-gray-200">{currentEvent.startsAt}</span>
         </div>
+        <div className="mb-4 text-base lg:text-lg">
+          <span className="font-semibold text-gray-500">Date : </span>
+          <span className="text-gray-200">{`${currentEvent.Day}.${currentEvent.Month}.${currentEvent.Year}`}</span>
+        </div>
 
         <div className="mb-6 text-base lg:text-lg">
           {currentEvent.Status === "Past Event" ? (
