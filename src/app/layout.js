@@ -33,17 +33,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrata.variable} ${montserrat.variable} ${montserratb.variable} antialiased`}
       >
-        {/* Main layout container */}
-        <div className="flex flex-col min-h-screen px-9 py-9 bg-white text-black max-md:px-5">
-          {/* Content container */}
-          <div className="flex flex-col px-12 pt-10 pb-24 w-full bg-stone-900 text-white rounded-[29px] max-md:px-5 max-md:pb-16 max-md:max-w-full flex-grow">
-            {/* Navbar */}
-            <Nav />
-
-            {/* Children */}
-            {children}
-          </div>
-        </div>
+    {/* Main layout container */}
+    <div className="flex flex-col min-h-screen px-9 py-9 bg-white text-black max-md:px-3 max-md:py-5">
+      {/* Content container */}
+      <div className="flex flex-col px-12 pt-10 pb-24 w-full bg-stone-900 text-white rounded-[29px] max-md:px-3 max-md:pb-10 max-md:max-w-full flex-grow">
+        {/* Navbar */}
+        <Nav />
+        {/* Children */}
+        {children}
+      </div>
+    </div>
 
         {/* Footer */}
         <Footer />
