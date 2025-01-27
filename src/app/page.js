@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Events from "./components/Event/page.jsx";
+import Projects from "./components/projects.jsx";
 
 export default function Home() {
   useEffect(() => {
@@ -70,6 +71,7 @@ export default function Home() {
         </main>
       </div>
       <Events />
+      <Projects/>
     </>
   );
 }
