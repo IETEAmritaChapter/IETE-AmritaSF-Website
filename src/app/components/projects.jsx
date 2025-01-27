@@ -8,7 +8,7 @@ const Projects = () => {
         src="/Images/hero/project.webp"
         width={1000}
         height={1000}
-        className="w-full md:w-[60%] object-cover transition-transform duration-500 ease-in-out hover:scale-110 hover:-rotate-3 hover:shadow-2xl hover:opacity-90 hover:brightness-110 hover:-translate-y-2"
+        className="w-full md:w-[60%] object-cover transition-transform duration-500 ease-in-out hover:scale-110 hover:-rotate-3 hover:opacity-90 hover:brightness-110 hover:-translate-y-2"
       />
 
       <div className="px-3 md:pl-8 ">
