@@ -1,9 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Projects = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensuring window is accessed only on the client-side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <div>
@@ -55,13 +61,13 @@ const Projects = () => {
           Railway Alert System with OpenVINO and Neural Compressor
         </h1>
         <p className="[font-family:var(--font-montserrat)] text-justify text-sm md:text-lg">
-          {isExpanded || window.innerWidth >= 768
+          {isExpanded || (isClient && window.innerWidth >= 768)
             ? `Trespassing on railway tracks poses a significant safety hazard, leading to accidents involving individuals and wildlife. Our system addresses this critical issue by leveraging advanced detection technologies to identify unauthorized presence on tracks in real time. Utilizing computer vision, IoT sensors, and AI-driven analytics, the system promptly detects movement and sends immediate alerts to authorities, enabling swift action to prevent potential incidents. Designed for efficiency and scalability, this solution enhances railway safety by minimizing trespassing risks and ensuring proactive intervention, ultimately protecting lives and maintaining secure railway operations. 🚆⚠️`
             : "Trespassing on railway tracks poses a significant safety hazard, leading to accidents involving individuals and wildlife. Our system addresses this critical issue by leveraging advanced detection technologies..."}
         </p>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-orange-500 hover:underline md:hidden"  
+          className="text-orange-500 hover:underline md:hidden"
         >
           {isExpanded ? "Read Less" : "Read More"}
         </button>
