@@ -28,7 +28,6 @@ function Logo() {
 
 function Navigation({ onClick }) {
   const navItems = [
-    { text: 'HOME', path: '/' },
     { text: 'ABOUT', path: '/about' },
     { text: 'TEAM', path: '/team' },
     { text: 'EVENTS & PROJECTS', path: '/#events-section' },
