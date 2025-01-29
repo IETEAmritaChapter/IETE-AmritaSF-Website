@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen p-4 pb-8 sm:p-7">
+      <div className="min-h-screen p-4 pb-10 sm:p-10 bg-1c1917">
         <Maincontent />
       </div>
       <Events />

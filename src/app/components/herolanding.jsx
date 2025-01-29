@@ -108,13 +108,13 @@ export default function MainContent() {
 
       {/* About Us Section */}
       <div
-        className="self-center -mt-24 text-[72px] font-extrabold leading-tight text-center max-md:-mt-6 max-md:max-w-full max-md:text-[36px] tracking-wide [font-family:var(--font-montserratb)]"
-        ref={aboutSectionRef}
-      >
+  className="self-center -mt-24 max-md:-mt-24 mb-8 text-[72px] font-extrabold leading-tight text-center max-md:text-[36px] tracking-wide [font-family:var(--font-montserratb)]"
+  ref={aboutSectionRef}
+>
       
         <Link href="/about">
           <button
-            className="text-[30px] font-extrabold leading-tight text-center sm:text-[50px] md:text-[45px] lg:text-[50px] xl:text-[72px] 2xl:text-[72px] 
+            className="text-[40px] font-extrabold leading-tight text-center sm:text-[50px] md:text-[45px] lg:text-[50px] xl:text-[72px] 2xl:text-[72px] 
              max-md:text-[30px] bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent [font-family:var(--font-montserratb)] hover:scale-105 transition-transform duration-300"
           >
             ABOUT US
