@@ -68,28 +68,27 @@ export default function MainContent() {
     <div className="main-content py-20 px-2 text-white rounded-lg shadow-xl">
       {/* Description Section */}
       <div
-      className="self-center -mt-12 text-[46px] font-extrabold leading-tight text-center 
-      sm:text-[45px] md:text-[46px] lg:text-[55px] xl:text-[72px] 2xl:text-[72px]
-      max-md:-mt-6 max-md:max-w-full max-md:text-[30px] 
-      tracking-wide [font-family:var(--font-montserratb)]"
-    ref={(el) => (textRefs.current[0] = el)}
+        className="self-center -mt-12 text-[46px] font-extrabold leading-tight text-center 
+        sm:text-[45px] md:text-[46px] lg:text-[55px] xl:text-[72px] 2xl:text-[72px]
+        max-md:-mt-6 max-md:max-w-full max-md:text-[30px] 
+        tracking-wide [font-family:var(--font-montserratb)]"
+        ref={(el) => (textRefs.current[0] = el)}
       >
-
         <div className="flex flex-col md:flex-row items-center justify-center text-center md:space-x-4">
-  <div className="flex flex-col md:flex-row">
-    <span className="block">
-      DREAM<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
-    </span>
-    <span className="block md:ml-4">
-      DESIGN<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
-    </span>
-    <span className="block md:ml-4">
-      DEVELOP<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
-    </span>
-  </div>
-</div>
-
+          <div className="flex flex-col md:flex-row">
+            <span className="block">
+              DREAM<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
+            </span>
+            <span className="block md:ml-4">
+              DESIGN<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
+            </span>
+            <span className="block md:ml-4">
+              DEVELOP<span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">.</span>
+            </span>
+          </div>
+        </div>
       </div>
+
       <div
         className="self-center mt-4 text-[24px] leading-8 text-center max-md:max-w-full [font-family:var(--font-montserrat)]"
         ref={(el) => (textRefs.current[1] = el)}
@@ -108,10 +107,9 @@ export default function MainContent() {
 
       {/* About Us Section */}
       <div
-  className="self-center -mt-24 max-md:-mt-24 mb-8 text-[72px] font-extrabold leading-tight text-center max-md:text-[36px] tracking-wide [font-family:var(--font-montserratb)]"
-  ref={aboutSectionRef}
->
-      
+        className="self-center -mt-24 max-md:-mt-24 mb-8 text-[72px] font-extrabold leading-tight text-center max-md:text-[36px] tracking-wide [font-family:var(--font-montserratb)]"
+        ref={aboutSectionRef}
+      >
         <Link href="/about">
           <button
             className="text-[40px] font-extrabold leading-tight text-center sm:text-[50px] md:text-[45px] lg:text-[50px] xl:text-[72px] 2xl:text-[72px] 
