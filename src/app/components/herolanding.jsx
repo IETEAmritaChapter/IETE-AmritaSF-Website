@@ -65,7 +65,7 @@ export default function MainContent() {
   }, []);
 
   return (
-    <div className="main-content py-20 px-2 text-white rounded-lg shadow-xl">
+    <div className="main-content py-20 px-2 text-white rounded-lg">
       {/* Description Section */}
       <div
         className="self-center -mt-12 text-[46px] font-extrabold leading-tight text-center 

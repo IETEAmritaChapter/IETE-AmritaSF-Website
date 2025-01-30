@@ -38,7 +38,10 @@ export default function RootLayout({ children }) {
       {/* Content container */}
       <div className="flex flex-col px-10 pt-8 pb-20 w-full bg-stone-900 text-white rounded-[29px] max-md:px-2 max-md:pb-8 max-md:max-w-full flex-grow">
         {/* Navbar */}
-        <Nav />
+        <div className="sticky top-0 left-0 pt-5 w-full z-[100] bg-stone-900">
+        <Nav/>
+        </div>
+        
         {/* Children */}
         {children}
       </div>
