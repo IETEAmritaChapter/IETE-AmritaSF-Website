@@ -339,7 +339,7 @@ const EventDisplay = () => {
             ref={prevButtonRef}
             onClick={handlePrev}
             className="motion-button relative p-0 bg-transparent text-white border border-white/50 rounded-[0.4em] flex justify-center items-center w-[4em] h-[4em] transition-transform transform hover:scale-110"
-            whileHover={{ scale: 1.2, rotate: -10 }}
+            whileHover={{ scale: 1.1, rotate: 0 }}
           >
             <ChevronLeft size={24} />
             <div className="button-overlay absolute inset-[-1px]">
@@ -356,7 +356,7 @@ const EventDisplay = () => {
             ref={nextButtonRef}
             onClick={handleNext}
             className="motion-button relative p-0 bg-transparent text-white border border-white/50 rounded-[0.4em] flex justify-center items-center w-[4em] h-[4em] transition-transform transform hover:scale-110"
-            whileHover={{ scale: 1.2, rotate: 10 }}
+            whileHover={{ scale: 1.1, rotate: 0 }}
           >
             <ChevronRight size={24} />
             <div className="button-overlay absolute inset-[-1px]">
