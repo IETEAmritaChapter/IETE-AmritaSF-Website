@@ -78,6 +78,7 @@ const Projects = () => {
         >
           <Image
             src="/Images/socials/GitHub.png"
+            alt='GitHub logo'
             width={30}
             height={30}
             className=""
