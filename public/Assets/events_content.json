@@ -16,20 +16,6 @@
         },
         {
             "id":2,
-            "title": "Robotics Workshop",
-            "image": ["/Images/events/induction.png"],
-            "description": "We are planning for a lora workshop which would be very Interesting for students",
-            "Status":"Upcoming Event",
-            "Location": "yet to confirm",
-            "Registration": "https://google.com",
-            "Year": "yet to confirm",
-            "Month": "yet to confirm",
-            "Day": "yet to confirm",
-            "startsAt": "yet to confirm"
-
-        },
-        {
-            "id":3,
             "title": "Docker Workshop",
             "image": ["/Images/events/docker_1.jpg"],
             "description": "The IETE Club's Docker Workshop at Amrita Vishwa Vidyapeetham provided participants with hands-on experience in Docker, Linux kernels, and web development. The event featured interactive sessions, a Dockerization competition, and practical demonstrations on containerization. With enthusiastic participation and engaging activities, the workshop successfully enhanced students' technical skills and teamwork. 🚀",
@@ -43,7 +29,7 @@
 
         },
         {
-            "id":4,
+            "id":3,
             "title": "Raspberry Pi Workshop",
             "image": ["/Images/events/raspberrypi_1.jpg"],
             "description": "The IETE Club at Amrita Vishwa Vidyapeetham hosted an engaging Raspberry Pi and Computer Vision workshop on November 21, 2023, blending theory with hands-on experience. Students explored Raspberry Pi setup, image preprocessing, and Edge Impulse applications under expert guidance. The event successfully bridged the gap between theoretical knowledge and real-world implementation, leaving participants with valuable skills and insights. 🚀",
@@ -57,7 +43,7 @@
 
         },
         {
-            "id":5,
+            "id":4,
             "title": "Women in AI with oneAPI",
             "image": ["/Images/events/induction.png"],
             "description": "The IETE Club, in collaboration with the IEEE Student Branch, hosted Women in AI with oneAPI on December 11, 2023, featuring Dr. Shriram K Vasudevan from Intel. The event celebrated women's contributions to AI, highlighting Intel's oneAPI technology through insightful talks, a panel discussion, and project showcases. With inspiring sessions and networking opportunities, it fostered a strong community, empowering women in AI to innovate and lead. 🚀",
