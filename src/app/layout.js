@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrata.variable} ${montserrat.variable} ${montserratb.variable} antialiased`}
       >
+
         {/* Main layout container */}
         <div className="flex flex-col min-h-screen px-5 py-4 bg-white text-black">
           {/* Content container */}
