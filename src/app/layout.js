@@ -23,8 +23,8 @@ const montserratb = localFont({
 });
 
 export const metadata = {
-  title: "IETE SF Website",
-  description: "IETE Website by Amrita Chapter",
+  title: "IETE Amrita SF",
+  description: "IETE SF Website by Amrita Chapter",
   icons: {
     icon: '/Assets/logo.png', 
   },
