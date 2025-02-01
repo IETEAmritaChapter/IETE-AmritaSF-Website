@@ -2,7 +2,27 @@
   "FACULTY":{
     "data":[
       {
-        "Name": "Dr Anantha Narayanan",
+        "Name": "Dr. M Jayakumar",
+        "Position": "Chairman @ IETE Coimbatore Center",
+        "ContactEmail": "",
+        "Instagram": "",
+        "Linkedin": "https://www.linkedin.com/in/jayakumar-m-32527371",
+        "Github": "",
+        "Image":"https://p2d1ft3jxi.ufs.sh/f/kLWCI59fG7mIQiDpB7kRNiobUKIepjOLx87G4nDQ6fT2F3PA",
+        "Role":"Chairman"
+      },
+      {
+        "Name": "Prof. B Sabarish Narayanan",
+        "Position": "Assistant Professor (Sr. Gr) @ Amrita School of Engineering, Coimbatore",
+        "ContactEmail": "nb_sabarish@cb.amrita.edu",
+        "Instagram": "",
+        "Linkedin": "https://www.linkedin.com/in/sabarish-narayanan-b-520b4063/",
+        "Github": "",
+        "Image":"https://p2d1ft3jxi.ufs.sh/f/kLWCI59fG7mIZhR3kPb1a9UVgSTwqof2v6WzG8sjpk0uhCdL",
+        "Role":"Honorary Treasurer"
+      },
+      {
+        "Name": "Dr. Anantha Narayanan",
         "Position": "Associate Professor @ Amrita School of Computing, Coimbatore",
         "ContactEmail": "v_ananthanarayanan@cb.amrita.edu",
         "Instagram": "",
@@ -56,7 +76,7 @@
         "Instagram": "amrututu",
         "Linkedin": "https://www.linkedin.com/in/amrithanandini/",
         "Github": "https://github.com/amri-tah",
-        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclStErBsxY3EeuXgDKrlyjbTAqJFPCcIpZontH",
+        "Image":"https://p2d1ft3jxi.ufs.sh/f/kLWCI59fG7mIQY4RJI5kRNiobUKIepjOLx87G4nDQ6fT2F3P",
         "Role":"Tech Team Lead"
       },
       {
@@ -65,7 +85,7 @@
         "Year": 3,
         "ContactEmail": "pavithraasasee@gmail.com",
         "Instagram": "pavithraa.7",
-        "Linkedin": "www.linkedin.com/in/pavithraasasseendran",
+        "Linkedin": "https://www.linkedin.com/in/pavithraasasseendran",
         "Github": "https://github.com/Pavithraa77",
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclpPfSlBmasc1zWN3TJRL5Sd8wkDmECqHlI6Pi",
         "Role":"PR Team Lead"
@@ -90,7 +110,7 @@
         "Linkedin": "https://www.linkedin.com/in/mithill-prabhu/",
         "Github": "https://github.com/MithillPrabhu",
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclOslNrtpeuGDK0VCl7fbFsQzr1oxH8TjJmRLO",
-        "Role":"Core DM Member"
+        "Role":"Core DM Member"
       }
     ],
     "name": "Core"
@@ -216,10 +236,10 @@
         "Name": "Tharun Kumarr A",
         "Dept": "CSE",
         "Year": 3,
-        "ContactEmail": "cb.en.u4cse22253@cb.students.amrita.edu",
-        "Instagram": "-",
-        "Linkedin": "",
-        "Github": "",
+        "ContactEmail": "tharunkumarra@gmail.com",
+        "Instagram": "astro_tharun_",
+        "Linkedin": "https://www.linkedin.com/in/tharun-kumarr/",
+        "Github": "https://github.com/TharunKumarrA",
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTcle2fLgEHGwFxp205KjEA6NYUMkSB1PoufvbZm",
         "Role":"WMD Team Member"
       },
@@ -227,10 +247,10 @@
         "Name": "Thanus Kumaar A",
         "Dept": "CSE",
         "Year": 3,
-        "ContactEmail": "cb.en.u4cse22447@cb.students.amrita.edu",
+        "ContactEmail": "thanuskumaara@gmail.com",
         "Instagram": "-",
-        "Linkedin": "",
-        "Github": "",
+        "Linkedin": "https://www.linkedin.com/in/thanus-kumaar/",
+        "Github": "https://github.com/Thanus-Kumaar",
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclA96HuoKFdQAZnz16xWLSloI5aRckvfmYuV2s",
         "Role":"WMD Team Member"
       }
@@ -287,10 +307,10 @@
         "Name": "Baranidharan Selvaraj",
         "Dept": "AIE",
         "Year": 2,
-        "ContactEmail": "cb.sc.u4aie23015@cb.students.amrita.edu",
-        "Instagram": "",
-        "Linkedin": "",
-        "Github": "",
+        "ContactEmail": "baranidharans2005@gmail.com ",
+        "Instagram": "imbaraniii",
+        "Linkedin": "https://www.linkedin.com/in/baranidharan-selvaraj-59bb02293",
+        "Github": "https://github.com/imbaraniii",
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclqs83L1iuoOgkedH6KmnZPVcaFNiSDlI9Ur3R",
         "Role":"AI Team Member"
       }
@@ -354,7 +374,7 @@
         "Year": 2,
         "ContactEmail": "saivedgrt@gmail.com",
         "Instagram": "ved_0802",
-        "Linkedin": "www.linkedin.com/in/sai-ved-713176315",
+        "Linkedin": "https://www.linkedin.com/in/sai-ved-713176315",
         "Github": "",
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclqUCHLhCiuoOgkedH6KmnZPVcaFNiSDlI9Ur3",
         "Role":"PR Team Member"
@@ -374,11 +394,11 @@
         "Name": "Arivananthan M",
         "Dept": "AIE",
         "Year": 3,
-        "ContactEmail": "cb.en.u4aie22007@cb.students.amrita.edu",
-        "Instagram": "",
-        "Linkedin": "",
-        "Github": "",
-        "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclfS4ZB4hV0D259JLyxKrh31bkaiWQXqs8IeEA",
+        "ContactEmail": "arivananthan2004@gmail.com",
+        "Instagram": "arivu_ehh",
+        "Linkedin": "www.linkedin.com/in/arivu1",
+        "Github": "https://github.com/ARIVANANTHAN-007",
+        "Image":"https://p2d1ft3jxi.ufs.sh/f/kLWCI59fG7mIi7Aa0UIPAtL1d7E5Y0z8h9guj3ybw4B6QKfs",
         "Role":"PR Team Member"
       },
       {
@@ -458,7 +478,7 @@
         "Year": 3,
         "ContactEmail": "srishti.prasanna369@gmail.com",
         "Instagram": "_srishti.prasanna_",
-        "Linkedin": "www.linkedin.com/in/srishti-prasanna-726005287",
+        "Linkedin": "https://www.linkedin.com/in/srishti-prasanna-726005287",
         "Github": "https://github.com/srishtiprasanna",
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclm8lkgQbnBYR0SjNCI32vLulthKOFUiWTVx6Z",
         "Role":"EM Team Member"
@@ -496,7 +516,7 @@
         "Year": 2,
         "ContactEmail": "akarunoday2005@gmail.com",
         "Instagram": "arooon__n",
-        "Linkedin": "www.linkedin.com/in/arunoday-a-k",
+        "Linkedin": "https://www.linkedin.com/in/arunoday-a-k",
         "Github": "https://github.com/arooon-n",
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclYSiVbsgUuRtCElcmVHP738OTpBrhgMDikL2n",
         "Role":"D&M Team Member"
@@ -516,10 +536,10 @@
         "Name": " Sravya Duvvuri",
         "Dept": "CSE",
         "Year": 3,
-        "ContactEmail": "cb.en.u4cse22353@cb.students.amrita.edu",
-        "Instagram": "",
-        "Linkedin": "",
-        "Github": "",
+        "ContactEmail": "sravyad13@gmail.com",
+        "Instagram": "sravyad13",
+        "Linkedin": "https://www.linkedin.com/in/sravya-duvvuri-1a6351262/",
+        "Github": "https://github.com/Sravya-Duvvuri",
         "Image":"https://owjd1gzj2e.ufs.sh/f/atqGiE5hmTclAcIzhVKFdQAZnz16xWLSloI5aRckvfmYuV2s",
         "Role":"D&M Team Member"
       },

@@ -25,6 +25,9 @@ const montserratb = localFont({
 export const metadata = {
   title: "IETE SF Website",
   description: "IETE Website by Amrita Chapter",
+  icons: {
+    icon: '/Assets/logo.png', 
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -33,19 +36,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrata.variable} ${montserrat.variable} ${montserratb.variable} antialiased`}
       >
-    {/* Main layout container with reduced padding */}
-    <div className="flex flex-col min-h-screen px-6 py-6 bg-white text-black max-md:px-2 max-md:py-4">
-      {/* Content container */}
-      <div className="flex flex-col px-10 pt-8 pb-20 w-full bg-stone-900 text-white rounded-[29px] max-md:px-2 max-md:pb-8 max-md:max-w-full flex-grow">
-        {/* Navbar */}
-        <div className="sticky top-0 left-0 pt-5 w-full z-[100] bg-stone-900">
-        <Nav/>
+
+        {/* Main layout container */}
+        <div className="flex flex-col min-h-screen px-5 py-4 bg-white text-black">
+          {/* Content container */}
+          <div className="flex flex-col px-12 pt-10 pb-24 w-full bg-stone-900 text-white rounded-[29px] max-md:px-5 max-md:pb-16 max-md:max-w-full flex-grow">
+            {/* Navbar */}
+            <Nav />
+
+            {/* Children */}
+            {children}
+          </div>
         </div>
-        
-        {/* Children */}
-        {children}
-      </div>
-    </div>
 
         {/* Footer */}
         <Footer />
