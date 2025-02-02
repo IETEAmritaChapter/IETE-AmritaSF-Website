@@ -1,15 +1,12 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 function Logo() {
   return (
     <div className="flex items-center gap-3">
-      <Image
+      <img
         src="/Assets/logo.png"
-        width={80}
-        height={80}
         className="object-contain aspect-square w-12 md:w-16"
         alt="IETE Student Forum Logo"
       />

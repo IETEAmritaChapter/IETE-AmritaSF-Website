@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -7,8 +6,8 @@ const Footer = () => {
       <div className="flex flex-wrap justify-between items-center sm:px-5 max-md:flex-col max-md:items-center max-md:text-center max-md:space-y-4">
         {/* Left Section */}
         <div className="left flex flex-col justify-center mb-2 sm:mb-0 max-md:items-center">
-          <h2 className="text-[28px] sm:text-[40px] font-[montserrata]">
-            Let's Connect !
+          <h2 className="text-[28px]  sm:text-[40px] font-[montserratb]">
+            Let's Connect!
           </h2>
           <p className="text-base sm:text-lg lg:text-xl xl:text-[1.3rem] font-[montserrat]">
             <Link
@@ -24,11 +23,9 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
+              <img
                 src="/Images/socials/Instagram.png"
                 alt="Instagram"
-                width={40}
-                height={40}
                 className=" w-10 h-10 sm:w-13 sm:h-13 filter invert"
               />
             </Link>
@@ -37,11 +34,9 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
+              <img
                 src="/Images/socials/GitHub.png"
                 alt="Github"
-                width={40}
-                height={40}
                 className=" w-10 h-10 sm:w-13 sm:h-13 filter invert"
               />
             </Link>
@@ -50,11 +45,9 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
+              <img
                 src="/Images/socials/LinkedIn.png"
                 alt="LinkedIn"
-                width={36}
-                height={36}
                 className=" w-9 h-9 sm:w-13 sm:h-13 filter invert"
               />
             </Link>
@@ -63,11 +56,9 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
+              <img
                 src="/Images/socials/Whatsapp.png"
                 alt="Whatsapp"
-                width={40}
-                height={40}
                 className=" w-10 h-10 sm:w-13 sm:h-13 filter invert"
               />
             </Link>
@@ -78,11 +69,9 @@ const Footer = () => {
         <div className="right flex flex-col font-[montserrat] py-6 justify-center max-md:items-center p-8">
           <div className="mb-2 justify-center sm:justify-end md:ml-10 lg:ml-10">
             <Link href="/">
-              <Image
+              <img
                 src="/Assets/logo.png"
                 alt="App Development"
-                width={128}
-                height={128}
                 className="logo w-24 h-24 sm:w-20 sm:h-20 md:w-32 md:h-32 filter invert"
               />
             </Link>
