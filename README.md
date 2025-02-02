@@ -3,6 +3,7 @@
 Official website for the **IETE Amrita Student Forum (IETE Amrita SF)**. This application is built using [Next.js](https://nextjs.org) to deliver a modern, dynamic, and responsive experience.
 
 ---
+---
 
 ## Project Overview
 
