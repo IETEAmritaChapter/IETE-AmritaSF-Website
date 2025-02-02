@@ -17,7 +17,7 @@
         {
             "id":2,
             "title": "Docker Workshop",
-            "image": ["/Images/events/docker_1.jpg"],
+            "image": ["/Images/events/docker_1.jpg","/Images/events/docker_2.png","/Images/events/docker_3.png","/Images/events/docker_5.png"],
             "description": "The IETE Club's Docker Workshop at Amrita Vishwa Vidyapeetham provided participants with hands-on experience in Docker, Linux kernels, and web development. The event featured interactive sessions, a Dockerization competition, and practical demonstrations on containerization. With enthusiastic participation and engaging activities, the workshop successfully enhanced students' technical skills and teamwork. 🚀",
             "Status":"Past Event",
             "Location": "Seminar Hall, AB3, Amrita Vishwa Vidyapeetham, Coimbatore",
@@ -31,7 +31,7 @@
         {
             "id":3,
             "title": "Raspberry Pi Workshop",
-            "image": ["/Images/events/raspberrypi_1.jpg"],
+            "image": ["/Images/events/raspberrypi_1.jpg","/Images/events/raspberrypi_2.png","/Images/events/raspberrypi_3.png","/Images/events/raspberrypi_41.png"],
             "description": "The IETE Club at Amrita Vishwa Vidyapeetham hosted an engaging Raspberry Pi and Computer Vision workshop on November 21, 2023, blending theory with hands-on experience. Students explored Raspberry Pi setup, image preprocessing, and Edge Impulse applications under expert guidance. The event successfully bridged the gap between theoretical knowledge and real-world implementation, leaving participants with valuable skills and insights. 🚀",
             "Status":"Past Event",
             "Location": "E-405, AB2, Amrita Vishwa Vidyapeetham, Coimbatore",
@@ -45,7 +45,7 @@
         {
             "id":4,
             "title": "Women in AI with oneAPI",
-            "image": ["/Images/events/oneapi_21.jpg"],
+            "image": ["/Images/events/oneapi_21.jpg","/Images/events/oneapi_221.jpg","/Images/events/oneapi_231.jpg","/Images/events/oneapi_271.jpg"],
             "description": "The IETE Club, in collaboration with the IEEE Student Branch, hosted Women in AI with oneAPI on December 11, 2023, featuring Dr. Shriram K Vasudevan from Intel. The event celebrated women's contributions to AI, highlighting Intel's oneAPI technology through insightful talks, a panel discussion, and project showcases. With inspiring sessions and networking opportunities, it fostered a strong community, empowering women in AI to innovate and lead. 🚀",
             "Status":"Past Event",
             "Location": "Murilarikrishna hall, CIR block , Amrita vishwavidyapeetam, Coimbatore",
@@ -53,6 +53,20 @@
             "Year": "2023",
             "Month": "12",
             "Day": "11",
+            "startsAt": "9:00 AM"
+
+        },
+        {
+            "id":5,
+            "title": "Intel AI Hackathon",
+            "image": ["/Images/events/IntelAI_1.jpg","/Images/events/IntelAI_2.jpg","/Images/events/IntelAI_3.jpg","/Images/events/IntelAI_4.jpg"],
+            "description": "The IETE Club, in collaboration with the IEEE Student Branch, hosted Women in AI with oneAPI on December 11, 2023, featuring Dr. Shriram K Vasudevan from Intel. The event celebrated women's contributions to AI, highlighting Intel's oneAPI technology through insightful talks, a panel discussion, and project showcases. With inspiring sessions and networking opportunities, it fostered a strong community, empowering women in AI to innovate and lead. 🚀",
+            "Status":"Past Event",
+            "Location": "Amrita vishwavidyapeetam, Coimbatore",
+            "Registration": "Closed",
+            "Year": "2023",
+            "Month": "2",
+            "Day": "15",
             "startsAt": "9:00 AM"
 
         }
