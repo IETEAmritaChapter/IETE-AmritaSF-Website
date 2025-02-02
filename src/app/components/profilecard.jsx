@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 
 const ProfileCard = ({
     name,
-    role="President", // Added role prop
+    role="President",
     dept,
     year,
     contactEmail,
@@ -18,6 +18,7 @@ const ProfileCard = ({
     const textRef = useRef(null);
     const socialsRef = useRef(null);
     const loadingRef = useRef(null);
+    const imageRef = useRef(null);
     const [imageLoaded, setImageLoaded] = useState(false);
 
     const numberToRoman = (num) => {
@@ -30,16 +31,35 @@ const ProfileCard = ({
         };
         return romanNumerals[num] || num.toString();
     };
+
     let details;
     let isFaculty = false;
     
-    if(year){
-    details = `B.Tech ${dept} ${numberToRoman(year)} Year`;
-    }
-    else{
+    if(year) {
+        details = `B.Tech ${dept} ${numberToRoman(year)} Year`;
+    } else {
         isFaculty = true;
-    details = `${Position}`;
+        details = `${Position}`;
     }
+
+    useEffect(() => {
+        setImageLoaded(false);
+        
+        const img = new Image();
+        img.src = image;
+        
+        img.onload = () => {
+            if (imageRef.current) {
+                imageRef.current.src = image;
+                setImageLoaded(true);
+            }
+        };
+
+        return () => {
+            img.onload = null;
+        };
+    }, [image]);
+
     useEffect(() => {
         // Loading animation
         if (!imageLoaded && loadingRef.current) {
@@ -53,17 +73,15 @@ const ProfileCard = ({
                 duration: 0.5
             });
         }
-    }, []);
+    }, [imageLoaded]);
 
     useEffect(() => {
         if (imageLoaded && loadingRef.current) {
-            // Fade out loading animation
             gsap.to(loadingRef.current, {
                 opacity: 0,
                 duration: 0.3,
                 onComplete: () => {
-                    // Fade in image with a scale effect
-                    gsap.fromTo(".profile-image",
+                    gsap.fromTo(imageRef.current,
                         {
                             opacity: 0,
                             scale: 0.8
@@ -131,10 +149,9 @@ const ProfileCard = ({
                     </div>
                 )}
                 <img
-                    src={image}
+                    ref={imageRef}
                     alt={`${name}'s Profile Picture`}
-                    className={`profile-image w-full h-full rounded-2xl ${!imageLoaded ? 'opacity-0' : ''}`}
-                    onLoad={() => setImageLoaded(true)}
+                    className={`w-full h-full rounded-2xl transition-opacity duration-300 ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`}
                 />
             </div>
 
@@ -148,7 +165,7 @@ const ProfileCard = ({
                         <p className="text-orange-400 text-base [font-family:var(--font-montserrat)] font-bold">{role}</p>
                     )}
                     <p className={`text-gray-300 ${isFaculty ? 'text-sm' : 'text-md'} [font-family:var(--font-montserrat)]`}>
-                    {details}
+                        {details}
                     </p>
                 </div>
 
