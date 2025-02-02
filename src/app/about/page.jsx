@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -42,7 +41,7 @@ export default function Home() {
           <div className="box-wrapper flex flex-wrap md:flex-row justify-center items-stretch gap-4 w-full mt-4">
             {/* Mission Box */}
             <div className="box-container bg-white p-4 border rounded-[8px] shadow text-black flex-1 min-h-[150px] relative">
-              <Image
+              <img
                 src="/Images/mission-vision/mission.png"
                 alt="Mission Icon"
                 width={44}
@@ -67,7 +66,7 @@ export default function Home() {
 
             {/* Vision Box */}
             <div className="box-container bg-white p-4 border rounded-[8px] shadow text-black flex-1 min-h-[150px] relative">
-              <Image
+              <img
                 src="/Images/mission-vision/vision.png"
                 alt="Vision Icon"
                 width={56}
@@ -155,7 +154,7 @@ export default function Home() {
                 }`}
                 key={label}
               >
-                <Image
+                <img
                   src={src}
                   alt={label}
                   width={80}
@@ -221,7 +220,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 key={alt}
               >
-                <Image src={src} alt={alt} width={52} height={52} />
+                <img src={src} alt={alt} width={52} height={52} />
               </a>
             ))}
           </div>
