@@ -66,25 +66,42 @@ const Footer = () => {
         </div>
 
         {/* Right Section */}
-        <div className="right flex flex-col font-[montserrat] py-6 justify-center max-md:items-center p-8">
-          <div className="mb-2 justify-center sm:justify-end md:ml-10 lg:ml-10">
-            <Link href="/">
-              <img
-                src="/Assets/logo.png"
-                alt="App Development"
-                className="logo w-24 h-24 sm:w-20 sm:h-20 md:w-32 md:h-32 filter invert"
-              />
-            </Link>
-          </div>
-          <div className="text-black">
-            <p className="text-[1rem] sm:text-base md:text-[1.2rem] mt-2">
-              IETE Student Forum
-            </p>
-            <p className="text-orange-400 text-[0.9rem] sm:text-base md:text-[1.2rem]">
-              Amrita Coimbatore
-            </p>
-          </div>
-        </div>
+        <div className="right flex flex-row items-center font-[montserrat] py-6 justify-center max-md:flex-col p-8 gap-6">
+  
+  {/* Amrita Logo */}
+  <div className="flex justify-center mx-5 sm:justify-end">
+      <img
+        src="/Images/amrita_logo.png"
+        alt="Amrita Logo"
+        className="w-[80%]"
+      />
+  </div>
+
+  {/* IETE Section */}
+  <div className="flex flex-col items-center md:items-start">
+    {/* IETE Logo */}
+    <div className="mb-2 justify-center sm:justify-end md:ml-10 lg:ml-10">
+      <Link href="/">
+        <img
+          src="/Assets/logo.png"
+          alt="IETE Logo"
+          className="logo w-24 h-24 sm:w-20 sm:h-20 md:w-32 md:h-32 filter invert"
+        />
+      </Link>
+    </div>
+
+    {/* Text */}
+    <div className="text-black text-center md:text-left">
+      <p className="text-[1rem] sm:text-base md:text-[1.2rem] mt-2">
+        IETE Student Forum
+      </p>
+      <p className="text-orange-400 text-[0.9rem] sm:text-base md:text-[1.2rem]">
+        Amrita Coimbatore
+      </p>
+    </div>
+  </div>
+
+</div>
       </div>
 
       <div className="bg-white text-center text-black py-1 font-[montserrat] text-[0.8rem] sm:text-base">
