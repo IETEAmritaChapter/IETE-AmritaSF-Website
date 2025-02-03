@@ -1,60 +1,97 @@
 {
-    "events": [
-        {
-            "id": 1,
-            "title": "Club Induction",
-            "image": ["/Images/events/induction_poster.png","/Images/events/induction_1.png","/Images/events/induction_2.png","/Images/events/induction_3.png"],
-            "description": "The IETE Club Induction Program for the term 2024-25 on Dec 26th, 2024, brought together innovation, inspiration, and interaction. From an insightful keynote by Mr. Velmurugan E to engaging activities and team introductions, the event set the stage for a promising year ahead! 🚀 This marks the beginning of a great journey for IETE Amrita.",
-            "Status":"Past Event",
-            "Location": "Sandeepmani Hall,2nd Floor,Amrita School of Engineering,Coimbatore",
-            "Registration": "https://google.com",
-            "Year": "2024",
-            "Month": "12",
-            "Day": "26",
-            "startsAt": "10:00 AM"
-
-        },
-        {
-            "id":2,
-            "title": "Docker Workshop",
-            "image": ["/Images/events/docker_1.jpg"],
-            "description": "The IETE Club's Docker Workshop at Amrita Vishwa Vidyapeetham provided participants with hands-on experience in Docker, Linux kernels, and web development. The event featured interactive sessions, a Dockerization competition, and practical demonstrations on containerization. With enthusiastic participation and engaging activities, the workshop successfully enhanced students' technical skills and teamwork. 🚀",
-            "Status":"Past Event",
-            "Location": "Seminar Hall, AB3, Amrita Vishwa Vidyapeetham, Coimbatore",
-            "Registration": "Closed",
-            "Year": "2023",
-            "Month": "12",
-            "Day": "01",
-            "startsAt": "9:00 AM"
-
-        },
-        {
-            "id":3,
-            "title": "Raspberry Pi Workshop",
-            "image": ["/Images/events/raspberrypi_1.jpg"],
-            "description": "The IETE Club at Amrita Vishwa Vidyapeetham hosted an engaging Raspberry Pi and Computer Vision workshop on November 21, 2023, blending theory with hands-on experience. Students explored Raspberry Pi setup, image preprocessing, and Edge Impulse applications under expert guidance. The event successfully bridged the gap between theoretical knowledge and real-world implementation, leaving participants with valuable skills and insights. 🚀",
-            "Status":"Past Event",
-            "Location": "E-405, AB2, Amrita Vishwa Vidyapeetham, Coimbatore",
-            "Registration": "Closed",
-            "Year": "2023",
-            "Month": "11",
-            "Day": "21",
-            "startsAt": "2:15 PM"
-
-        },
-        {
-            "id":4,
-            "title": "Women in AI with oneAPI",
-            "image": ["/Images/events/oneapi_21.jpg"],
-            "description": "The IETE Club, in collaboration with the IEEE Student Branch, hosted Women in AI with oneAPI on December 11, 2023, featuring Dr. Shriram K Vasudevan from Intel. The event celebrated women's contributions to AI, highlighting Intel's oneAPI technology through insightful talks, a panel discussion, and project showcases. With inspiring sessions and networking opportunities, it fostered a strong community, empowering women in AI to innovate and lead. 🚀",
-            "Status":"Past Event",
-            "Location": "Murilarikrishna hall, CIR block , Amrita vishwavidyapeetam, Coimbatore",
-            "Registration": "Closed",
-            "Year": "2023",
-            "Month": "12",
-            "Day": "11",
-            "startsAt": "9:00 AM"
-
-        }
-    ]
+  "events": [
+    {
+      "id": 1,
+      "title": "Club Induction",
+      "image": [
+        "/Images/events/induction_poster.png",
+        "/Images/events/induction_1.JPG",
+        "/Images/events/induction_12.png",
+        "/Images/events/induction_2.JPG",
+        "/Images/events/induction_3.png",
+        "/Images/events/induction_4.png"
+      ],
+      "description": "The IETE Club Induction Program for the term 2024-25 on Dec 26th, 2024, brought together innovation, inspiration, and interaction. From an insightful keynote by Mr. Velmurugan E to engaging activities and team introductions, the event set the stage for a promising year ahead! 🚀 This marks the beginning of a great journey for IETE Amrita.",
+      "Status": "Past Event",
+      "Location": "Sandeepani Hall, AB2, Amrita Vishwa Vidyapeetham, Coimbatore",
+      "Registration": "https://google.com",
+      "Year": "2024",
+      "Month": "12",
+      "Day": "26",
+      "startsAt": "4:30 PM"
+    },
+    {
+      "id": 2,
+      "title": "Intel AI Hackathon",
+      "image": [
+        "/Images/events/IntelAI_1.jpg",
+        "/Images/events/intelhack.png",
+        "/Images/events/IntelAI_2.jpg",
+        "/Images/events/IntelAI_3.jpg",
+        "/Images/events/IntelAI_4.jpg"
+      ],
+      "description": "The intersection of intellect, innovation, and artificial intelligence converged at the prestigious Amrita Vishwa Vidyapeetham Coimbatore Campus for the highly anticipated Intel AI Hackathon conducted during Anokha National Level Techfest 2024. With a total prize poolworth Rs 1,25,000, the event promised not only substantial rewards but also a platform for aspiring technologists to showcase their talents and push the boundaries of AI applications.",
+      "Status": "Past Event",
+      "Location": "Online",
+      "Registration": "Closed",
+      "Year": "2024",
+      "Month": "2",
+      "Day": "15",
+      "startsAt": "N/A"
+    },
+    {
+      "id": 3,
+      "title": "Women in AI with oneAPI",
+      "image": [
+        "/Images/events/oneapi_21.jpg",
+        "/Images/events/oneapi_221.jpg",
+        "/Images/events/oneapi_231.jpg",
+        "/Images/events/oneapi_271.jpg"
+      ],
+      "description": "The IETE Club, in collaboration with the IEEE Student Branch, hosted Women in AI with oneAPI on December 11, 2023, featuring Dr. Shriram K Vasudevan from Intel. The event celebrated women's contributions to AI, highlighting Intel's oneAPI technology through insightful talks, a panel discussion, and project showcases. With inspiring sessions and networking opportunities, it fostered a strong community, empowering women in AI to innovate and lead. 🚀",
+      "Status": "Past Event",
+      "Location": "Murilarikrishna hall, CIR block , Amrita Vishwa Vidyapeetam, Coimbatore",
+      "Registration": "Closed",
+      "Year": "2023",
+      "Month": "12",
+      "Day": "11",
+      "startsAt": "9:00 AM"
+    },
+    {
+      "id": 4,
+      "title": "Docker Workshop",
+      "image": [
+        "/Images/events/docker_1.jpg",
+        "/Images/events/docker_2.png",
+        "/Images/events/docker_3.png",
+        "/Images/events/docker_5.png"
+      ],
+      "description": "The IETE Club's Docker Workshop at Amrita Vishwa Vidyapeetham provided participants with hands-on experience in Docker, Linux kernels, and web development. The event featured interactive sessions, a Dockerization competition, and practical demonstrations on containerization. With enthusiastic participation and engaging activities, the workshop successfully enhanced students' technical skills and teamwork. 🚀",
+      "Status": "Past Event",
+      "Location": "Seminar Hall, AB3, Amrita Vishwa Vidyapeetham, Coimbatore",
+      "Registration": "Closed",
+      "Year": "2023",
+      "Month": "12",
+      "Day": "01",
+      "startsAt": "9:00 AM"
+    },
+    {
+      "id": 5,
+      "title": "Raspberry Pi Workshop",
+      "image": [
+        "/Images/events/raspberrypi_1.jpg",
+        "/Images/events/raspberrypi_2.png",
+        "/Images/events/raspberrypi_3.png",
+        "/Images/events/raspberrypi_41.png"
+      ],
+      "description": "The IETE Club at Amrita Vishwa Vidyapeetham hosted an engaging Raspberry Pi and Computer Vision workshop on November 21, 2023, blending theory with hands-on experience. Students explored Raspberry Pi setup, image preprocessing, and Edge Impulse applications under expert guidance. The event successfully bridged the gap between theoretical knowledge and real-world implementation, leaving participants with valuable skills and insights. 🚀",
+      "Status": "Past Event",
+      "Location": "E-405, AB2, Amrita Vishwa Vidyapeetham, Coimbatore",
+      "Registration": "Closed",
+      "Year": "2023",
+      "Month": "11",
+      "Day": "21",
+      "startsAt": "2:15 PM"
+    }
+  ]
 }
