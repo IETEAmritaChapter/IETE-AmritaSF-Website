@@ -1,0 +1,15 @@
+.blog-grid {
+    position: relative;
+}
+
+.blog-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: white;
+    transform: translateX(-50%);
+    z-index: -1;
+}
