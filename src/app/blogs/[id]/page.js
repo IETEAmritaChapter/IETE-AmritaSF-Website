@@ -5,7 +5,7 @@ import BlogContent from './Blogcontent';
 
 export async function generateStaticParams() {
   try {
-    const orderFile = await fs.readFile(path.join(process.cwd(), 'public', 'Blog', 'order.json'), 'utf8');
+    const orderFile = await fs.readFile(path.join(process.cwd(), 'public', 'blogs', 'order.json'), 'utf8');
     const orderData = JSON.parse(orderFile);
     
     return Object.keys(orderData).map(id => ({
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 
 async function getBlogContent(blogId) {
   try {
-    const orderFile = await fs.readFile(path.join(process.cwd(), 'public', 'Blog', 'order.json'), 'utf8');
+    const orderFile = await fs.readFile(path.join(process.cwd(), 'public', 'blogs', 'order.json'), 'utf8');
     const orderData = JSON.parse(orderFile);
     const blogDirectories = Object.values(orderData);
     const blogDir = blogDirectories[parseInt(blogId)];
@@ -28,7 +28,7 @@ async function getBlogContent(blogId) {
       return null;
     }
 
-    const contentPath = path.join(process.cwd(), 'public', 'Blog', blogDir, 'content.md');
+    const contentPath = path.join(process.cwd(), 'public', 'blogs', blogDir, 'content.md');
     const content = await fs.readFile(contentPath, 'utf8');
     
     return {

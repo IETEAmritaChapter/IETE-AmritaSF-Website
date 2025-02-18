@@ -2,6 +2,7 @@
 Title : "What is AI Even About??" 
 Date : "31-05-2001"
 Tags : ["Artificial Intelligence","Beginner-Friendly"]
+Author : "Author Name"
 Preview_image : "/preview_img.png"
 Condense : "AI is a roleplayer which can adapt to say teacher, student and what not. Because it was trained for this purpose. Simply put, it is built different."
 ------
@@ -73,7 +74,7 @@ The future of AI holds immense potential:
 
 AI is a rapidly evolving field with numerous applications in various industries. Python, with its extensive libraries and ease of use, plays a crucial role in the development and implementation of AI solutions. As AI continues to advance, it will undoubtedly transform the way we live and work.
 
-![AI Image](/Blogs/what_is_ai/my_gif.gif)
+![AI Image](/blogs/what_is_ai/my_gif.gif)
 
 ### Additional Resources
 

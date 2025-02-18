@@ -35,7 +35,7 @@ const BlogContent = ({ blogData }) => {
             return acc;
           }, {});
 
-        metadata.preview_image = `/Blogs/${blogData.blogDir}${metadata.preview_image}`;
+        metadata.preview_image = `/blogs/${blogData.blogDir}${metadata.preview_image}`;
 
         setBlog({ metadata, content: content[2].trim() });
         setLoading(false);
@@ -59,7 +59,7 @@ const BlogContent = ({ blogData }) => {
     ),
     img: ({ node, ...props }) => (
       <div className="flex justify-center">
-        <img {...props} className="!max-w-full !h-auto" />
+        <img {...props} alt={props.alt || ''} className="!max-w-full !h-auto" />
       </div>
     ),
     code: ({ node, inline, className, children, ...props }) => {
@@ -104,7 +104,7 @@ const BlogContent = ({ blogData }) => {
       <ul className="!list-disc [font-family:var(--font-montserrat)] !list-inside !space-y-2 !mb-6 ">{children}</ul>
     ),
     li: ({ children }) => (
-      <li className="!text-lg [font-family:var(--font-montserrat)] !leading-relaxed !text-gray-300 ">{children}</li>
+      <li className="!text-lg [font-family:var(--font-montserrat)] !leading-relaxed !text-gray-300">{children}</li>
     ),
   };
 
@@ -142,7 +142,7 @@ const BlogContent = ({ blogData }) => {
       </h1>
       <p className="text-center text-gray-400 mb-6">{blog.metadata.date}</p>
 
-      <div className="prose prose-invert prose-headings:!m-0 max-w-3xl mx-auto">
+      <div className="prose prose-invert prose-headings:!m-0 max-w-3xl mx-auto ">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
