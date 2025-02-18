@@ -1,7 +1,7 @@
 // page.js
 import { promises as fs } from 'fs';
 import path from 'path';
-import BlogContent from './BlogContent';
+import BlogContent from './Blogcontent';
 
 export async function generateStaticParams() {
   try {
