@@ -26,7 +26,7 @@ The **IETE Amrita Student Forum Website** aims to:
 7. [Learn More](#learn-more)  
 8. [Deploy on Vercel](#deploy-on-vercel)  
 9. [Contributing](#contributing)  
-
+10. [How to make a Blog](https://docs.google.com/document/d/1nZXCXjHiSoSwnBNx01Tbra3Qfbnr7-TfJsvtQ59iiaQ/edit?usp=sharing)
 ---
 
 ## Getting Started
