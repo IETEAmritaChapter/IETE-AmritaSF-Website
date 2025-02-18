@@ -187,6 +187,7 @@ Easily deploy this Next.js app via [Vercel](https://vercel.com). For detailed in
 
 ---
 
+
 ## Contributing
 
 ### Steps to Contribute:
