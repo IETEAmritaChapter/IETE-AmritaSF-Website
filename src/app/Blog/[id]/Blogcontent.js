@@ -52,10 +52,10 @@ const BlogContent = ({ blogData }) => {
 
   const components = {
     h2: ({ children }) => (
-      <h2 className="!text-4xl !font-bold !mt-8 !mb-4 !text-white">{children}</h2>
+      <h2 className="!text-4xl [font-family:var(--font-montserratb)] !font-bold !mt-8 !mb-4 !text-white">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h3 className="!text-3xl !font-semibold !mt-6 !mb-3 !text-white">{children}</h3>
+      <h3 className="!text-3xl !font-semibold [font-family:var(--font-montserratb)] !mt-6 !mb-3 !text-white">{children}</h3>
     ),
     code: ({ node, inline, className, children, ...props }) => {
       const match = /language-(\w+)/.exec(className || '');
@@ -93,13 +93,13 @@ const BlogContent = ({ blogData }) => {
       );
     },
     p: ({ children }) => (
-      <p className="!text-lg !leading-relaxed !mb-6 !text-gray-300">{children}</p>
+      <p className="!text-lg [font-family:var(--font-montserrat)] !leading-relaxed !mb-6 !text-gray-300">{children}</p>
     ),
     ul: ({ children }) => (
-      <ul className="!list-disc !list-inside !space-y-2 !mb-6">{children}</ul>
+      <ul className="!list-disc [font-family:var(--font-montserrat)] !list-inside !space-y-2 !mb-6">{children}</ul>
     ),
     li: ({ children }) => (
-      <li className="!text-lg !leading-relaxed !text-gray-300">{children}</li>
+      <li className="!text-lg [font-family:var(--font-montserrat)] !leading-relaxed !text-gray-300">{children}</li>
     ),
   };
 
@@ -132,7 +132,7 @@ const BlogContent = ({ blogData }) => {
           />
         </div>
       </div>
-      <h1 className="text-6xl font-bold text-center mb-8">
+      <h1 className="text-6xl [font-family:var(--font-montserratb)] font-bold text-center mb-8">
         {blog.metadata.title}
       </h1>
       <p className="text-center text-gray-400 mb-6">{blog.metadata.date}</p>
