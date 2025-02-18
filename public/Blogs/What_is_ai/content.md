@@ -73,7 +73,7 @@ The future of AI holds immense potential:
 
 AI is a rapidly evolving field with numerous applications in various industries. Python, with its extensive libraries and ease of use, plays a crucial role in the development and implementation of AI solutions. As AI continues to advance, it will undoubtedly transform the way we live and work.
 
-![AI Image](/Blog/what_is_ai/my_gif.gif)
+![AI Image](/Blogs/what_is_ai/my_gif.gif)
 
 ### Additional Resources
 

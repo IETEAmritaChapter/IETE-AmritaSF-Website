@@ -10,12 +10,12 @@ const BlogGrid = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const orderResponse = await fetch("/Blog/order.json");
+        const orderResponse = await fetch("/Blogs/order.json");
         const orderData = await orderResponse.json();
         const blogDirectories = Object.values(orderData);
 
         const blogPromises = blogDirectories.map(async (dir) => {
-          const response = await fetch(`/Blog/${dir}/content.md`);
+          const response = await fetch(`/Blogs/${dir}/content.md`);
           const text = await response.text();
           const content = text.split("------");
 
@@ -35,7 +35,7 @@ const BlogGrid = () => {
               return acc;
             }, {});
 
-          metadata.preview_image = `/Blog/${dir}${metadata.preview_image}`;
+          metadata.preview_image = `/Blogs/${dir}${metadata.preview_image}`;
           return { metadata, dir };
         });
 
@@ -119,7 +119,7 @@ const BlogGrid = () => {
                         {blog.metadata.date}
                       </p>
                       <Link
-                        href={`/Blog/${index}`}
+                        href={`/Blogs/${index}`}
                         className="text-[#FF5252] [font-family:var(--font-montserrat)] text-sm font-semibold hover:text-[#ff7575] transition-colors duration-200"
                       >
                         Read More →
