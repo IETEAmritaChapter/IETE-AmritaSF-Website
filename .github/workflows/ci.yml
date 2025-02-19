@@ -24,6 +24,11 @@ jobs:
         node-version: "22.x"
     - name: Install packages
       run: npm install
+    - name: Ensure order.json exists
+      run: |
+        if [ ! -f ./public/blogs/order.json ]; then
+          echo '{}' > ./public/blogs/order.json
+        fi
     - name: Build the Next.js app
       run: npm run build
     - name: Verify build
