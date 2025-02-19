@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import "../styles/Blog.css";
-import order from "./order.json"
+import order from "./order.json";
 
 const BlogGrid = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,7 +11,7 @@ const BlogGrid = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const orderResponse = order
+        const orderResponse = order;
         const orderData = order;
         const blogDirectories = Object.values(orderData);
 
@@ -37,7 +37,6 @@ const BlogGrid = () => {
             }, {});
 
           metadata.preview_image = `/blogs/${dir}${metadata.preview_image}`;
-          metadata.tags.push(metadata.author); // Add author name as a tag
           return { metadata, dir };
         });
 
@@ -86,7 +85,10 @@ const BlogGrid = () => {
             console.log(isNew);
 
             return (
-              <div key={index} className="relative w-full md:ml-4 md:pr-4 py-3 md:w-auto">
+              <div
+                key={index}
+                className="relative w-full md:ml-4 md:pr-4 py-3 md:w-auto"
+              >
                 <Link href={`/blogs/${blog.dir}`}>
                   <div
                     className="bg-[#1c1917] overflow-hidden  transform transition-transform duration-300 ease-in-out
@@ -114,25 +116,22 @@ const BlogGrid = () => {
                         {blog.metadata.tags.map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
-                            className="inline-block [font-family:var(--font-montserrat)] bg-[#FF5252] text-white text-sm px-3 py-1 rounded-sm"
+                            className="inline-block [font-family:var(--font-montserrat)] bg-[#FF5252] text-white text-base px-3 py-1 rounded-sm"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
-                      <p className="text-gray-300 text-sm mb-4 line-clamp-3 [font-family:var(--font-montserrat)]">
+                      <p className="text-gray-300 text-lg mb-4 line-clamp-3 [font-family:var(--font-montserrat)]">
                         {blog.metadata.condense}
                       </p>
                       <div className="flex items-center justify-between">
-                        <p className="text-gray-400 text-base [font-family:var(--font-montserrat)]">
+                        <p className="text-gray-400 text-lg [font-family:var(--font-montserrat)]">
                           {blog.metadata.date}
                         </p>
-                        <Link
-                          href={`/blogs/${blog.dir}`}
-                          className="text-[#FF5252] [font-family:var(--font-montserrat)] text-sm font-semibold hover:text-[#ff7575] transition-colors duration-200"
-                        >
-                          Read More →
-                        </Link>
+                        <p className="text-[#FF5252] text-lg [font-family:var(--font-montserrat)]  font-semibold">
+                          Cooked By : {blog.metadata.author} 🧑‍🍳
+                        </p>
                       </div>
                     </div>
                   </div>

@@ -99,7 +99,7 @@ const BlogContent = ({ blogData }) => {
       );
     },
     p: ({ children }) => (
-      <p className="!text-lg [font-family:var(--font-montserrat)] !leading-relaxed !mb-6 !text-gray-300 ">{children}</p>
+      <p className="!text-lg [font-family:var(--font-montserrat)] text-justify !leading-relaxed !mb-6 !text-gray-300 ">{children}</p>
     ),
     ul: ({ children }) => (
       <ul className="!list-disc [font-family:var(--font-montserrat)] !list-inside !space-y-2 !mb-6 ">{children}</ul>
@@ -140,9 +140,12 @@ const BlogContent = ({ blogData }) => {
       <h1 className="text-4xl md:text-5xl [font-family:var(--font-montserratb)] font-bold text-center mb-8">
         {blog.metadata.title}
       </h1>
-      <p className="text-center text-gray-400 mb-6">{blog.metadata.date}</p>
+      <p className="text-center text-gray-400 mb-6">{blog.metadata.date} </p>
+      <p className="text-center text-gray-400 mb-6">- by {blog.metadata.author} </p>
 
-      <div className="prose prose-invert prose-headings:!m-0 md:w-[90%] mx-auto ">
+      
+
+      <div className="prose prose-invert prose-headings:!m-0 md:w-[50%] mx-auto ">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}

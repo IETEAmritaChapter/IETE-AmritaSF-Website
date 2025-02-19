@@ -2,7 +2,7 @@
 Title : "What is AI Even About??" 
 Date : "31-05-2001"
 Tags : ["Artificial Intelligence","Beginner-Friendly"]
-Author : "Author Name"
+Author : "Eshwanth Karti T R"
 Preview_image : "/preview_img.png"
 Condense : "AI is a roleplayer which can adapt to say teacher, student and what not. Because it was trained for this purpose. Simply put, it is built different."
 ------
