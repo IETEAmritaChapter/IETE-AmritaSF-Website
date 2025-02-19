@@ -137,12 +137,12 @@ const BlogContent = ({ blogData }) => {
           />
         </div>
       </div>
-      <h1 className="text-6xl [font-family:var(--font-montserratb)] font-bold text-center mb-8">
+      <h1 className="text-4xl md:text-5xl [font-family:var(--font-montserratb)] font-bold text-center mb-8">
         {blog.metadata.title}
       </h1>
       <p className="text-center text-gray-400 mb-6">{blog.metadata.date}</p>
 
-      <div className="prose prose-invert prose-headings:!m-0 max-w-3xl mx-auto ">
+      <div className="prose prose-invert prose-headings:!m-0 md:w-[90%] mx-auto ">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
