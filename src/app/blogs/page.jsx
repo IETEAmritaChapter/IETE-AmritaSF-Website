@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import "../styles/Blog.css";
+import order from "./order.json"
 
 const BlogGrid = () => {
   const [blogs, setBlogs] = useState([]);
@@ -10,8 +11,8 @@ const BlogGrid = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const orderResponse = await fetch("/blogs/order.json");
-        const orderData = await orderResponse.json();
+        const orderResponse = order
+        const orderData = order;
         const blogDirectories = Object.values(orderData);
 
         const blogPromises = blogDirectories.map(async (dir) => {
