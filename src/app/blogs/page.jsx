@@ -29,6 +29,7 @@ const BlogGrid = () => {
             .split("\n")
             .reduce((acc, line) => {
               const [key, value] = line.split(":").map((item) => item.trim());
+              console.log(key,value)
               acc[key.toLowerCase()] = value
                 .replace(/["\[\]]/g, "")
                 .split(",")
