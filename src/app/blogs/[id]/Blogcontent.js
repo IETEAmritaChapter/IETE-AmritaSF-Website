@@ -28,13 +28,19 @@ const BlogContent = ({ blogData }) => {
         }
 
         const metadata = content[1]
-          .trim()
-          .split("\n")
-          .reduce((acc, line) => {
-            const [key, value] = line.split(":").map((item) => item.trim());
-            acc[key.toLowerCase()] = value.replace(/["\[\]]/g, "");
-            return acc;
-          }, {});
+            .trim()
+            .split("\n")
+            .reduce((acc, line) => {
+              const [key, value] = line.split(":").map((item) => item.trim());
+              console.log(key, value);
+              if (key && value) {
+                acc[key.toLowerCase()] = value
+                  .replace(/["\[\]]/g, "")
+                  .split(",")
+                  .map((item) => item.trim());
+              }
+              return acc;
+            }, {});
 
         metadata.preview_image = `/Blogs/${blogData.blogDir}${metadata.preview_image}`;
 
