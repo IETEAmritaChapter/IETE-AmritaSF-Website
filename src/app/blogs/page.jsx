@@ -29,7 +29,6 @@ const BlogGrid = () => {
             .split("\n")
             .reduce((acc, line) => {
               const [key, value] = line.split(":").map((item) => item.trim());
-              console.log(key, value);
               if (key && value) {
                 acc[key.toLowerCase()] = value
                   .replace(/["\[\]]/g, "")
@@ -52,7 +51,6 @@ const BlogGrid = () => {
         setBlogs(blogResults);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching blogs:", error);
         setLoading(false);
       }
     };
@@ -85,12 +83,11 @@ const BlogGrid = () => {
           {blogs.map((blog, index) => {
             const isNew = blog.metadata.tags.includes("New");
             const showVerticalLine = blogs.length > 1 && (index + 1) % 3 !== 0;
-            console.log(isNew);
 
             return (
               <div
                 key={index}
-                className="relative w-full md:ml-4 md:pr-4 py-3 md:w-auto"
+                className="relative  md:ml-4 md:pr-4 py-3 md:w-[350px]"
               >
                 <Link href={`/blogs/${blog.dir}`}>
                   <div

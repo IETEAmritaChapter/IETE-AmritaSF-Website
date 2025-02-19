@@ -11,7 +11,7 @@ export async function generateStaticParams() {
       id: dir
     })).filter(param => param.id); // Ensure id is not empty
   } catch (error) {
-    console.error("Error generating static params:", error);
+    
     throw error;
   }
 }
@@ -26,7 +26,6 @@ async function getBlogContent(blogDir) {
       content
     };
   } catch (error) {
-    console.error("Error fetching blog data:", error);
     return null;
   }
 }

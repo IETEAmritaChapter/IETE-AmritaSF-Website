@@ -32,7 +32,6 @@ const BlogContent = ({ blogData }) => {
           .split("\n")
           .reduce((acc, line) => {
             const [key, value] = line.split(":").map((item) => item.trim());
-            console.log(key, value);
             if (key && value) {
               acc[key.toLowerCase()] = value
                 .replace(/["\[\]]/g, "")
@@ -47,7 +46,6 @@ const BlogContent = ({ blogData }) => {
         setBlog({ metadata, content: content[2].trim() });
         setLoading(false);
       } catch (error) {
-        console.error("Error processing blog data:", error);
         setLoading(false);
       }
     };
@@ -151,7 +149,7 @@ const BlogContent = ({ blogData }) => {
   return (
     <div className="text-white container mx-auto px-4 py-16">
       <div className="mb-6">
-        <div className="mx-auto w-full max-w-2xl">
+        <div className="mx-auto w-[250px] max-w-2xl">
           <img
             src={blog.metadata.preview_image}
             alt={blog.metadata.title}
