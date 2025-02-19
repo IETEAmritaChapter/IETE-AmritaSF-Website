@@ -216,12 +216,11 @@ Easily deploy this Next.js app via [Vercel](https://vercel.com). For detailed in
    ```bash
    git push origin feature/your-feature-name
    ```
----
-
-Made with 🧡 by IETE Amrita SF Team
 
 5. **Submit a pull request:**
 
    Ensure it adheres to the coding standards. PRs require approval from two reviewers before merging into the `main` branch.
 
 ---
+
+Made with 🧡 by IETE Amrita SF Team
