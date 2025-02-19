@@ -1,5 +1,5 @@
 {
-    "0":"what_is_ai",
-    "1":"Deep_learning",
-    "2":"Machine_learning"
+    "what_is_ai":"what_is_ai",
+    "Deep_learning":"Deep_learning",
+    "Machine_learning":"Machine_learning"
 }

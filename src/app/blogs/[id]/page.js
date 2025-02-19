@@ -1,5 +1,3 @@
-import { promises as fs } from 'fs';
-import path from 'path';
 import BlogContent from './Blogcontent';
 import blog_content from "../order.json";
 
@@ -7,25 +5,17 @@ export async function generateStaticParams() {
   try {
     const orderData = blog_content;
     
-    return Object.keys(orderData).map(id => ({
-      id: id.toString()
-    }));
+    return Object.values(orderData).map(dir => ({
+      id: dir
+    })).filter(param => param.id); // Ensure id is not empty
   } catch (error) {
     console.error("Error generating static params:", error);
     throw error;
   }
 }
 
-async function getBlogContent(blogId) {
+async function getBlogContent(blogDir) {
   try {
-    const orderData = blog_content;
-    const blogDirectories = Object.values(orderData);
-    const blogDir = blogDirectories[parseInt(blogId)];
-
-    if (!blogDir) {
-      return null;
-    }
-
     const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
     const response = await fetch(new URL(`/blogs/${blogDir}/content.md`, baseUrl));
     if (!response.ok) {
@@ -44,7 +34,7 @@ async function getBlogContent(blogId) {
 }
 
 export default async function BlogPage(props) {
-  const params = await props.params; // Await the params
+  const { params } = props; // Destructure params from props
   const blogData = await getBlogContent(params.id);
   
   if (!blogData) {

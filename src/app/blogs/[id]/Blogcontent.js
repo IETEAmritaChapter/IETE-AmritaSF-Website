@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -128,12 +129,11 @@ const BlogContent = ({ blogData }) => {
     <div className="text-white container mx-auto px-4 py-16">
       <div className="mb-6">
         <div className="mx-auto w-full max-w-2xl">
-          <Image
+          
+          <img
             src={blog.metadata.preview_image}
             alt={blog.metadata.title}
-            className="w-full max-h-[500px] object-cover rounded-lg"
-            width={900}
-            height={500}
+            className="w-full h-auto object-cover rounded-lg"
           />
         </div>
       </div>

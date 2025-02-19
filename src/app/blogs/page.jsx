@@ -87,7 +87,7 @@ const BlogGrid = () => {
 
             return (
               <div key={index} className="relative w-full md:w-auto">
-                <Link href={`/blogs/${index}`}>
+                <Link href={`/blogs/${blog.dir}`}>
                   <div
                     className="bg-[#1c1917] overflow-hidden transform transition-transform duration-300 ease-in-out
                              hover:-translate-y-1 hover:scale-103 m-4 relative"
@@ -128,7 +128,7 @@ const BlogGrid = () => {
                           {blog.metadata.date}
                         </p>
                         <Link
-                          href={`/blogs/${index}`}
+                          href={`/blogs/${blog.dir}`}
                           className="text-[#FF5252] [font-family:var(--font-montserrat)] text-sm font-semibold hover:text-[#ff7575] transition-colors duration-200"
                         >
                           Read More →
