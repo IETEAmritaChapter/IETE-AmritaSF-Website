@@ -28,19 +28,19 @@ const BlogContent = ({ blogData }) => {
         }
 
         const metadata = content[1]
-            .trim()
-            .split("\n")
-            .reduce((acc, line) => {
-              const [key, value] = line.split(":").map((item) => item.trim());
-              console.log(key, value);
-              if (key && value) {
-                acc[key.toLowerCase()] = value
-                  .replace(/["\[\]]/g, "")
-                  .split(",")
-                  .map((item) => item.trim());
-              }
-              return acc;
-            }, {});
+          .trim()
+          .split("\n")
+          .reduce((acc, line) => {
+            const [key, value] = line.split(":").map((item) => item.trim());
+            console.log(key, value);
+            if (key && value) {
+              acc[key.toLowerCase()] = value
+                .replace(/["\[\]]/g, "")
+                .split(",")
+                .map((item) => item.trim());
+            }
+            return acc;
+          }, {});
 
         metadata.preview_image = `/Blogs/${blogData.blogDir}${metadata.preview_image}`;
 
@@ -59,7 +59,7 @@ const BlogContent = ({ blogData }) => {
 
   const components = {
     h2: ({ children }) => (
-      <h2 className="!text-4xl [font-family:var(--font-montserratb)] !font-bold !mt-8 !mb-4 !text-white text-center">{children}</h2>
+      <h2 className="!text-5xl [font-family:var(--font-montserratb)] !font-bold !mt-8 !mb-4 !text-white text-center">{children}</h2>
     ),
     h3: ({ children }) => (
       <h3 className="!text-3xl !font-semibold [font-family:var(--font-montserratb)] !mt-6 !mb-3 !text-white text-center">{children}</h3>
@@ -113,6 +113,23 @@ const BlogContent = ({ blogData }) => {
     li: ({ children }) => (
       <li className="!text-lg [font-family:var(--font-montserrat)] !leading-relaxed !text-gray-300">{children}</li>
     ),
+    table: ({ children }) => (
+      <div className="overflow-x-auto">
+        <table className="min-w-full divide-y divide-gray-200">
+          {children}
+        </table>
+      </div>
+    ),
+    th: ({ children }) => (
+      <th className="px-6 py-3 bg-gray-800 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+        {children}
+      </th>
+    ),
+    td: ({ children }) => (
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+        {children}
+      </td>
+    ),
   };
 
   if (loading) {
@@ -135,7 +152,6 @@ const BlogContent = ({ blogData }) => {
     <div className="text-white container mx-auto px-4 py-16">
       <div className="mb-6">
         <div className="mx-auto w-full max-w-2xl">
-          
           <img
             src={blog.metadata.preview_image}
             alt={blog.metadata.title}
@@ -148,8 +164,6 @@ const BlogContent = ({ blogData }) => {
       </h1>
       <p className="text-center text-gray-400 mb-6">{blog.metadata.date} </p>
       <p className="text-center text-gray-400 mb-6">- by {blog.metadata.author} </p>
-
-      
 
       <div className="prose prose-invert prose-headings:!m-0 md:w-[50%] mx-auto ">
         <ReactMarkdown

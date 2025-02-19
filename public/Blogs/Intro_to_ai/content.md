@@ -35,7 +35,7 @@ After o1's impressive debut, researchers stood at a fascinating crossroads. Shou
 
 The results were stunning - o1-ioi rocketed to the top 2% of Codeforces and earned an impressive 213 points at IOI 2024! But here's where it gets really interesting: when researchers removed the usual submission limits (allowing 10,000 tries instead of just 50), o1-ioi's performance skyrocketed by 70%, reaching gold medal status. This revealed both the system's incredible potential and its current reliance on carefully crafted human strategies.
 
-## The Autonomous Reasoning Revolution
+# The Autonomous Reasoning Revolution
 
 ## Emergent Test-time Strategies
 
