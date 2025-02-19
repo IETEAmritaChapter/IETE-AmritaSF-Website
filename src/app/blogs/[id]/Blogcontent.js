@@ -36,7 +36,7 @@ const BlogContent = ({ blogData }) => {
             return acc;
           }, {});
 
-        metadata.preview_image = `/blogs/${blogData.blogDir}${metadata.preview_image}`;
+        metadata.preview_image = `/Blogs/${blogData.blogDir}${metadata.preview_image}`;
 
         setBlog({ metadata, content: content[2].trim() });
         setLoading(false);
