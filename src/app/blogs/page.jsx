@@ -69,7 +69,7 @@ const BlogGrid = () => {
   return (
     <div className="text-white">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-7xl font-bold text-center mb-16 [font-family:var(--font-montserratb)]">
+        <h1 className="text-7xl font-bold text-center mb-10 [font-family:var(--font-montserratb)]">
           BLOGS<span className="text-[#FF5252]">.</span>
         </h1>
 
@@ -86,10 +86,10 @@ const BlogGrid = () => {
             console.log(isNew);
 
             return (
-              <div key={index} className="relative w-full md:w-auto">
+              <div key={index} className="relative w-full md:ml-4 md:pr-4 py-3 md:w-auto">
                 <Link href={`/blogs/${blog.dir}`}>
                   <div
-                    className="bg-[#1c1917] overflow-hidden transform transition-transform duration-300 ease-in-out
+                    className="bg-[#1c1917] overflow-hidden  transform transition-transform duration-300 ease-in-out
                              hover:-translate-y-1 hover:scale-103 m-4 relative"
                   >
                     {isNew && (
@@ -106,7 +106,7 @@ const BlogGrid = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-30"></div>
                     </div>
 
-                    <div className="p-6">
+                    <div className="mt-3 mb-2">
                       <h2 className="text-3xl [font-family:var(--font-montserratb)] mb-2 text-white">
                         {blog.metadata.title}
                       </h2>
