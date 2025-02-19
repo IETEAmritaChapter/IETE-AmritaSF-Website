@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 
 async function getBlogContent(blogDir) {
   try {
-    const contentPath = path.join(process.cwd(), 'public', 'blogs', blogDir, 'content.md');
+    const contentPath = path.join(process.cwd(), 'public', 'Blogs', blogDir, 'content.md');
     const content = await fs.readFile(contentPath, 'utf8');
     
     return {

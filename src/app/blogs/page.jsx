@@ -16,7 +16,7 @@ const BlogGrid = () => {
         const blogDirectories = Object.values(orderData);
 
         const blogPromises = blogDirectories.map(async (dir) => {
-          const response = await fetch(`/blogs/${dir}/content.md`);
+          const response = await fetch(`/Blogs/${dir}/content.md`);
           const text = await response.text();
           const content = text.split("------");
 
@@ -36,7 +36,7 @@ const BlogGrid = () => {
               return acc;
             }, {});
 
-          metadata.preview_image = `/blogs/${dir}${metadata.preview_image}`;
+          metadata.preview_image = `/Blogs/${dir}${metadata.preview_image}`;
           return { metadata, dir };
         });
 
