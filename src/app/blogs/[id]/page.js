@@ -1,3 +1,5 @@
+import { promises as fs } from 'fs';
+import path from 'path';
 import BlogContent from './Blogcontent';
 import blog_content from "../order.json";
 
@@ -16,12 +18,8 @@ export async function generateStaticParams() {
 
 async function getBlogContent(blogDir) {
   try {
-    const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
-    const response = await fetch(new URL(`/blogs/${blogDir}/content.md`, baseUrl));
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const content = await response.text();
+    const contentPath = path.join(process.cwd(), 'public', 'blogs', blogDir, 'content.md');
+    const content = await fs.readFile(contentPath, 'utf8');
     
     return {
       blogDir,
