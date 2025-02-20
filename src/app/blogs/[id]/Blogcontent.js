@@ -149,7 +149,7 @@ const BlogContent = ({ blogData }) => {
   return (
     <div className="text-white container mx-auto px-4 py-8 md:py-16">
       <div className="mb-6">
-        <div className="mx-auto w-full max-w-2xl">
+      <div className="mx-auto w-full max-w-xs md:max-w-xl">
           <img
             src={blog.metadata.preview_image}
             alt={blog.metadata.title}
@@ -163,7 +163,7 @@ const BlogContent = ({ blogData }) => {
       <p className="text-center text-gray-400 mb-6">{blog.metadata.date} </p>
       <p className="text-center text-gray-400 mb-6">- by {blog.metadata.author} </p>
 
-      <div className="prose prose-invert prose-headings:!m-0 md:w-[50%] mx-auto ">
+      <div className="prose prose-invert prose-headings:!m-0 md:w-[50%] mx-auto  bg-opacity-10 backdrop-transparent backdrop-blur-lg p-6 rounded-lg shadow-lg">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
