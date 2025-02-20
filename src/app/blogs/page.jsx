@@ -127,10 +127,10 @@ const BlogGrid = () => {
                         {blog.metadata.condense}
                       </p>
                       <div className="flex items-center justify-between">
-                        <p className="text-gray-400 text-lg [font-family:var(--font-montserrat)]">
+                        <p className="text-gray-400 text-md [font-family:var(--font-montserrat)]">
                           {blog.metadata.date}
                         </p>
-                        <p className="text-[#FF5252] text-lg [font-family:var(--font-montserrat)]  font-semibold">
+                        <p className="text-[#FF5252] text-md [font-family:var(--font-montserrat)]  font-semibold">
                           Cooked By : {blog.metadata.author} 🧑‍🍳
                         </p>
                       </div>
