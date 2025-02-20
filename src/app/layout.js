@@ -23,10 +23,32 @@ const montserratb = localFont({
 });
 
 export const metadata = {
-  title: "IETE Amrita SF",
-  description: "IETE SF Website by Amrita Chapter",
+  title: "IETE Amrita Student Forum",
+  description:
+    "Official website of IETE Amrita Student Forum - Fostering Innovation and Excellence in Tech.",
+  keywords:
+    "IETE Amrita, IETE Student Forum, Amrita Coimbatore, Tech Clubs Amrita, IETE Amrita SF, IETE Amrita Student Forum, IETE Amrita Club, Technology, Innovation, Amrita Vishwa Vidyapeetham",
+  author: "IETE Amrita Student Forum",
   icons: {
-    icon: '/Assets/logo.png', 
+    icon: '/logo.ico', 
+    apple: "/logo.ico",
+    shortcut: "/logo.ico",
+  },
+  themeColor: "#FF5252", 
+  openGraph: {
+    type: "website",
+    title: "IETE Amrita Student Forum",
+    description:
+      "Explore events, projects, and initiatives by the IETE Amrita Student Forum at Amrita Vishwa Vidyapeetham.",
+    url: "https://avvsf.ietecbe.org/",
+    images: [
+      {
+        url: "/Images/hero/hero-image.webp", 
+        width: 1200,
+        height: 630,
+        alt: "IETE Amrita Student Forum Banner",
+      },
+    ],
   },
 };
 
