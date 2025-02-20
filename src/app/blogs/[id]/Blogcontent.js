@@ -163,7 +163,7 @@ const BlogContent = ({ blogData }) => {
       <p className="text-center text-lg text-gray-400 mb-6">{blog.metadata.date} </p>
       <p className="text-center text-lg text-gray-400 mb-6">- by {blog.metadata.author} </p>
 
-      <div className="prose prose-invert prose-headings:!m-0 md:w-[50%] mx-auto  bg-opacity-10 backdrop-transparent backdrop-blur-lg md:p-6 rounded-lg shadow-lg">
+      <div className="prose prose-invert prose-headings:!m-0 md:w-[80%] mx-auto  bg-opacity-10 backdrop-transparent backdrop-blur-lg md:p-6 rounded-lg shadow-lg">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}

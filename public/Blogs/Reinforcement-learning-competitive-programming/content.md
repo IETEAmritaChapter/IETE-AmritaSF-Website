@@ -10,7 +10,7 @@ Condense : "Imagine a world where artificial intelligence not just writes code b
 
 ## The Evolution of Reasoning Models
 
-![image.png](/Blogs/Reinforcement-learning-competitive-programming/Image1.jpg)
+![image1.png](/Blogs/Reinforcement-learning-competitive-programming/Image1.jpg)
 
 
 ## From Basic Code Generation to Strategic Problem-Solving
@@ -81,7 +81,7 @@ The results speak for themselves:
 
 ## Record-Breaking Performance
 
-![image.png](/blogs/Reinforcement-learning-competitive-programming/Image2.jpg)
+![image2.png](/Blogs/Reinforcement-learning-competitive-programming/Image2.jpg)
 
 
 Hold onto your keyboards - o3 has just shattered records with an incredible 2724 Codeforces rating! To put this in perspective, this AI powerhouse has joined the ranks of the top 0.2% of all-time competitors - a feat that would take even the most talented human programmers years of intense training to achieve. But here's what's truly mind-blowing: o3 reached this level without any special competition training. It's like having a natural-born coding genius that just "gets it" - showcasing the incredible potential of AI's general problem-solving abilities.
