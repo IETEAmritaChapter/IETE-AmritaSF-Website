@@ -68,11 +68,12 @@ const BlogGrid = () => {
 
   return (
     <div className="text-white">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-7xl font-bold text-center mb-10 [font-family:var(--font-montserratb)]">
-          BLOGS<span className="text-[#FF5252]">.</span>
+      <div className="w-full text-white text-center">
+        <h1 className="text-5xl font-bold [font-family:var(--font-montserratb)]">
+        BLOGS<span className="text-[#FF5252]">.</span>
         </h1>
-
+      </div>
+      <div className="container mx-auto px-4 pt-2">
         <div
           className={`grid ${
             blogs.length === 1
@@ -87,7 +88,7 @@ const BlogGrid = () => {
             return (
               <div
                 key={index}
-                className="relative  md:ml-4 md:pr-4 py-3 md:w-[350px]"
+                className="relative  md:ml-4 md:pr-4 py-3 md:w-[400px]"
               >
                 <Link href={`/blogs/${blog.dir}`}>
                   <div
@@ -103,13 +104,13 @@ const BlogGrid = () => {
                       <img
                         src={blog.metadata.preview_image}
                         alt={blog.metadata.title}
-                        className="w-full rounded-[20px] h-max object-cover"
+                        className="w-full rounded-[20px] h-[200px] object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-30"></div>
                     </div>
 
                     <div className="mt-3 mb-2">
-                      <h2 className="text-3xl [font-family:var(--font-montserratb)] mb-2 text-white">
+                      <h2 className="text-2xl leading-[100%] [font-family:var(--font-montserratb)] mb-2 text-white">
                         {blog.metadata.title}
                       </h2>
                       <div className="mb-4 flex flex-wrap gap-2">
