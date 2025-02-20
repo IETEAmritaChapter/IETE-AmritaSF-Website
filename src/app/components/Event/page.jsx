@@ -137,7 +137,6 @@ const EventDisplay = () => {
 
     // Set margin-top based on aspect ratio
     const aspectRatio = naturalWidth / naturalHeight;
-    console.log(aspectRatio);
     if (aspectRatio > 0.9) {
       setMarginTop("mt-36");
     } else {

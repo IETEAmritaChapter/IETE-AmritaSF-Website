@@ -1,8 +1,6 @@
 # IETE Amrita SF Website
-
 Official website for the **IETE Amrita Student Forum (IETE Amrita SF)**. This application is built using [Next.js](https://nextjs.org) to deliver a modern, dynamic, and responsive experience.
 
----
 ---
 
 ## Project Overview
@@ -27,7 +25,7 @@ The **IETE Amrita Student Forum Website** aims to:
 7. [Learn More](#learn-more)  
 8. [Deploy on Vercel](#deploy-on-vercel)  
 9. [Contributing](#contributing)  
-
+10. [How to make a Blog](https://docs.google.com/document/d/1nZXCXjHiSoSwnBNx01Tbra3Qfbnr7-TfJsvtQ59iiaQ/edit?usp=sharing)
 ---
 
 ## Getting Started
@@ -188,6 +186,7 @@ Easily deploy this Next.js app via [Vercel](https://vercel.com). For detailed in
 
 ---
 
+
 ## Contributing
 
 ### Steps to Contribute:
@@ -223,3 +222,5 @@ Easily deploy this Next.js app via [Vercel](https://vercel.com). For detailed in
    Ensure it adheres to the coding standards. PRs require approval from two reviewers before merging into the `main` branch.
 
 ---
+
+Made with 🧡 by IETE Amrita SF Team

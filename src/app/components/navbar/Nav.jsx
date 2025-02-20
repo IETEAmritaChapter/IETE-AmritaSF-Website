@@ -28,7 +28,7 @@ function Navigation({ onClick }) {
     { text: 'ABOUT', path: '/about' },
     { text: 'TEAM', path: '/team' },
     { text: 'EVENTS & PROJECTS', path: '/#events-section' },
-    { text: 'BLOG', path: '/comingsoon' },
+    { text: 'BLOG', path: '/blogs' },
     { text: 'CP LEADERBOARD', path: '/comingsoon' },
   ];
 
