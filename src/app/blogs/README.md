@@ -1,7 +1,7 @@
 ## How to add blogs
 
 Steps on making a new blog post
-1.	Create a new folder Under public/Blogs
+1.	Create a new folder under public/Blogs
 2.	Add all the relevant images gif within that particular folder
 3.	Create a content.md file inside this folder (this is the main file)
 4.	Copy the following meta data and modify based upon your content:
