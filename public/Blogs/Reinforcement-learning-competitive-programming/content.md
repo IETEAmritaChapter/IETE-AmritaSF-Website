@@ -10,6 +10,9 @@ Condense : "Imagine a world where artificial intelligence not just writes code b
 
 ## The Evolution of Reasoning Models
 
+![image.png](/Blogs/Reinforcement-learning-competitive-programming/Image1.jpg)
+
+
 ## From Basic Code Generation to Strategic Problem-Solving
 
 The evolution of AI in programming has been nothing short of remarkable! Early language models like Codex could write simple code but hit a wall when faced with complex programming challenges. Then came a game-changing moment - AlphaCode burst onto the scene in 2022, using clever sampling techniques to crack 34% of Codeforces problems. But here's the catch: these systems were essentially throwing computational power at problems until something stuck, lacking true problem-solving smarts.
@@ -35,7 +38,7 @@ After o1's impressive debut, researchers stood at a fascinating crossroads. Shou
 
 The results were stunning - o1-ioi rocketed to the top 2% of Codeforces and earned an impressive 213 points at IOI 2024! But here's where it gets really interesting: when researchers removed the usual submission limits (allowing 10,000 tries instead of just 50), o1-ioi's performance skyrocketed by 70%, reaching gold medal status. This revealed both the system's incredible potential and its current reliance on carefully crafted human strategies.
 
-# The Autonomous Reasoning Revolution
+## The Autonomous Reasoning Revolution
 
 ## Emergent Test-time Strategies
 
@@ -47,9 +50,9 @@ Get ready to be amazed! The o3 model is revolutionizing how AI thinks and solves
 
 Think of o3's brain as a well-oiled machine, where all these abilities work together naturally:
 
-```jsx
+```python
 class ReasoningEngine:
-    def __init__(self, base_model):
+    def _init_(self, base_model):
         self.core = base_model
         self.memory = SolutionCache()
         
@@ -77,6 +80,9 @@ The results speak for themselves:
 | o3 | 2724 | 362* | 99.8th |
 
 ## Record-Breaking Performance
+
+![image.png](/blogs/Reinforcement-learning-competitive-programming/Image2.jpg)
+
 
 Hold onto your keyboards - o3 has just shattered records with an incredible 2724 Codeforces rating! To put this in perspective, this AI powerhouse has joined the ranks of the top 0.2% of all-time competitors - a feat that would take even the most talented human programmers years of intense training to achieve. But here's what's truly mind-blowing: o3 reached this level without any special competition training. It's like having a natural-born coding genius that just "gets it" - showcasing the incredible potential of AI's general problem-solving abilities.
 
@@ -168,3 +174,13 @@ The evolution from o1 to o3 reveals a fascinating truth - when we supercharge re
 We're witnessing the dawn of a new era in software development, where AI isn't just a tool - it's your brilliant coding partner! Imagine having a collaborator who never gets tired, instantly recalls every programming pattern, and helps you push the boundaries of what's possible. But here's the crucial part: this revolution isn't about replacing human developers. Instead, it's about amplifying their creativity and potential. As we navigate this exciting frontier, our focus must shift from simply building faster systems to ensuring they enhance human capabilities ethically and effectively.
 
 Here's the bottom line: While the tech world debates between highly specialized AI and broader, more adaptable systems, the evidence points clearly to one winner - scalable general intelligence. But remember this crucial caveat: the most powerful solutions will always combine AI's computational might with human insight and creativity. It's not about human versus machine - it's about human and machine, working together to unlock unprecedented possibilities in programming!
+
+
+## Reference Links
+
+Additional : 
+
+- [Reinforcement Learning in Competitive Programming 🔗](https://arxiv.org/pdf/2502.06807)
+- [New OpenAI o1 AI Model Examples of Step Change in AI 🔗](https://www.reddit.com/r/singularity/comments/1figt2o/new_openai_o1_ai_model_examples_of_step_change_in/)
+- [AI Modeling Competitions: Answer AI in Competitive Programming 🔗](https://www.restack.io/p/ai-modeling-competitions-answer-ai-in-competitive-programming-cat-ai)
+- [Reinforcement Learning in Competitive Programming 🔗](https://ai.gopubby.com/reinforcement-learning-in-competitive-programming-f1f2bc9eaf67)
