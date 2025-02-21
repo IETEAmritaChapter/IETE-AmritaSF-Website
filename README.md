@@ -33,16 +33,23 @@ The **IETE Amrita Student Forum Website** aims to:
 ---
 
 ## Screenshots 📸
-
 ![Landing](https://github.com/user-attachments/assets/6017eae3-95a6-4347-96ba-90b5e5721a6b)
+![Landing-About](https://github.com/user-attachments/assets/16066952-4320-4e55-a6e4-a9a8466e00e4)
 
-### About Section ℹ️
-
+### About Section
 ![About-1](https://github.com/user-attachments/assets/ca4629c2-f62a-4994-bbb2-11cbd6dba2b7)
+![About-2](https://github.com/user-attachments/assets/798812c3-87ed-4c3c-b4c1-0da46da1d29d)
 
-### Events and Projects 🎟️🛠️
-
+### Events and Projects
 ![Events](https://github.com/user-attachments/assets/5279699a-7d90-432a-8317-36755d8b46b5)
+![Projects](https://github.com/user-attachments/assets/beeab193-74ef-4436-abda-6c8136f134a2)
+
+### Teams
+![Teams Page](https://github.com/user-attachments/assets/dadefa3e-2729-4fc8-adb6-09433f37c9f4)
+
+### Blogs
+![BLog-1](https://github.com/user-attachments/assets/0431cfc4-e426-416a-9758-bae15845955d)
+![Blog-2](https://github.com/user-attachments/assets/cd0a2510-7ef3-41ba-960d-fbedcdea9644)
 
 ---
 
