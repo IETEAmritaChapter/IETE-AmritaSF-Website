@@ -326,6 +326,7 @@ const EventDisplay = () => {
           ) : (
             <motion.a
               href={currentEvent.Registration}
+              target="_blank"
               className="bg-[#FB923C] text-white py-2 px-4 rounded"
               whileHover={{ scale: 1.05 }}
             >
