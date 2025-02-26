@@ -1,7 +1,20 @@
 {
   "events": [
     {
-      "id": 1,
+      "id": 6,
+      "title": "Torch It Up 🔥: AI Journey with PyTorch",
+      "image": ["/Images/events/pytorch_1.png"],
+      "description": "The IETE Amrita Club presents an electrifying AI workshop designed to ignite your passion for Machine Learning! Whether you're a fresher, sophomore, or an AI enthusiast from any department, this hands-on session will equip you with essential deep-learning skills using PyTorch. Expect an exciting blend of talks, live coding, interactive AI quizzes, and an adrenaline-pumping Mini Hackathon where you’ll build your own AI model. Engage in fun activities, network with fellow AI enthusiasts, and take home exclusive PyTorch resources. Don’t miss this chance to supercharge your AI journey—see you there! 🚀✨",
+      "Status": "Upcoming Event",
+      "Location": "Sandeepani Hall, AB2",
+      "Registration": "https://forms.office.com/r/jWuZDJBzWL",
+      "Year": "2025",
+      "Month": "03",
+      "Day": "10",
+      "startsAt": "9 AM - 12:30 PM"
+    },
+    {
+      "id": 5,
       "title": "Club Induction",
       "image": [
         "/Images/events/induction_poster.png",
@@ -21,7 +34,7 @@
       "startsAt": "4:30 PM"
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "Intel AI Hackathon",
       "image": [
         "/Images/events/IntelAI_1.jpg",
@@ -58,7 +71,7 @@
       "startsAt": "9:00 AM"
     },
     {
-      "id": 4,
+      "id": 2,
       "title": "Docker Workshop",
       "image": [
         "/Images/events/docker_1.jpg",
@@ -76,7 +89,7 @@
       "startsAt": "9:00 AM"
     },
     {
-      "id": 5,
+      "id": 1,
       "title": "Raspberry Pi Workshop",
       "image": [
         "/Images/events/raspberrypi_1.jpg",

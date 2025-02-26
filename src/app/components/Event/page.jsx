@@ -184,7 +184,7 @@ const EventDisplay = () => {
         className={`
           w-full 
           ${isMobile ? "order-2" : "lg:w-1/2"} 
-          flex flex-col justify-center pr-0 lg:pr-12
+          flex flex-col justify-center pr-0
         `}
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -203,7 +203,7 @@ const EventDisplay = () => {
         )}
         {/* Date Display in Mobile View */}
         {isMobile && (
-          <div ref={dateRef} className="text-xl font-bold text-white mb-4">
+          <div ref={dateRef} className="text-xl font-bold text-white mb-4 [font-family:var(--font-montserratb)]">
             {currentEvent.Year === "yet to confirm"
               ? "TBD"
               : `${currentEvent.Day} / ${currentEvent.Month} / ${currentEvent.Year}`}
@@ -288,21 +288,23 @@ const EventDisplay = () => {
         </p>
 
         {/* Location, Time, Registration remain the same */}
-        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrat)]">
-          <span className="font-semibold text-gray-500 ">Location : </span>
-          <span className="text-gray-200 ">{currentEvent.Location}</span>
-        </div>
-
-        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrat)]">
-          <span className="font-semibold text-gray-500">Time : </span>
-          <span className="text-gray-200">{currentEvent.startsAt}</span>
-        </div>
-        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrat)]">
+        <div className="text-base lg:text-lg [font-family:var(--font-montserrat)]">
           <span className="font-semibold text-gray-500">Date : </span>
           <span className="text-gray-200">{currentEvent.Year === "yet to confirm" 
           ? "TBD"
               : `${currentEvent.Day} - ${currentEvent.Month} - ${currentEvent.Year}`}</span>
         </div>
+        <div className="text-base lg:text-lg [font-family:var(--font-montserrat)]">
+          <span className="font-semibold text-gray-500">Time : </span>
+          <span className="text-gray-200">{currentEvent.startsAt}</span>
+        </div>
+        <div className="mb-4 text-base lg:text-lg [font-family:var(--font-montserrat)]">
+          <span className="font-semibold text-gray-500 ">Location : </span>
+          <span className="text-gray-200 ">{currentEvent.Location}</span>
+        </div>
+
+        
+        
 
         <div className="mb-6 text-base lg:text-lg [font-family:var(--font-montserrat)]">
           {currentEvent.Status === "Past Event" ? (
@@ -324,6 +326,7 @@ const EventDisplay = () => {
           ) : (
             <motion.a
               href={currentEvent.Registration}
+              target="_blank"
               className="bg-[#FB923C] text-white py-2 px-4 rounded"
               whileHover={{ scale: 1.05 }}
             >
