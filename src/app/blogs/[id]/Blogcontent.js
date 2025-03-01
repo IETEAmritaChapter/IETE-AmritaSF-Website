@@ -57,10 +57,10 @@ const BlogContent = ({ blogData }) => {
 
   const components = {
     h2: ({ children }) => (
-      <h2 className="!text-2xl md:!text-3xl [font-family:var(--font-montserratb)] !font-bold !mt-8 !mb-4 !text-white text-center">{children}</h2>
+      <h2 className="!text-2xl md:!text-3xl [font-family:var(--font-montserratb)] !font-bold !mt-8 !mb-4 !text-white text-left">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h3 className="!text-xl md:!text-2xl !font-semibold [font-family:var(--font-montserratb)] !mt-6 !mb-3 !text-white text-center">{children}</h3>
+      <h3 className="!text-xl md:!text-2xl !font-semibold [font-family:var(--font-montserratb)] !mt-6 !mb-3 !text-white text-left">{children}</h3>
     ),
     img: ({ node, ...props }) => (
       <div className="flex justify-center">
