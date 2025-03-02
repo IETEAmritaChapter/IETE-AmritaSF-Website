@@ -25,11 +25,11 @@ function Logo() {
 
 function Navigation({ onClick }) {
   const navItems = [
-    { text: 'ABOUT', path: '/about' },
-    { text: 'TEAM', path: '/team' },
+    { text: 'ABOUT', path: '/about/' },
+    { text: 'TEAM', path: '/team/' },
     { text: 'EVENTS & PROJECTS', path: '/#events-section' },
-    { text: 'BLOG', path: '/blogs' },
-    { text: 'CP LEADERBOARD', path: '/comingsoon' },
+    { text: 'BLOG', path: '/blogs/' },
+    { text: 'CP LEADERBOARD', path: '/comingsoon/' },
   ];
 
   return (
