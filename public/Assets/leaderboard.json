@@ -1,0 +1,65 @@
+{
+    "teamEvents": [
+      {
+        "name": "ML challenge",
+        "description": "A 36-hour Mini hackathon where teams develop AI models to classify 369 handwritten mathematical symbols.",
+        "teams": [
+          {
+            "rank": 1,
+            "name": "Team Seventie",
+            "medal": "Gold",
+            "trophy": true,
+            "members": [
+              {
+                "name": "Shaik Abdus Sattar",
+                "year": 2,
+                "dept": "CSE"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "name": "Team Ritzy",
+            "medal": "Silver",
+            "trophy": true,
+            "members": [
+              {
+                "name": "Sanjith M",
+                "year": 2,
+                "dept": "CSE"
+              },
+              {
+                "name": "Sanjai PG ",
+                "year": 2,
+                "dept": "CSE"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "name": "Team AiWillReplaceUs",
+            "medal": "Bronze",
+            "trophy": true,
+            "members": [
+              {
+                "name": "Visruth Thayyil Vijind",
+                "year": 1,
+                "dept": "CSE"
+              },
+              {
+                "name": "Akilan S S",
+                "year": 1,
+                "dept": "CSE"
+              },
+              {
+                "name": "Bharath Govindara ",
+                "year": 1,
+                "dept": "CSE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "individualEvents": []
+  }
