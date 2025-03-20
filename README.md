@@ -155,5 +155,7 @@ Easily deploy this Next.js app via [Vercel](https://vercel.com). 🌎
   <img src="https://contrib.rocks/image?repo=IETEAmritaChapter/IETE-AmritaSF-Website" />
 </a>
 
+--- 
+
 Made with 🧡 by IETE Amrita SF Team 🎯
 
