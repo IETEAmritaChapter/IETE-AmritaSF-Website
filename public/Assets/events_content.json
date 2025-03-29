@@ -1,13 +1,47 @@
 {
   "events": [
     {
+      "id": 7,
+      "title": "DevX: CODE. CREATE. CONQUER",
+      "image": [
+        "/Images/events/devx_1.png",
+        "/Images/events/devx_2.JPG",
+        "/Images/events/devx_3.JPG",
+        "/Images/events/devx_4.JPG",
+        "/Images/events/devx_5.JPG",
+        "/Images/events/devx_6.JPG",
+        "/Images/events/devx_7.JPG",
+        "/Images/events/devx_8.JPG",
+        "/Images/events/devx_9.JPG",
+        "/Images/events/devx_10.JPG"
+      ],
+      "description": "28 teams, 3 hours, 3 problem statements – one epic challenge! DevX was a high-energy web development competition where participants raced against time to solve exciting challenges. With a ₹5K prize pool on the line, teams tackled coding, debugging, and rapid deployments, all while enjoying a fun-filled picture quiz and Bingo showdown. The event was a perfect blend of technical skill, creativity, and collaboration, making it an unforgettable experience. A huge thank you to all participants for making DevX a phenomenal success— events like these remind us that tech is more than just code; it’s about community and shared experiences! ✨",
+      "Status": "Past Event",
+      "Location": "Seminar Hall (Near Anugraha Hall), AB3",
+      "Registration": "",
+      "Year": "2025",
+      "Month": "03",
+      "Day": "18",
+      "startsAt": "2 PM - 6 PM"
+    },
+    {
       "id": 6,
       "title": "Torch It Up 🔥: AI Journey with PyTorch",
-      "image": ["/Images/events/pytorch_1.png"],
-      "description": "The IETE Amrita Club presents an electrifying AI workshop designed to ignite your passion for Machine Learning! Whether you're a fresher, sophomore, or an AI enthusiast from any department, this hands-on session will equip you with essential deep-learning skills using PyTorch. Expect an exciting blend of talks, live coding, interactive AI quizzes, and an adrenaline-pumping Mini Hackathon where you’ll build your own AI model. Engage in fun activities, network with fellow AI enthusiasts, and take home exclusive PyTorch resources. Don’t miss this chance to supercharge your AI journey—see you there! 🚀✨",
-      "Status": "Upcoming Event",
-      "Location": "Seminar Hall (Near Anugraha Hall), AB3",
-      "Registration": "https://forms.office.com/r/jWuZDJBzWL",
+      "image": [
+        "/Images/events/pytorch_1.png",
+        "/Images/events/pytorch_2.JPG",
+        "/Images/events/pytorch_3.JPG",
+        "/Images/events/pytorch_4.JPG",
+        "/Images/events/pytorch_6.JPG",
+        "/Images/events/pytorch_5.JPG",
+        "/Images/events/pytorch_7.JPG",
+        "/Images/events/pytorch_8.JPG",
+        "/Images/events/pytorch_9.JPG"
+      ],
+      "description": "The IETE Amrita Club’s electrifying AI workshop Torch It Up: An AI Journey with PyTorch was a massive success! 🔥💻 With 250+ students from different courses across UG to PG, we packed not just one but two halls, creating an atmosphere buzzing with energy and enthusiasm. From engaging talks and live coding to interactive AI quizzes and an adrenaline-pumping ML Hackathon with a ₹5K prize pool, the event was filled with learning and excitement. The hackathon wrapped up successfully, and we’re thrilled to have announced the winners! 🎉",
+      "Status": "Past Event",
+      "Location": "Anugraha Hall and Seminar Hall (Near Anugraha Hall), AB3",
+      "Registration": "",
       "Year": "2025",
       "Month": "03",
       "Day": "10",
