@@ -29,7 +29,7 @@ function Navigation({ onClick }) {
     { text: 'TEAM', path: '/team/' },
     { text: 'EVENTS & PROJECTS', path: '/#events-section' },
     { text: 'BLOG', path: '/blogs/' },
-    { text: 'CP LEADERBOARD', path: '/leaderboard/' },
+    { text: 'LEADERBOARD', path: '/leaderboard/' },
   ];
 
   return (

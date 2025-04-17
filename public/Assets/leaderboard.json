@@ -1,7 +1,82 @@
 {
     "teamEvents": [
       {
-        "name": "ML challenge",
+        "name": "DevX Web Mini Hackathon",
+        "description": "DevX was a high-energy web development competition where 28 teams completed 3 problem statements in 3 hours.",
+        "teams": [
+          {
+            "rank": 1,
+            "name": "Team Partha",
+            "medal": "Track 1",
+            "trophy": true,
+            "members": [
+              {
+                "name": "S V Likhith Reddy",
+                "year": 2,
+                "dept": "CSE"
+              },
+              {
+                "name": "Mallaredy Karthik Srijan",
+                "year": 2,
+                "dept": "CSE"
+              }
+            ]
+          },
+          {
+            "rank": 1,
+            "name": "Team CODE YORKERZ",
+            "medal": "Track 2",
+            "trophy": true,
+            "members": [
+              {
+                "name": "Sharmin A S",
+                "year": 1,
+                "dept": "CSE"
+              },
+              {
+                "name": "Nikhil Karthik",
+                "year": 1,
+                "dept": "CSE"
+              },
+              {
+                "name": "Somesh Bharathwaj",
+                "year": 1,
+                "dept": "CSE"
+              },
+              {
+                "name": "Niranjan",
+                "year": 1,
+                "dept": "CSE"
+              }
+            ]
+          },
+          {
+            "rank": 1,
+            "name": "Team SKYkids",
+            "medal": "Track 3",
+            "trophy": true,
+            "members": [
+              {
+                "name": "Krishna Deepak",
+                "year": 2,
+                "dept": "CSE"
+              },
+              {
+                "name": "Santhosh A S",
+                "year": 2,
+                "dept": "CSE"
+              },
+              {
+                "name": "Yogini Aishwarayaa P T S",
+                "year": 2,
+                "dept": "CSE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Torch It Up: ML challenge",
         "description": "A 36-hour Mini hackathon where teams develop AI models to classify 369 handwritten mathematical symbols.",
         "teams": [
           {
@@ -52,7 +127,7 @@
                 "dept": "CSE"
               },
               {
-                "name": "Bharath Govindara ",
+                "name": "Bharath Govindara",
                 "year": 1,
                 "dept": "CSE"
               }
