@@ -9,7 +9,7 @@
             "name": "Team Partha",
             "medal": "Track 1",
             "trophy": true,
-            "Amount": 10000,
+            "Amount": 1666,
             "members": [
               {
                 "name": "S V Likhith Reddy",
@@ -28,7 +28,7 @@
             "name": "Team CODE YORKERZ",
             "medal": "Track 2",
             "trophy": true,
-            "Amount": 5000,
+            "Amount": 1666,
             "members": [
               {
                 "name": "Sharmin A S",
@@ -57,7 +57,7 @@
             "name": "Team SKYkids",
             "medal": "Track 3",
             "trophy": true,
-            "Amount": 2500,
+            "Amount": 1666,
             "members": [
               {
                 "name": "Krishna Deepak",
@@ -87,7 +87,7 @@
             "name": "Team Seventie",
             "medal": "Gold",
             "trophy": true,
-            "Amount": 10000,
+            "Amount": 2500,
             "members": [
               {
                 "name": "Shaik Abdus Sattar",
@@ -101,7 +101,7 @@
             "name": "Team Ritzy",
             "medal": "Silver",
             "trophy": true,
-            "Amount": 5000,
+            "Amount": 1500,
             "members": [
               {
                 "name": "Sanjith M",
@@ -120,7 +120,7 @@
             "name": "Team AiWillReplaceUs",
             "medal": "Bronze",
             "trophy": true,
-            "Amount": 2500,
+            "Amount": 1000,
             "members": [
               {
                 "name": "Visruth Thayyil Vijind",

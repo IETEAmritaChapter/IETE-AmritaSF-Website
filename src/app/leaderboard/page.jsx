@@ -146,7 +146,7 @@ export default function Leaderboard() {
         </h1>
       </motion.header>
 
-      <main className="max-w-6xl mx-auto px-0.5 sm:px-4 lg:px-8 pt-20 pb-6 space-y-14">
+      <main className="max-w-6xl mt-10 mx-auto px-0.5 sm:px-4 lg:px-8 pt-20 pb-6 space-y-14">
         {/* All Events Listed Vertically */}
         <div className="space-y-16">
           {/* Team Events */}
