@@ -1,17 +1,14 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Medal, Trophy, ChevronDown, ChevronUp } from 'lucide-react';
-import gsap from 'gsap';
 
 export default function Leaderboard() {
   const [leaderboardData, setLeaderboardData] = useState(null);
   const [expandedTeamEvents, setExpandedTeamEvents] = useState({});
   const [expandedIndividualEvents, setExpandedIndividualEvents] = useState({});
   
-  const headerRef = useRef(null);
-
   // Animation variants for cards
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -35,6 +32,24 @@ export default function Leaderboard() {
       }
     }
   };
+
+  // Header animation variants
+  const headerVariants = {
+    hidden: { y: -50, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { 
+        duration: 0.8, 
+        ease: [0.32, 0.72, 0, 1] // Power3.out equivalent
+      } 
+    }
+  };
+
+  // Scroll animation setup
+  const { scrollY } = useScroll();
+  const headerOpacity = useTransform(scrollY, [0, 50], [1, 0]);
+  const headerY = useTransform(scrollY, [0, 50], [0, -20]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,92 +80,6 @@ export default function Leaderboard() {
     };
 
     fetchData();
-
-    // Animate header on load
-    gsap.fromTo(
-      headerRef.current,
-      { y: -50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
-    );
-
-    // Handle scroll to hide header
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (headerRef.current) {
-        if (scrollPosition > 50) {
-          gsap.to(headerRef.current, {
-            opacity: 0,
-            y: -20,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        } else {
-          gsap.to(headerRef.current, {
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Add custom fonts - with absolute paths and correct format for woff
-    const style = document.createElement('style');
-    style.textContent = `
-      :root {
-        --font-montserrat: 'Montserrat';
-        --font-montserratb: 'Montserrat ExtraBold';
-        --font-montserrat-alternates: 'Montserrat Alternates';
-      }
-      
-      @font-face {
-        font-family: 'Montserrat ExtraBold';
-        src: url('src\\app\\_fonts\\Montserrat-ExtraBold.ttf') format('truetype');
-        font-weight: 800;
-        font-style: normal;
-        font-display: swap;
-      }
-      
-      @font-face {
-        font-family: 'Montserrat';
-        src: url('src\\app\\_fonts\\Montserrat-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-      
-      @font-face {
-        font-family: 'Montserrat Alternates';
-        src: url('src\\app\\_fonts\\MontserratAlternates-Regular.woff') format('woff');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-    `;
-    document.head.appendChild(style);
-
-    // Preload fonts
-    const fontLinks = [
-      { rel: 'preload', href: 'src\\app\\_fonts\\Montserrat-ExtraBold.ttf', as: 'font', type: 'font/ttf', crossOrigin: 'anonymous' },
-      { rel: 'preload', href: 'src\\app\\_fonts\\Montserrat-Regular.ttf', as: 'font', type: 'font/ttf', crossOrigin: 'anonymous' },
-      { rel: 'preload', href: 'src\\app\\_fonts\\MontserratAlternates-Regular.woff', as: 'font', type: 'font/woff', crossOrigin: 'anonymous' }
-    ];
-
-    fontLinks.forEach(linkData => {
-      const link = document.createElement('link');
-      Object.keys(linkData).forEach(key => {
-        link[key] = linkData[key];
-      });
-      document.head.appendChild(link);
-    });
-
-    // Cleanup event listener
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
   }, []);
 
   const toggleEventExpansion = (eventType, index) => {
@@ -205,16 +134,19 @@ export default function Leaderboard() {
 
   return (
     <div className="min-h-screen text-white pb-16 backdrop-blur-sm [font-family:var(--font-montserrat)]">
-      <header 
-        ref={headerRef}
-        className="w-full py-3 text-center backdrop-blur-sm absolute top-0 left-0 right-0 z-10 transition-opacity duration-300"
+      <motion.header 
+        initial="hidden"
+        animate="visible"
+        variants={headerVariants}
+        style={{ opacity: headerOpacity, y: headerY }}
+        className="w-full py-3 text-center backdrop-blur-sm absolute top-0 left-0 right-0 z-10"
       >
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white [font-family:var(--font-montserratb)]">
           LEADERBOARDS
         </h1>
-      </header>
+      </motion.header>
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-6 space-y-14">
+      <main className="max-w-6xl mx-auto px-0.5 sm:px-4 lg:px-8 pt-20 pb-6 space-y-14">
         {/* All Events Listed Vertically */}
         <div className="space-y-16">
           {/* Team Events */}
@@ -240,67 +172,77 @@ export default function Leaderboard() {
                 </button>
               </div>
 
-              {expandedTeamEvents[eventIndex] && (
-                <motion.div 
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="space-y-3"
-                >
-                  {teamEvent.teams.map((team) => (
-                    <motion.div
-                      key={team.rank}
-                      variants={itemVariants}
-                      className={`rounded-xl overflow-hidden backdrop-blur-lg ${
-                        team.rank <= 3 
-                          ? 'border-l-4 border-t border-r border-b border-orange-400/40' 
-                          : 'border border-white/10'
-                      }`}
-                    >
-                      <div className={`p-5 ${
-                        team.rank === 1 
-                          ? 'bg-black/80' 
-                          : team.rank === 2 
-                            ? 'bg-black/70' 
-                            : team.rank === 3 
-                              ? 'bg-black/60' 
-                              : team.rank % 2 === 0 
-                                ? 'bg-black/40' 
-                                : 'bg-black/50'
-                      }`}>
-                        <div className="flex justify-between items-center mb-4">
-                          <div className="flex items-center space-x-3">
-                            <div className={`w-10 h-10 rounded-full ${getRankBadgeColor(team.rank)} flex items-center justify-center font-bold text-lg shadow-md shadow-black/50 [font-family:var(--font-montserratb)]`}>
-                              #{team.rank}
+              <AnimatePresence>
+                {expandedTeamEvents[eventIndex] && (
+                  <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    className="space-y-3"
+                  >
+                    {teamEvent.teams.map((team) => (
+                      <motion.div
+                        key={`team-${team.rank}-${team.name}`}
+                        variants={itemVariants}
+                        className={`rounded-xl overflow-hidden backdrop-blur-lg ${
+                          team.rank <= 3 
+                            ? 'border-l-4 border-t border-r border-b border-orange-400/40' 
+                            : 'border border-white/10'
+                        }`}
+                      >
+                        <div className={`p-5 ${
+                          team.rank === 1 
+                            ? 'bg-black/80' 
+                            : team.rank === 2 
+                              ? 'bg-black/70' 
+                              : team.rank === 3 
+                                ? 'bg-black/60' 
+                                : team.rank % 2 === 0 
+                                  ? 'bg-black/40' 
+                                  : 'bg-black/50'
+                        }`}>
+                          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 md:gap-0 mb-4">
+                            <div className="flex items-center space-x-3">
+                              <div className={`w-10 h-10 rounded-full ${getRankBadgeColor(team.rank)} flex items-center justify-center font-bold text-lg shadow-md shadow-black/50 [font-family:var(--font-montserratb)]`}>
+                                #{team.rank}
+                              </div>
+                              <h3 className="text-2xl font-bold flex items-center space-x-2 [font-family:var(--font-montserratb)]">
+                                <span>{team.name}</span>
+                                {team.trophy && <Trophy className="w-6 h-6 text-orange-400" />}
+                              </h3>
                             </div>
-                            <h3 className="text-2xl font-bold flex items-center space-x-2 [font-family:var(--font-montserratb)]">
-                              <span>{team.name}</span>
-                              {team.trophy && <Trophy className="w-6 h-6 text-orange-400" />}
-                            </h3>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <div className={`px-3 py-1 rounded-full text-base font-semibold ${getMedalColor(team.medal)} shadow-md shadow-black/50 [font-family:var(--font-montserratb)]`}>
+                                {team.medal}
+                              </div>
+                              {team.Amount && (
+                                <div className="px-3 py-1 rounded-full text-base font-semibold bg-green-600 text-white shadow-md shadow-black/50 [font-family:var(--font-montserratb)]">
+                                  ₹{team.Amount}
+                                </div>
+                              )}
+                            </div>
                           </div>
-                          <div className={`px-3 py-1 rounded-full text-base font-semibold ${getMedalColor(team.medal)} shadow-md shadow-black/50 [font-family:var(--font-montserratb)]`}>
-                            {team.medal}
-                          </div>
-                        </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                          {team.members.map((member, index) => (
-                            <div 
-                              key={index} 
-                              className="bg-black/60 p-3 rounded-lg backdrop-blur-sm border border-orange-400/30 hover:border-orange-400/60 transition-all shadow-md"
-                            >
-                              <p className="font-semibold text-lg text-orange-400 [font-family:var(--font-montserratb)]">{member.name}</p>
-                              <p className="text-base text-gray-300">
-                                {member.year}{member.year === 1 ? 'st' : member.year === 2 ? 'nd' : member.year === 3 ? 'rd' : 'th'} year • {member.dept}
-                              </p>
-                            </div>
-                          ))}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                            {team.members.map((member, index) => (
+                              <div 
+                                key={`member-${index}-${member.name}`}
+                                className="bg-black/60 p-3 rounded-lg backdrop-blur-sm border border-orange-400/30 hover:border-orange-400/60 transition-all shadow-md"
+                              >
+                                <p className="font-semibold text-lg text-orange-400 [font-family:var(--font-montserratb)]">{member.name}</p>
+                                <p className="text-base text-gray-300">
+                                  {member.year}{member.year === 1 ? 'st' : member.year === 2 ? 'nd' : member.year === 3 ? 'rd' : 'th'} year • {member.dept}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </section>
           ))}
 
@@ -327,57 +269,67 @@ export default function Leaderboard() {
                 </button>
               </div>
 
-              {expandedIndividualEvents[eventIndex] && (
-                <motion.div 
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="space-y-2"
-                >
-                  {individualEvent.participants.map((participant) => (
-                    <motion.div
-                      key={participant.rank}
-                      variants={itemVariants}
-                      className={`rounded-lg overflow-hidden backdrop-blur-lg ${
-                        participant.rank <= 3 
-                          ? 'border-l-2 border-t border-r border-b border-orange-400/40' 
-                          : 'border border-white/10'
-                      }`}
-                    >
-                      <div className={`flex items-center justify-between p-4 ${
-                        participant.rank === 1 
-                          ? 'bg-black/70' 
-                          : participant.rank === 2 
-                            ? 'bg-black/60' 
-                            : participant.rank === 3 
-                              ? 'bg-black/50' 
-                              : participant.rank % 2 === 0 
-                                ? 'bg-black/30' 
-                                : 'bg-black/40'
-                      }`}>
-                        <div className="flex items-center space-x-3">
-                          <div className={`w-8 h-8 flex items-center justify-center ${getRankBadgeColor(participant.rank)} rounded-full shadow-md shadow-black/50 [font-family:var(--font-montserratb)]`}>
-                            <span className="font-bold text-base">#{participant.rank}</span>
-                          </div>
-                          <div>
-                            <div className="flex items-center space-x-2">
-                              <h3 className="font-semibold text-xl text-orange-400 [font-family:var(--font-montserratb)]">{participant.name}</h3>
+              <AnimatePresence>
+                {expandedIndividualEvents[eventIndex] && (
+                  <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    className="space-y-2"
+                  >
+                    {individualEvent.participants.map((participant) => (
+                      <motion.div
+                        key={`participant-${participant.rank}-${participant.name}`}
+                        variants={itemVariants}
+                        className={`rounded-lg overflow-hidden backdrop-blur-lg ${
+                          participant.rank <= 3 
+                            ? 'border-l-2 border-t border-r border-b border-orange-400/40' 
+                            : 'border border-white/10'
+                        }`}
+                      >
+                        <div className={`flex flex-col md:flex-row items-start md:items-center justify-between p-4 gap-3 md:gap-0 ${
+                          participant.rank === 1 
+                            ? 'bg-black/70' 
+                            : participant.rank === 2 
+                              ? 'bg-black/60' 
+                              : participant.rank === 3 
+                                ? 'bg-black/50' 
+                                : participant.rank % 2 === 0 
+                                  ? 'bg-black/30' 
+                                  : 'bg-black/40'
+                        }`}>
+                          <div className="flex items-center space-x-3">
+                            <div className={`w-8 h-8 flex items-center justify-center ${getRankBadgeColor(participant.rank)} rounded-full shadow-md shadow-black/50 [font-family:var(--font-montserratb)]`}>
+                              <span className="font-bold text-base">#{participant.rank}</span>
                             </div>
-                            <p className="text-base text-gray-300 border-b border-orange-400/30 pb-1">
-                              {participant.year}{participant.year === 1 ? 'st' : participant.year === 2 ? 'nd' : participant.year === 3 ? 'rd' : 'th'} year • {participant.dept}
-                            </p>
+                            <div>
+                              <div className="flex items-center space-x-2">
+                                <h3 className="font-semibold text-xl text-orange-400 [font-family:var(--font-montserratb)]">{participant.name}</h3>
+                              </div>
+                              <p className="text-base text-gray-300 border-b border-orange-400/30 pb-1">
+                                {participant.year}{participant.year === 1 ? 'st' : participant.year === 2 ? 'nd' : participant.year === 3 ? 'rd' : 'th'} year • {participant.dept}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <div className={`px-3 py-1 rounded-full font-semibold text-base ${
+                              participant.rank <= 3 ? getRankBadgeColor(participant.rank) : 'bg-gray-800 text-white'
+                            } shadow-md shadow-black/50 [font-family:var(--font-montserratb)]`}>
+                              {participant.points} points
+                            </div>
+                            {participant.Amount && (
+                              <div className="px-3 py-1 rounded-full text-base font-semibold bg-green-600 text-white shadow-md shadow-black/50 [font-family:var(--font-montserratb)]">
+                                ₹{participant.Amount}
+                              </div>
+                            )}
                           </div>
                         </div>
-                        <div className={`px-3 py-1 rounded-full font-semibold text-base ${
-                          participant.rank <= 3 ? getRankBadgeColor(participant.rank) : 'bg-gray-800 text-white'
-                        } shadow-md shadow-black/50 [font-family:var(--font-montserratb)]`}>
-                          {participant.points} points
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </section>
           ))}
         </div>
