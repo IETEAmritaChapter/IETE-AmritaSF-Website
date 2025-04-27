@@ -176,7 +176,7 @@ const EventDisplay = () => {
       className={`
       min-h-screen flex 
       ${isMobile ? "flex-col" : "lg:flex-row"} 
-      p-4 lg:p-8 bg-stone-900 text-gray-100
+      p-4 lg:p-8 items-center bg-stone-900 text-gray-100
     `}
     >
       {/* Left Content Section */}

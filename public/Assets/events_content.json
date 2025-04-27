@@ -1,6 +1,27 @@
 {
   "events": [
     {
+      "id": 8,
+      "title": "Hackathon Winners Felicitation",
+      "image": [
+        "/Images/events/feli_1.JPG",
+        "/Images/events/feli_5.JPG",
+        "/Images/events/feli_6.JPG",
+        "/Images/events/feli_7.JPG",
+        "/Images/events/feli_2.JPG",
+        "/Images/events/feli_3.JPG",
+        "/Images/events/feli_4.JPG"
+      ],
+      "description": "The IETE Amrita Student Chapter (2024-25) organized two exciting hackathons, Torch It Up and DevX, to showcase the creativity and technical brilliance of students. On 8th April 2025, a prize distribution ceremony was conducted to honor the winners. Cash prizes of ₹2,500, ₹1,500, and ₹1,000 were awarded to the top performing teams of Torch It Up, and ₹1,600 each to the winning teams of DevX. Certificates and prizes were distributed by Dr. Bagavathi Sivakumar P., Chairperson, School of Computing, Coimbatore and Dr. Anantha Narayanan V., Honorary Secretary of IETE Coimbatore, recognizing the remarkable achievements of the participants.",
+      "Status": "Past Event",
+      "Location": "Anugraha Hall, AB3",
+      "Registration": "",
+      "Year": "2025",
+      "Month": "04",
+      "Day": "08",
+      "startsAt": "4:30 PM - 5 PM"
+    },
+    {
       "id": 7,
       "title": "DevX: CODE. CREATE. CONQUER",
       "image": [
