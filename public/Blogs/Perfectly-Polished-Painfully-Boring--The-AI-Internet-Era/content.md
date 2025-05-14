@@ -1,7 +1,7 @@
 ------
-Title: "Perfectly Polished, Painfully Boring — The AI Internet Era"
-Date: "2025-05-14"
-Author: "Tharun"
+Title: "Perfectly Polished Painfully Boring — The AI Internet Era"
+Date: "14/05/2025"
+Author: "Tharun Kumarr"
 Tags: ["AI", "Web Design", "Creativity", "Culture"]
 Preview_image: "/preview_img.png"
 Condense: "Every website looks the same. Why? AI tools are fast but dangerously average. Here's what we're losing in the process — and how to bring the soul back to the web."
@@ -13,7 +13,7 @@ Hero image, big headline, some cards with icons, neat sections, muted gradients 
 
 I’ve been thinking about why. And more importantly — what we’re losing.
 
-![image1.png](/Blogs/Perfectly-Polished,-Painfully-Boring--The-AI-Internet-Era/Image1.png)
+![image1.png](/Blogs/Perfectly-Polished-Painfully-Boring--The-AI-Internet-Era/Image1.png)
 
 ## The AI Web Is Fast. But Also Kinda... Average.
 
@@ -25,17 +25,17 @@ Kind of like what happens when you average faces.
 
 ## The ‘Average Face’ Effect — But for Websites
 
-There’s this psychological thing I saw in a [YouTube video](https://www.youtube.com/watch?v=OwKlvd8BaxY) — the idea that the most attractive faces are the most **average**. Not extreme. Just perfectly balanced, symmetrically safe, and... well, forgettable.
+There’s this psychological thing I saw in a [YouTube video 🔗](https://www.youtube.com/watch?v=OwKlvd8BaxY) — the idea that the most attractive faces are the most **average**. Not extreme. Just perfectly balanced, symmetrically safe, and... well, forgettable.
 
 That’s what AI is doing to websites.
 
 By learning from everything, it creates a generic “face” for the Internet. And that face is clean, functional, and deeply uninspired. The soul is gone.
 
-![image2.png](/Blogs/Perfectly-Polished,-Painfully-Boring--The-AI-Internet-Era/Image2.png)
+![image2.png](/Blogs/Perfectly-Polished-Painfully-Boring--The-AI-Internet-Era/Image2.png)
 
 ## Let’s Time-Travel Back to the Pre-2000 Web
 
-If you're too young to remember or haven’t done a deep scroll through [oldweb.today](http://oldweb.today/) or the Geocities archive, please do yourself a favor and explore it. The pre-2000s Internet was unhinged. And I mean that in the best way possible.
+If you're too young to remember or haven’t done a deep scroll through [oldweb.today 🔗](http://oldweb.today/) or the Geocities archive, please do yourself a favor and explore it. The pre-2000s Internet was unhinged. And I mean that in the best way possible.
 
 - Neon backgrounds that could blind a bat.
 - Spinning “under construction” signs.

@@ -1,7 +1,7 @@
 ------
 Title : "Reinforcement Learning Propels AI to New Heights in Competitive Programming" 
-Date : "20-02-2025"
-Tags : ["Artificial Intelligence","Beginner-Friendly"]
+Date : "20/02/2025"
+Tags : ["AI","Beginner-Friendly"]
 Author : "Sai Nivedh"
 Preview_image : "/preview_img.png"
 Condense : "Imagine a world where artificial intelligence not just writes code but masters the art of competitive programming! In a groundbreaking development, OpenAI has achieved something extraordinary - they've created AI systems that can outthink and outcode some of the best human programmers. By combining reinforcement learning (RL) with large language models (LLMs), these AI systems have learned to solve complex programming challenges in ways that even surprise their creators. This article takes you on an exciting journey through three revolutionary AI systems - o1, o1-ioi, and o3 - that have transformed our understanding of machine intelligence. We'll explore how these systems evolved from basic code generators to sophisticated problem-solvers that can now compete at elite levels in programming competitions, marking a new chapter in the AI revolution.
